@@ -1,0 +1,208 @@
+---
+title: "Título de la Presentación"
+subtitle: "Subtítulo de la Presentación"
+author: "Nombre de la autora"
+institute: "R-Ladies Xalapa"
+date: "Fecha"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: 
+      - default
+      - rladies
+      - rladies-fonts
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, include = FALSE}
+library(tidyverse)
+library(datos)
+# set default options
+knitr::opts_chunk$set(echo = FALSE,
+               dpi = 300)
+```
+
+class: left, bottom
+background-image: url(https://raw.githubusercontent.com/rladies/starter-kit/master/stickers/hex-logo-with-text.png)
+background-position: 94% 10%
+background-size: 15%
+
+
+# `r rmarkdown::metadata$title`
+----
+## **`r rmarkdown::metadata$subtitle`**
+### `r rmarkdown::metadata$author`
+### `r rmarkdown::metadata$date`
+
+---
+name: hola
+class: inverse, middle, center
+
+<img style="border-radius: 50%;" src="https://pbs.twimg.com/media/D5qAsCmUYAAzYtE?format=jpg&name=small"
+width="150px"
+/>
+
+# R-Ladies Xalapa 
+
+## Promoviendo el uso de R en Xalapa, Veracruz
+
+[`r icon::fa("link")` meetup.com/rladies-xalapa](https://www.meetup.com/rladies-xalapa/)<br/>
+[`r icon::fa("twitter")` @RLadiesXalapa](https://twitter.com/RLadiesXalapa)<br/>
+[`r icon::fa("paper-plane")` xalapa@rladies.org](mailto:xalapa@rladies.org)
+
+???
+Hola! Mi nombre es R-Ladies Xalapa y estoy emocionada de estar aqui para promover la diversidad de género en la comunidad de R.
+
+---
+# R-Ladies Xalapa
+
+The R-Ladies Xalapa aims to support the learning, application and exploitation of R in the NHS through workshops, video tutorials and providing a platform for discussion and sharing of developing best practice solutions to NHS problems.
+
+With funding support from the Health Foundation’s Advancing Applied Analytics programme (which is aimed at improving analytical capability in support of health and care services.) The Improvement Academy & University of Bradford will lead this initiative  with support from NHS Improvement, NHS Midlands and Lancashire Commissioning Support Unit & NHS Wales Delivery Unit.
+
+
+.footnote[Este excerpto viene de la página web: https://www.meetup.com/rladies-xalapa]
+
+
+---
+class: inverse, middle
+
+# Outline
+
+----
+
+.pull-left[
+
+Outline slides like this one are commonly found in the wild. If they incorporate links they can become a useful "table of contents" for a slide deck.  
+
+Downside is they aren't very memorable. I would encourage a "roadmap" approach to your presentations, using interesting transition slides that let your audience know where you've been and where you're going next.
+
+]<!--end of left-column-->
+
+.pull-right[
+.left[
+1\. [Making bullet points and emphasizing text](#bulletpoints)
+
+2\. [Tables and quotes](#tables-quotes)
+
+3\. [Line highlighting](#line-highlighting)
+
+4\. [Final slide and contact info](#adios)
+]
+] <!--end of right-column-->
+
+---
+name: bulletpoints
+# Bullets and text color
+
+--
+
+* first point
+
+--
+
+* second point
+
+--
+
+* third point
+
+--
+
+-----
+
+And make it **bold** or _italicized_ using Markdown:
+
+* .blue[**Bold** or _italicized_]
+* .green[**Bold** or _italicized_]
+* .pink[**Bold** or _italicized_]
+* .red[**Bold** or _italicized_]
+* .warmyellow[**Bold** or _italicized_]
+
+---
+name: tables-quotes
+# Tables and quotes
+
+### Table
+.pull-left[
+
+`datos::pinguinos`
+
+Artificially generated hospital data. Fictional patients at 10 fictional hospitals, with `LOS`, `Age` and `Date status` data. 
+
+Data were generated to learn Generalized Linear Models (GLM) concepts, modelling either `Death` or `LOS`.
+]
+
+.pull-right[
+```{r}
+knitr::kable(head(datos::pinguinos), format = 'html')
+```
+]
+
+--
+
+### Quote
+
+> The NHS-R community aims to support the learning, application and exploitation of R in the NHS through workshops, video tutorials and providing a platform for discussion and sharing of developing best practice solutions to NHS problems.
+
+---
+name: line-highlighting
+
+# Code highlighting
+
+`This is what inline code looks like highlighted within text`
+
+Lines within code chunks can be highlighted using the trailing comment `#<<`, as seen below:
+
+### Code
+
+````markdown
+`r ''````{r}
+datos::pinguinos %>%
+  ggplot(aes(x = masa_corporal_g, y = isla)) +
+  geom_boxplot(aes(fill = isla))    #<<
+```
+````
+
+### Output
+
+```{r eval=FALSE, echo=TRUE}
+datos::pinguinos %>%
+  ggplot(aes(x = masa_corporal_g, y = isla)) +
+  geom_boxplot(aes(fill = isla))    #<<
+```
+
+---
+name: adios
+class: middle, inverse
+
+.pull-left[
+# **Gracias!**
+<br/>
+## R-Ladies Xalapa  
+
+### Promoviendo la diversidad de género<br>en la communidad de R
+
+### Xalapa, México (y a nivel global!)
+]
+
+.pull-right[
+.right[
+<img style="border-radius: 50%;" src="https://pbs.twimg.com/media/D5qAsCmUYAAzYtE?format=jpg&name=small"
+width="150px"
+/>
+
+[`r icon::fa("link")` meetup.com/rladies-xalapa](https://www.meetup.com/rladies-xalapa/)<br/>
+[`r icon::fa("twitter")` @RLadiesXalapa](https://twitter.com/RLadiesXalapa)<br/>
+[`r icon::fa("paper-plane")` xalapa@rladies.org](mailto:xalapa@rladies.org)
+]
+]
+
+???
+Thank you for your attention! 
+I'm happy to take any questions, and if you'd like to get in touch, I've included my contact information on this slide
