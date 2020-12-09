@@ -143,6 +143,10 @@ Algunos de los temas que se abordaran en las sesiones de R-Ladies Xalapa son:
 
 Y con al ayuda de Markdown puedes escribir el texto **en negritas** o _en cursiva_
 
+.footnote[
+Este extracto proviene de la página web: https://www.meetup.com/rladies-xalapa
+]
+
 ---
 name: tablas-citas
 # Tablas y citas
@@ -173,9 +177,9 @@ datos::pinguinos %>%
 
 ### Cita
 
-> El paquete [`datos` ](https://cienciadedatos.github.io/datos/) provee la traducción al español de conjuntos de datos en inglés originalmente disponibles en otros paquetes de R.
+> El paquete [`datos` ](https://cienciadedatos.github.io/datos/) provee la traducción al español de conjuntos de datos en inglés originalmente disponibles en otros paquetes de R, como [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
 
-> La autora principal de este paquete es [Riva Quiroga](https://twitter.com/rivaquiroga) `r emo::ji("clap")`
+> La autora principal del paquete `datos` es [Riva Quiroga](https://twitter.com/rivaquiroga) `r emo::ji("clap")`
 
 ---
 name: resaltando-lineas
