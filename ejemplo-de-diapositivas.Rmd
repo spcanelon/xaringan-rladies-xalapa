@@ -206,7 +206,7 @@ datos::pinguinos %>%
 
 ---
 
-```{r eval=TRUE, echo=TRUE, fig.height = 4.5}
+```{r masa-corporal, eval=TRUE, echo=TRUE, fig.height = 4.5}
 datos::pinguinos %>%
   ggplot(aes(x = isla, y = masa_corporal_g)) +
   geom_boxplot(aes(fill = especie))               #<<
