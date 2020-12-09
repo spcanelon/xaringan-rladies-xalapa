@@ -17,9 +17,11 @@ install.packages(c(
 ))
 
 # Desde GitHub
-devtools::install_github("cienciadedatos/datos")
-devtools::install_github("ropenscilabs/icon")
-devtools::install_githuh("hadley/emo")
+devtools::install_github(c(
+  "cienciadedatos/datos",
+  "ropenscilabs/icon",
+  "hadley/emo"
+))
 ```
 
 ## Rmd como ejemplo
