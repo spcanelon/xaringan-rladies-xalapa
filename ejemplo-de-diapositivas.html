@@ -37,169 +37,151 @@ width="150px"
 
 # R-Ladies Xalapa 
 
-## Promoviendo el uso de R en Xalapa, Veracruz
+## Capitulo de R-Ladies Global
 
 [<i class="fas  fa-link "></i> meetup.com/rladies-xalapa](https://www.meetup.com/rladies-xalapa/)&lt;br/&gt;
 [<i class="fab  fa-twitter "></i> @RLadiesXalapa](https://twitter.com/RLadiesXalapa)&lt;br/&gt;
 [<i class="fas  fa-paper-plane "></i> xalapa@rladies.org](mailto:xalapa@rladies.org)
 
 ???
-Hola! Mi nombre es R-Ladies Xalapa y estoy emocionada de estar aqui para promover la diversidad de género en la comunidad de R.
+¡Hola! Mi nombre es R-Ladies Xalapa y estoy emocionada de estar aqui para promover la diversidad de género en la comunidad de R.
 
 ---
+
+.left-column[
 # R-Ladies Xalapa
+]
 
-The R-Ladies Xalapa aims to support the learning, application and exploitation of R in the NHS through workshops, video tutorials and providing a platform for discussion and sharing of developing best practice solutions to NHS problems.
+.right-column[
 
-With funding support from the Health Foundation’s Advancing Applied Analytics programme (which is aimed at improving analytical capability in support of health and care services.) The Improvement Academy &amp; University of Bradford will lead this initiative  with support from NHS Improvement, NHS Midlands and Lancashire Commissioning Support Unit &amp; NHS Wales Delivery Unit.
+El capítulo local R-Ladies Xalapa busca promover la diversidad de género en la comunidad de R (un lenguaje de programación para la manipulación y análisis estadístico de datos).
+
+Nuestra prioridad es proporcionar un espacio comunitario seguro para cualquier persona que se identifique como un género minoritario que esté interesada y/o trabaje con R.
 
 
-.footnote[Este excerpto viene de la página web: https://www.meetup.com/rladies-xalapa]
-
+.footnote[
+----
+Este extracto proviene de la página web: https://www.meetup.com/rladies-xalapa]
+]
 
 ---
 class: inverse, middle
 
-# Outline
+# El esquema
 
 ----
 
 .pull-left[
 
-Outline slides like this one are commonly found in the wild. If they incorporate links they can become a useful "table of contents" for a slide deck.  
+Diapositivas utilizadas como esquema se encuentran con frecuencia. Si contienen enlaces pueden servir como tabla de contenido para una presentación.
 
-Downside is they aren't very memorable. I would encourage a "roadmap" approach to your presentations, using interesting transition slides that let your audience know where you've been and where you're going next.
+Otra opción es utilizar algunas diapositivas como transiciones en tu presentación de manera que le indiquen a la audiencia de dónde vienen y a dónde van.
 
 ]&lt;!--end of left-column--&gt;
 
 .pull-right[
+
 .left[
-1\. [Making bullet points and emphasizing text](#bulletpoints)
+1\. [Haciendo listas y enfatizando el texto](#listas)
 
-2\. [Tables and quotes](#tables-quotes)
+2\. [Tablas y citas](#tablas-citas)
 
-3\. [Line highlighting](#line-highlighting)
+3\. [Resaltando lineas de código](#resaltando-lineas)
 
-4\. [Final slide and contact info](#adios)
+4\. [Diapositiva final e información de contacto](#adios)
 ]
+
 ] &lt;!--end of right-column--&gt;
 
 ---
-name: bulletpoints
-# Bullets and text color
+name: listas
+# Haciendo listas y enfatizando el texto
 
 --
 
-* first point
+Algunos de los temas que se abordaran en las sesiones de R-Ladies Xalapa son:
 
 --
 
-* second point
+* Análisis estadístico
 
 --
 
-* third point
+* Visualización de datos
+
+--
+
+* Minería de textos
+
+--
+
+* Análisis exploratorio de datos
+
+--
+
+* Aplicaciones en R Shiny
 
 --
 
 -----
 
-And make it **bold** or _italicized_ using Markdown:
-
-* .blue[**Bold** or _italicized_]
-* .green[**Bold** or _italicized_]
-* .pink[**Bold** or _italicized_]
-* .red[**Bold** or _italicized_]
-* .warmyellow[**Bold** or _italicized_]
+Y con al ayuda de Markdown puedes escribir el texto **en negritas** o _en cursiva_
 
 ---
-name: tables-quotes
-# Tables and quotes
+name: tablas-citas
+# Tablas y citas
 
-### Table
+### Tabla
+
 .pull-left[
 
 `datos::pinguinos`
 
-Artificially generated hospital data. Fictional patients at 10 fictional hospitals, with `LOS`, `Age` and `Date status` data. 
+Los datos `pinguinos` son medidas de tamaño de pingüinos adultos en busca de comida cerca de la estación Palmer en la Antártica.
 
-Data were generated to learn Generalized Linear Models (GLM) concepts, modelling either `Death` or `LOS`.
+Medidas como `masa_corporal_g`
 ]
 
 .pull-right[
+
 &lt;table&gt;
  &lt;thead&gt;
   &lt;tr&gt;
    &lt;th style="text-align:left;"&gt; especie &lt;/th&gt;
    &lt;th style="text-align:left;"&gt; isla &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; largo_pico_mm &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; alto_pico_mm &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; largo_aleta_mm &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; masa_corporal_g &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; sexo &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; anio &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Barbijo &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dream &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2700 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Torgersen &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 39.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 18.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 181 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3750 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; macho &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Biscoe &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2850 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Biscoe &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2850 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Biscoe &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2900 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dream &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2900 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Torgersen &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 39.5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 17.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 186 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3800 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; hembra &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Torgersen &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 40.3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 18.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 195 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3250 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; hembra &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Torgersen &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Torgersen &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 36.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 19.3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 193 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3450 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; hembra &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Torgersen &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 39.3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 20.6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 190 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3650 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; macho &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2900 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -207,50 +189,68 @@ Data were generated to learn Generalized Linear Models (GLM) concepts, modelling
 
 --
 
-### Quote
+### Cita
 
-&gt; The NHS-R community aims to support the learning, application and exploitation of R in the NHS through workshops, video tutorials and providing a platform for discussion and sharing of developing best practice solutions to NHS problems.
+&gt; El paquete [`datos` ](https://cienciadedatos.github.io/datos/) provee la traducción al español de conjuntos de datos en inglés originalmente disponibles en otros paquetes de R.
+
+&gt; La autora principal de este paquete es [Riva Quiroga](https://twitter.com/rivaquiroga) 👏
 
 ---
-name: line-highlighting
+name: resaltando-lineas
 
-# Code highlighting
+# Resaltando lineas de código
 
-`This is what inline code looks like highlighted within text`
+`Asī se ve el código resaltado cuando está ubicado en línea con el texto`
 
-Lines within code chunks can be highlighted using the trailing comment `#&lt;&lt;`, as seen below:
+Líneas de  código dentro de fragmentos de código (code chunks), se pueden resaltar usando `#&lt;&lt;`, como se ve a continuación:
 
-### Code
+### Código
 
 ````markdown
 ```{r}
 datos::pinguinos %&gt;%
-  ggplot(aes(x = masa_corporal_g, y = isla)) +
-  geom_boxplot(aes(fill = isla))    #&lt;&lt;
+  ggplot(aes(x = isla, y = masa_corporal_g)) +
+  geom_boxplot(aes(fill = especie))               #&lt;&lt;
 ```
 ````
 
-### Output
+### Salida
 
 
 ```r
 datos::pinguinos %&gt;%
-  ggplot(aes(x = masa_corporal_g, y = isla)) +
-* geom_boxplot(aes(fill = isla))
+  ggplot(aes(x = isla, y = masa_corporal_g)) +
+* geom_boxplot(aes(fill = especie))
 ```
+
+---
+
+
+```r
+datos::pinguinos %&gt;%
+  ggplot(aes(x = isla, y = masa_corporal_g)) +
+* geom_boxplot(aes(fill = especie))
+```
+
+```
+## Warning: Removed 2 rows containing non-finite values
+## (stat_boxplot).
+```
+
+![](ejemplo-de-diapositivas_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
 
 ---
 name: adios
 class: middle, inverse
 
 .pull-left[
-# **Gracias!**
+# **¡Gracias!**
 &lt;br/&gt;
 ## R-Ladies Xalapa  
 
-### Promoviendo la diversidad de género&lt;br&gt;en la communidad de R
+### Promoviendo la diversidad de género en la comunidad de R
 
-### Xalapa, México (y a nivel global!)
+#### Xalapa, México (¡y a nivel global!)
 ]
 
 .pull-right[
@@ -266,8 +266,8 @@ width="150px"
 ]
 
 ???
-Thank you for your attention! 
-I'm happy to take any questions, and if you'd like to get in touch, I've included my contact information on this slide
+¡Gracias por tu atención! 
+En este momento me encantaría tomar preguntas y si me quieren contactar, en esta diapositiva incluí mi información
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -275,7 +275,7 @@ I'm happy to take any questions, and if you'd like to get in touch, I've include
 "highlightStyle": "github",
 "highlightLines": true,
 "countIncrementalSlides": false,
-"ratio": "16:9"
+"ratio": "4:3"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
