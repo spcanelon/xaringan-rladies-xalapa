@@ -9,9 +9,12 @@ El taller tiene por objetivo introducir a las participantes al paquete [xaringan
 
 ```
 # Desde CRAN
-install.packages("xaringan")
-install.packages("knitr")
-install.packages("tidyverse")
+
+install.packages(c(
+  "xaringan",
+  "knitr",
+  "tidyverse"
+))
 
 # Desde GitHub
 devtools::install_github("cienciadedatos/datos")
