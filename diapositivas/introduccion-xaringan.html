@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introducción al paquete xaringan</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Silvia Canelón, Ph.D." />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
+    <meta name="description" content="An Introduction to xaringan for Presentations: The Basics and Beyond"/>
+    <meta name="generator" content="xaringan and remark.js"/>
+    <meta name="github-repo" content="spcanelon/xaringan-basics-and-beyond"/>
+    <meta name="twitter:title" content="Sharing Your Work with xaringan"/>
+    <meta name="twitter:description" content="An Introduction to xaringan for Presentations: The Basics and Beyond"/>
+    <meta name="twitter:url" content="https://spcanelon.github.io/xaringan-basics-and-beyond"/>
+    <meta name="twitter:image:src" content="https://github.com/spcanelon/xaringan-basics-and-beyond/blob/main/xaringan-nhsr-general.png"/>
+    <meta name="twitter:image:alt" content="Title slide for the Sharing Your Work with xaringan workshop series"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@spcanelon"/>
+    <meta name="twitter:site" content="@spcanelon"/>
+    <meta property="og:title" content="Sharing Your Work with xaringan"/>
+    <meta property="og:description" content="An Introduction to xaringan for Presentations: The Basics and Beyond"/>
+    <meta property="og:url" content="https://spcanelon.github.io/xaringan-basics-and-beyond"/>
+    <meta property="og:image" content="https://github.com/spcanelon/xaringan-basics-and-beyond/blob/main/xaringan-nhsr-general.png"/>
+    <meta property="og:image:alt" content="Title slide for the Sharing Your Work with xaringan workshop series"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="article:author" content="Silvia Canelon"/>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="libs/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="libs/academicons/css/academicons.min.css" rel="stylesheet" />
+    <link href="libs/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/jquery/jquery.min.js"></script>
+    <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="libs/datatables-binding/datatables.js"></script>
+    <link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+    <link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+    <script src="libs/crosstalk/js/crosstalk.min.js"></script>
+    <link rel="stylesheet" href="css/mi-tema.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+class: center, middle, inverse
+
+&lt;img style="border-radius: 50%;" src="https://pbs.twimg.com/media/D5qAsCmUYAAzYtE?format=jpg&amp;name=small"
+width="150px"
+/&gt;&amp;nbsp;
+&lt;img style="border-radius: 0%;" src="img/hex-xaringan.png"
+width="125px"
+/&gt;
+
+# Introducción al paquete xaringan
+## **R-Ladies Xalapa**
+----
+### Silvia Canelón, Ph.D.
+### Diciembre 17, 2020
+
+[<i class="fab  fa-github "></i> bit.ly/xaringan-xalapa](https://bit.ly/xaringan-xalapa)
+[<i class="fas  fa-images "></i> diapositivas: ](spcanelon.github.io/xaringan-rladies-xalapa/diapositivas/introduccion-xaringan)
+
+---
+name: saludo
+layout: false
+class: inverse, middle, center
+
+# Sobre mí
+
+&lt;img style="border-radius: 50%;" src="https://silvia.rbind.io/authors/silvia/avatar.png" width="150px"/&gt;
+
+## Silvia Canelón 🇻🇪
+
+### Investigadora Postdoctoral
+
+.fade[University of Pennsylvania&lt;br&gt;Philadelphia, PA, USA]
+
+[<i class="fas  fa-link "></i> silvia.rbind.io](https://silvia.rbind.io)
+[<i class="fab  fa-twitter "></i> @spcanelon](https://twitter.com/spcanelon)
+[<i class="fab  fa-github "></i> @spcanelon](https://github.com/spcanelon)
+
+---
+class: center, middle
+
+# Agradecimientos
+
+--
+
+## [R-Ladies Xalapa](https://www.meetup.com/rladies-xalapa)
+
+--
+
+### [📦 xaringan](https://github.com/yihui/xaringan#xaringan)
+Hoy estaremos usando el [tema de R-Ladies](https://alison.rbind.io/post/2017-12-18-r-ladies-presentation-ninja/)
+
+--
+
+### [📦 xaringanExtra](https://github.com/gadenbuie/xaringanExtra/#xaringanExtra)
+Presiona la tecla "O" para ver todas las diapositivas a la vez
+
+---
+name: pregunta
+class: inverse, middle, center
+
+{{content}}
+
+---
+template: pregunta
+
+<i class="fas  fa-images fa-3x "></i>
+# ¿Cómo podemos crear presentaciones con Rla ayuda de xaringan?
+
+---
+
+## It takes a team
+
+### remark.js
+.pull-left[
+.center[
+&lt;i class="fab fa-js fa-3x"&gt;&lt;/i&gt;&lt;br&gt;
+JavaScript
+
+**and**
+
+&lt;i class="fab fa-markdown fa-3x"&gt;&lt;/i&gt;&lt;br&gt;
+Markdown
+]
+]
+
+.pull-right[
+&gt; .morado-claro[A simple, in browser, Markdown driven slideshow tool] .fade[targeted at people who know their way around HTML and CSS]
+
+&lt;iframe src="https://remarkjs.com" width="100%" height="250px"&gt;&lt;/iframe&gt;
+]
+
+---
+
+### xaringan
+
+.pull-left[
+.center[
+![:scale 25%](img/hex-xaringan.png)
+
+**xaringan** is a package that introduces `remark.js` to R Markdown
+
+![:scale 15%](img/hex-rmarkdown.png)
+]]
+.pull-right[
+&lt;iframe src="https://slides.yihui.org/xaringan" width="100%" height="400px"&gt;&lt;/iframe&gt;
+]
+
+---
+
+### CSS
+
+**CSS** stands for **C**ascading **S**tyle **S**heet, and turns
+.pull-left[
+functional, but dull HTML (content)...
+![:scale 95%](img/ej-sin-css.png)
+]
+
+.pull-right[
+...into HTML (content) with style! 😎
+![:scale 95%](img/ej-con-css.png)
+]
+
+???
+Remark helps us:
+- create a new slide (Markdown syntax* and slide properties);
+- format a slide (e.g. text alignment);
+- configure the slideshow;
+- and use the presentation (keyboard shortcuts).
+
+---
+
+# Getting started
+
+## nhsrtheme
+
+**Step 1.** Install the `nhsrtheme` package from GitHub
+
+```r
+# install.packages("devtools")
+devtools::install_github("nhs-r-community/nhsrtheme")
+```
+
+**Step 2.** Load the `nhsrtheme` package
+
+```r
+library(nhsrtheme)
+```
+
+---
+
+## New Rmd File
+.pull-left[
+1. New File
+2. New R Markdown
+![:scale 90%](img/new-r-markdown.png)
+]
+
+.pull-right[
+3\. From Template <i class="fas  fa-angle-double-right "></i> NHS-R Presentation&lt;br&gt;4. Give your slide deck a name!
+![:scale 85%](img/nhsrtheme-template.png)
+]
+
+---
+
+## Directory
+The new directory in the "Files" pane contains
+.left[
++ <i class="fas  fa-file-code "></i> the new Rmd file (i.e. `my-slides.Rmd`)
+
++ <i class="fas  fa-folder-open "></i> the `img` folder containing logo files
+
++ <i class="fas  fa-folder-open "></i> the `css` folder containing the custom `nhsr` theme files&lt;br&gt;.small[and an HTML file in charge of [adding the NHS logo to each slide](https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides)]
+]
+
+---
+
+## YAML
+
+```r
+title: "Presentation title"
+subtitle: "Presentation subtitle"
+author: "Author Name"
+institute: "NHS Organisation"
+date: "Presentation Date"
+output:
+  xaringan::moon_reader:               # new kind of output!
+    css:                               
+     -default                          # default xaringan theme CSS file
+     -css/nhsr.css                     # custom primary CSS file
+     -css/nhsr-fonts.css               # custom font CSS file
+    lib_dir: libs                        # creates directory for libraries
+    seal: false                          # false: custom title slide
+    nature:
+      highlightStyle: googlecode         # highlighting syntax for code
+      highlightLines: true               # true: enables code line highlighting 
+      highlightLanguage: ["r"]           # languages to highlight
+      countIncrementalSlides: false      # false: disables counting of incremental slides
+      ratio: "16:9"                      # 4:3 for standard size
+    includes:
+      after_body: [css/insert-logo.html] # adds NHS logo to slides (you can ignore it)
+```
+
+---
+## Extra info
+
+- `seal: true` creates a title slide with inverse colors using metadata from your YAML
+
+- Other [highlightStyle options](https://github.com/gnab/remark/wiki/Configuration#highlighting) from **remark.js** are:
+
+  + `arta`, `ascetic`, `dark`, `default`, `far`, `github`, `googlecode`,   `idea`, `ir-black`, `magula`, `monokai`, `rainbow`, `solarized-dark`, `solarized-light`, `sunburst`, `tomorrow`, `tomorrow-night-blue`, `tomorrow-night-bright`, `tomorrow-night`, `tomorrow-night-eighties`, `vs`, `zenburn`.
+
+---
+name: en-vivo
+background-color: var(--morado-claro)
+class: middle, center, inverse
+
+<i class="fas  fa-code fa-3x "></i>
+# Demo en vivo
+
+---
+## Our first few slides
+
+<i class="fas  fa-star " style="color:#e5bf00;"></i> Slide content starts immediately after the YAML `---`
+
+.left-column[
+The .morado-claro[nhsrtheme] xaringan template comes pre-loaded with a few things
+]
+.right-column[
+- .morado-claro[A `setup` chunk] with a few libraries and some chunk options set for the whole slide deck
+
+- Some example slides separated by three dashes (`---`)
+  1. .morado-claro[Title slide with the `title-slide` class.]&lt;br&gt;Content is aligned with the `left` and the `bottom` of the slide
+  1. .morado-claro[Inverse slide with the `inverse` slide class.]&lt;br&gt;Content is aligned with `middle` and `center` of the slide
+  1. .morado-claro[Incremental slides with no specified slide class (default).]&lt;br&gt;Incremental steps are made using two dashes (`--`), and bullet points made using markdown (`*`)
+]
+
+---
+
+## Moon Reader
+
+To view the slides generated by your new Rmd file, you have two options:
+
+**Option 1**. Run xaringan's infinite moon reader function in the console 🚀 
+
+
+```r
+xaringan::inf_mr()
+```
+
+&gt; .small[Note: you can also access this feature using the IDE toolbar: **Addins &gt; XARINGAN Infinite Moon Reader**]
+
+**Option 2**. Knit the document 🧶 
+
+---
+
+## Setup chunk
+.left-column[
+A `setup` chunk with a few libraries and some chunk options set for the whole slide deck
+]
+.right-column[
+![](img/code-setup-chunk.png)
+]
+
+---
+
+## Title slide
+
+.pull-left[
+### Code
+![](img/code-title-slide.png)
+This is the very first slide after the YAML so it doesn't need to begin with `---`]
+.pull-right[
+### Slide
+&lt;img src="img/sample-title-slide.png" width="100%" 
+style="border:2px solid #E8EDEE"/&gt; 
+]
+
+---
+## Inverse slide
+
+.pull-left[
+### Code
+![](img/code-inverse-slide.png)]
+
+.pull-right[
+### Slide
+&lt;img src="img/sample-inverse-slide.png" width="100%" 
+style="border:0px solid #E8EDEE"/&gt; 
+]
+
+---
+## Incremental slides
+
+.pull-left[
+### Code
+![](img/code-incremental-slides.png)]
+
+.pull-right[
+### Slide
+&lt;img src="img/sample-incremental-slides.png" width="100%" style="border:2px solid #E8EDEE"/&gt; 
+]
+
+---
+# xaringan syntax
+
+### What did you notice?
+
+???
+What about the syntax used in the R Markdown file looked familiar?
+Please type your answers in the chat box.
+
+--
+
+.pull-left[
+
+### Familiar from **markdown**
+
+- Headings (#, ##, ###)
+- **Bold** and _italic_ type
+- Links and images with `![]()`
+- Bullet points can be added&lt;br&gt;with `-`, `+`, or `-`
+- Numbered lists can be created&lt;br&gt;with `1.`
+]
+
+???
+What about the syntax looked new or different?
+Please type your answers in the chat box.
+
+--
+
+.pull-right[
+### Not so familiar, from **remark.js**
+- First slide starts immediately after YAML, doesn't need to begin with three dashes(`---`)
+- Slides are separated by&lt;br&gt;three dashes (`---`)
+- Incremental slides are separated by&lt;br&gt;two dashes (`--`)
+- Slide content is separated from presenter notes by three questions marks (`???`)
+]
+
+---
+template: pregunta
+
+<i class="fas  fa-magic fa-3x "></i>
+# How can we make our slides&lt;br&gt;look more interesting???
+
+--
+
+----
+
+### <i class="fas  fa-th-large "></i>&amp;nbsp;&amp;nbsp;with placement
+
+--
+
+### <i class="fas  fa-image "></i>&amp;nbsp;&amp;nbsp;pretty pictures
+
+--
+
+### &lt;i class="fas fa-star"&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;and icons
+
+---
+name: placement
+## Placement &lt;i class="fas fa-th-large" style = "float: right"&gt;&lt;/i&gt;
+
+---
+template: placement
+
+### Align an entire slide
+
+.left-column[
+
+Horizontally
+
+```r
+left,
+*center,
+right
+```
+
+----
+
+Vertically
+
+```r
+top, 
+*middle, 
+bottom 
+```
+]
+
+--
+
+.right-column[
+
+```r
+---
+
+*class: center, middle
+
+# Slide with centered content in the middle
+
+This content is also centered and in the middle of the slide 
+
+---
+```
+
+.right[.morado-claro[example on next slide <i class="fas  fa-arrow-circle-right "></i> ]]
+]
+
+---
+class: center, middle
+
+# Slide with centered content and aligned with the middle
+
+This content is also centered and aligned with the middle of the slide
+
+
+---
+template: placement
+
+### Align only some text
+
+.left-column[
+Horizontal only
+
+```r
+*.left[words]
+.center[words]
+*.right[words]
+```
+]
+
+--
+
+.right-column[
+```r
+---
+
+class: center, middle 
+
+# Slide with some text aligned
+
+*.left[We can start writing a sentence on the left...]
+
+*.right[and end on the right.]
+
+---
+```
+
+.right[.morado-claro[example on next slide <i class="fas  fa-arrow-circle-right "></i> ]]
+
+]
+
+---
+class: center, middle
+
+# Slide with some text aligned
+
+.left[We can start writing a sentence on the left...]
+
+.right[...and finish it on the right.]
+
+---
+template: placement
+
+### Pull content to either side of the slide
+
+.pull-left[
+**The `.pull-left[]` class pulls content to&lt;br&gt;the left 47%**
+
+Like the text above and&lt;br&gt;the hex sticker below
+
+![:scale 25%](img/hex-rmarkdown.png)
+]
+
+--
+
+.pull-right[
+**And `.pull-right[]` pulls content to&lt;br&gt;the right 47%**
+
+You've already seen these content classes&lt;br&gt;in action today 😄
+&lt;br&gt;
+
+![:scale 30%](img/hex-xaringan.png)
+
+]
+
+--
+
+They don't have to take up the entire slide. Like for this text, you can decide to continue creating content that isn't pulled to either side.
+
+---
+template: placement
+
+### Arrange content into a two-column layout
+
+.left-column[
+**`.left-column[]` places content into a column 20% wide**
+
+And text is a little lighter
+]
+
+--
+
+.right-column[
+**`.right-column[]` places content into a column 75% wide**
+- It also has a _little_ bit of padding on the top
+
+- And unlike the `.pull` content classes, these column classes are fixed for the entire slide
+- They are meant to be used together
+
+.center[
+![:scale 15%](img/hex-xaringan.png)]
+]
+
+---
+name: imagenes
+## Pictures &lt;i class="fas fa-image" style = "float: right"&gt;&lt;/i&gt;
+
+---
+template: imagenes
+
+### There are a variety of ways to add images to your slides
+
+## Markdown
+.pull-left[
+
+
+```markdown
+![](img/jacarandas.jpg)
+```
+
+- simple
+- not very flexible
+- output size fully dependent on the size of the image, but scaling can be managed [using custom macros (JavaScript functions) ](https://slides.yihui.org/xaringan/#33)
+ 
+.small[
+Photo by [Annie Spratt](https://unsplash.com/@anniespratt)]
+]
+
+.pull-right[
+![](img/jacarandas.jpg)
+]
+
+---
+template: imagenes
+
+### knitr
+
+.pull-left[
+
+
+```r
+knitr::include_graphics("img/jacarandas.jpg")
+```
+- pretty flexible
+- a little bulky
+- more options [here](https://www.rdocumentation.org/packages/knitr/versions/1.30/topics/include_graphics)
+]
+
+.pull-right[
+&lt;img src="img/jacarandas.jpg" width="90%" /&gt;
+]
+
+---
+template: imagenes
+
+### HTML
+.pull-left[
+
+```html
+&lt;img src="img/jacarandas.jpg" width="90%"/&gt;
+```
+- most flexible
+- a bit unsightly
+- takes time to [get used to syntax](https://www.w3schools.com/html/html_images.asp)
+
+.small[**Tip:** To insert an avatar: 
+
+```html
+&lt;img src="https://insertweblink.here" width="170px" style="border-radius: 50%;"/&gt;
+```
+]
+]
+
+.pull-right[
+&lt;img src="img/jacarandas.jpg" width="90%"/&gt;
+]
+
+---
+template: imagenes
+
+### Image sources
+
+Below you'll see a few places where you can find beautiful and free background images contributed by artists all over world.
+
+**Tip:** You can use the `.footnote[]` class to credit the source of the image ([example here](https://spcanelon.github.io/xaringan-basics-and-beyond/slides/day-01-basics.html)) 🙂
+
+.pull-left[
+- [unsplash.com](unsplash.com)
+- [rawpixel.com](rawpixel.com)
+- [pexels.com](https://www.pexels.com/)
+]
+
+.pull-right[
+&gt; - In the public domain&lt;br&gt;
+  (no attribution necessary)
+&gt; - Free with attribution&lt;br&gt;
+  (e.g. Photo by [Junel Mujar](https://unsplash.com/@junelmujar))
+]
+
+---
+template: imagenes
+
+### Image paths
+
+.pull-left[
+R Markdown and xaringan don't always agree on where images are located&lt;br&gt;(i.e. relative file paths). 
+
+You might find that `knitr::include_graphics()` produces an image from a code chunk in your Rmd, and that the same image may not show up when you render your xaringan slides. 🤷‍♀
+]
+
+.pull-right[
+I recommend using this directory structure to help avoid confusion&lt;br&gt;(example file path: `img/jacarandas.jpg`)
+
+
+```r
+.
+├── css
+*├── img
+*   ├── jacarandas.jpg
+├── libs
+├── my-slides.Rmd
+└── my-slides.html
+```
+]
+
+---
+template: imagenes
+
+### Background
+
+You can use the [background-image property](https://github.com/gnab/remark/wiki/Markdown#background-image) underneath the `---` slide separator
+
+- `background-image:` 
+  - `url(https://enlaceweb.aqui)` --&gt; image from the web
+  - `url(img/jacarandas.jpg)` --&gt; local image, using relative file paths
+- `background-size:`
+    - `cover` --&gt; rescales + crops with no empty space
+    - `contain` --&gt; rescales only
+- `background-position:` play with [this](https://css-tricks.com/almanac/properties/b/background-position/)
+
+
+.right[.morado-claro[`background-size` examples in action! <i class="fas  fa-arrow-circle-right "></i> ]]
+
+
+---
+background-image: url(img/jacarandas.jpg)
+class: top, center
+
+# **No background-size**
+**Image size: 3999x3005**
+
+---
+background-image: url(img/jacarandas.jpg)
+background-size: cover
+class: top, center
+
+# **Cover**
+
+---
+background-image: url(img/jacarandas.jpg)
+background-size: contain
+background-color: var(--morado-oscuro)
+class: middle, center
+
+.fondo-blanco[
+# **Contain**
+]
+
+---
+class: left
+name: icons
+## Icons &lt;i class="fas fa-star" style = "float: right"&gt;&lt;/i&gt;
+
+--
+
+.left-column[.center[
+😄&lt;br&gt;
+[Emojis](https://github.com/hadley/emo#emoji)
+]]
+.right-column[
+Use the [emo(ji) 📦](https://github.com/hadley/emo#emoji):&lt;br&gt;
+Icon on the left: ` r emo::ji("smile")` (surrounded by backticks `)
+]
+
+--
+
+.left-column[.center[
+&lt;i class="fas fa-brain"&gt;&lt;/i&gt;
+&lt;br&gt;
+[FontAwesome](https://fontawesome.com/icons?d=gallery&amp;c=medical&amp;m=free)
+]]
+
+.right-column[
+Copy and paste html directly from the website:&lt;br&gt;`&lt;i class="fas fa-brain"&gt;&lt;/i&gt;`&lt;br&gt;
+Use the [icon 📦](https://slides.mitchelloharawild.com/icon/): ` r icon::fa("brain")`,&lt;br&gt;or the [fontawesome 📦](https://github.com/rstudio/fontawesome#the-fontawesome-package): ` r fontawesome:fa("brain")`
+]
+
+--
+
+.left-column[.center[
+<i class="ai  ai-orcid "></i>&lt;br&gt;
+[Academicons](https://jpswalsh.github.io/academicons/)
+]]
+.right-column[
+The easiest way to access them is with the icon 📦:&lt;br&gt;` r icon::fa("orcid")`
+]
+
+--
+
+.left-column[.center[
+<i class="ion  ion-ios-flask-outline "></i>&lt;br&gt;
+[Ionicons](https://ionicons.com/)
+]]
+.right-column[
+I haven't had as much luck with these, but you can use the icon 📦 here as well: ` r icon::ii("ios-flask-outline")`
+]
+
+---
+name: your-turn
+class: inverse
+
+.left-column[
+## Your turn&lt;br&gt;<i class="fas  fa-edit "></i>&lt;br&gt;
+### .my-pink[10:00 mins]
+]
+
+.right-column[
+### Make an "about me" slide
+
+----
+
+Think about including details like your&lt;br&gt;name, affiliation, location, and/or contact information
+
+Here are some options to consider
+- practice [moving content around](#placement) the slide
+- separate content with a horizontal bar `----`
+- [add an image](#pictures) or photo
+- link to sites and/or social media
+- add some [icons](#icons)!
+- see [my about me slide](#about-me) for ideas
+]
+
+---
+template: pregunta
+
+<i class="fab  fa-r-project fa-3x "></i>
+# What about R content?
+
+--
+
+----
+
+.pull-left[.center[
+<i class="fas  fa-table fa-2x "></i>
+### tables
+]]
+
+--
+
+.pull-right[
+.center[
+<i class="fas  fa-chart-bar fa-2x "></i>
+### plots
+]]
+
+---
+name: tables
+## Tables &lt;i class="fas fa-table" style = "float: right"&gt;&lt;/i&gt;
+
+---
+template: tables
+
+### Direct output
+
+----
+
+
+```r
+NHSRdatasets::LOS_model %&gt;% head()
+## # A tibble: 6 x 5
+##      ID Organisation   Age   LOS Death
+##   &lt;int&gt; &lt;ord&gt;        &lt;int&gt; &lt;int&gt; &lt;int&gt;
+## 1     1 Trust1          55     2     0
+## 2     2 Trust2          27     1     0
+## 3     3 Trust3          93    12     0
+## 4     4 Trust4          45     3     1
+## 5     5 Trust5          70    11     0
+## 6     6 Trust6          60     7     0
+```
+
+.footnote[We're using the [NHSRdatasets 📦](https://github.com/nhs-r-community/NHSRdatasets#nhs-r-community-datasets-) here! It was developed by Chris Mainey and contains a few datasets to use for practice.]
+
+---
+template: tables
+
+### HTML table
+
+----
+.pull-left[
+
+```r
+NHSRdatasets::LOS_model %&gt;% head() %&gt;%
+  knitr::kable(format = "html")
+```
+]
+
+.pull-right[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; ID &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Organisation &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Age &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; LOS &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Death &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Trust1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Trust2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Trust3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 93 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Trust4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 45 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Trust5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 70 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Trust6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+template: tables
+
+### DT table
+
+----
+
+
+```r
+NHSRdatasets::LOS_model %&gt;% head() %&gt;%
+  DT::datatable()
+```
+
+<div id="htmlwidget-1ecd25cdbd9a7872515b" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1ecd25cdbd9a7872515b">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1,2,3,4,5,6],["Trust1","Trust2","Trust3","Trust4","Trust5","Trust6"],[55,27,93,45,70,60],[2,1,12,3,11,7],[0,0,0,1,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>ID<\/th>\n      <th>Organisation<\/th>\n      <th>Age<\/th>\n      <th>LOS<\/th>\n      <th>Death<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+
+---
+template: tables
+
+### GT table
+
+----
+
+.pull-left[
+
+```r
+NHSRdatasets::LOS_model %&gt;% head() %&gt;%
+  gt::gt()
+```
+]
+
+.pull-right[
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#ghmfieaonm .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ghmfieaonm .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ghmfieaonm .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ghmfieaonm .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ghmfieaonm .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ghmfieaonm .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ghmfieaonm .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ghmfieaonm .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ghmfieaonm .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ghmfieaonm .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ghmfieaonm .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ghmfieaonm .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ghmfieaonm .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ghmfieaonm .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ghmfieaonm .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ghmfieaonm .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ghmfieaonm .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ghmfieaonm .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#ghmfieaonm .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ghmfieaonm .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#ghmfieaonm .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ghmfieaonm .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ghmfieaonm .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ghmfieaonm .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ghmfieaonm .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#ghmfieaonm .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ghmfieaonm .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#ghmfieaonm .gt_left {
+  text-align: left;
+}
+
+#ghmfieaonm .gt_center {
+  text-align: center;
+}
+
+#ghmfieaonm .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ghmfieaonm .gt_font_normal {
+  font-weight: normal;
+}
+
+#ghmfieaonm .gt_font_bold {
+  font-weight: bold;
+}
+
+#ghmfieaonm .gt_font_italic {
+  font-style: italic;
+}
+
+#ghmfieaonm .gt_super {
+  font-size: 65%;
+}
+
+#ghmfieaonm .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="ghmfieaonm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">ID</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Organisation</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">LOS</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Death</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_center">1</td>
+      <td class="gt_row gt_center">Trust1</td>
+      <td class="gt_row gt_center">55</td>
+      <td class="gt_row gt_center">2</td>
+      <td class="gt_row gt_center">0</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center">2</td>
+      <td class="gt_row gt_center">Trust2</td>
+      <td class="gt_row gt_center">27</td>
+      <td class="gt_row gt_center">1</td>
+      <td class="gt_row gt_center">0</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center">3</td>
+      <td class="gt_row gt_center">Trust3</td>
+      <td class="gt_row gt_center">93</td>
+      <td class="gt_row gt_center">12</td>
+      <td class="gt_row gt_center">0</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center">4</td>
+      <td class="gt_row gt_center">Trust4</td>
+      <td class="gt_row gt_center">45</td>
+      <td class="gt_row gt_center">3</td>
+      <td class="gt_row gt_center">1</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center">5</td>
+      <td class="gt_row gt_center">Trust5</td>
+      <td class="gt_row gt_center">70</td>
+      <td class="gt_row gt_center">11</td>
+      <td class="gt_row gt_center">0</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center">6</td>
+      <td class="gt_row gt_center">Trust6</td>
+      <td class="gt_row gt_center">60</td>
+      <td class="gt_row gt_center">7</td>
+      <td class="gt_row gt_center">0</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+]
+.footnote[Make sure to check out the [GT package workshop](https://github.com/nhs-r-community/Conference_2020#workshop-sessions) tomorrow!]
+---
+name: plots
+## Plots &lt;i class="fas fa-chart-bar" style = "float: right"&gt;&lt;/i&gt;
+
+---
+template: plots
+name: plot-right
+
+.pull-left[
+### Code
+
+----
+
+
+```r
+NHSRdatasets::LOS_model %&gt;%
+  ggplot(aes(x = Age, y = Organisation)) +
+  geom_boxplot(aes(fill = Organisation)) +
+  nhsrtheme::scale_fill_nhs("highlights")
+```
+]
+
+.pull-right[
+
+### Plot
+
+----
+
+![](introduccion-xaringan_files/figure-html/unnamed-chunk-18-1.png)&lt;!-- --&gt;
+
+]
+
+.footnote[Note the use of the [nhsrtheme 📦](https://github.com/nhs-r-community/nhsrtheme#nhs-r-theme-) here! It was developed by Tom Jemmett and contains a few different colour palettes based on the NHS identity guidelines]
+---
+template: plots
+name: alison-tips
+
+### Creating side-by-side code + plot
+
+----
+
+Here's how to leverage code chunk options to avoid repeating your code&lt;sup1/sup&gt;:
+
+1. Code on left, plot on right ([example](#plot-right))
+
+  - Chunk 1: `{r plot-right, fig.show = 'hide'}`
+  - Chunk 2: `{r ref.label = 'plot-right', echo = FALSE}`
+
+2. Plot on left, code on right
+  - Chunk 1: `{r plot-left, echo = FALSE}`
+  - Chunk 2: `{r ref.label = 'plot-left', fig.show = 'hide'}`
+
+.small[
+These and more great tips in Alison Hill's [Teaching in Production](https://rstudio-education.github.io/teaching-in-production/slides/index.html#46)
+]
+
+---
+name: your-turn
+class: inverse
+
+.left-column[
+## Your turn&lt;br&gt;<i class="fas  fa-edit "></i>&lt;br&gt;
+### .my-pink[10:00 mins]
+]
+
+.right-column[
+### Make a new slide and practice&lt;br&gt;adding some R content
+
+----
+
+Here are some options to consider
+- add a [table](#tables)
+- add a [plot](#plots)
+- try [arranging content](#alison-tips) to have code on one side and the output on the other
+]
+
+---
+template: en-vivo
+
+### Let's try deploying slides to GitHub!
+
+---
+class: goodbye-slide, inverse, middle, left
+
+.pull-left[
+&lt;img style="border-radius: 50%;" src="https://silvia.rbind.io/authors/silvia/avatar.png" width="170px"/&gt;
+# Thank you!
+
+### Here's where you can find me...
+
+.right[
+[silvia.rbind.io <i class="fas  fa-link "></i>](https://silvia.rbind.io)&lt;br/&gt;
+[@spcanelon <i class="fab  fa-twitter "></i>](https://twitter.com/spcanelon)&lt;br/&gt;
+[@spcanelon <i class="fab  fa-github "></i>](https://github.com/spcanelon)&lt;br/&gt;
+]]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

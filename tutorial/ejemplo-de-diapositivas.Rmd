@@ -12,6 +12,7 @@ output:
       - rladies
       - rladies-fonts
     seal: false
+    self_contained: true
     nature:
       highlightStyle: github
       highlightLines: true
@@ -28,7 +29,9 @@ library(emo)
 
 # set default options
 knitr::opts_chunk$set(echo = FALSE,
-                      dpi = 300)
+                      dpi = 300,
+                      warning = FALSE,
+                      error = FALSE)
 ```
 
 class: left, bottom
@@ -204,16 +207,16 @@ datos::pinguinos %>%
 
 ```{r eval=FALSE, echo=TRUE}
 datos::pinguinos %>%
-  ggplot(aes(x = isla, y = masa_corporal_g)) +
-  geom_boxplot(aes(fill = especie))               #<<
+  ggplot(aes(x = especie, y = masa_corporal_g)) +
+  geom_boxplot(aes(fill = isla))               #<<
 ```
 
 ---
 
 ```{r masa-corporal, eval=TRUE, echo=TRUE, fig.height = 4.5}
 datos::pinguinos %>%
-  ggplot(aes(x = isla, y = masa_corporal_g)) +
-  geom_boxplot(aes(fill = especie))               #<<
+  ggplot(aes(x = especie, y = masa_corporal_g)) +
+  geom_boxplot(aes(fill = isla))               #<<
 ```
 
 ---

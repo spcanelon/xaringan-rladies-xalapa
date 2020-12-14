@@ -4,10 +4,11 @@
     <title>Título de la Presentación</title>
     <meta charset="utf-8" />
     <meta name="author" content="Nombre de la autora" />
-    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/rladies.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/rladies-fonts.css" rel="stylesheet" />
-    <link href="libs/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
@@ -223,8 +224,8 @@ datos::pinguinos %&gt;%
 
 ```r
 datos::pinguinos %&gt;%
-  ggplot(aes(x = isla, y = masa_corporal_g)) +
-* geom_boxplot(aes(fill = especie))
+  ggplot(aes(x = especie, y = masa_corporal_g)) +
+* geom_boxplot(aes(fill = isla))
 ```
 
 ---
@@ -232,13 +233,8 @@ datos::pinguinos %&gt;%
 
 ```r
 datos::pinguinos %&gt;%
-  ggplot(aes(x = isla, y = masa_corporal_g)) +
-* geom_boxplot(aes(fill = especie))
-```
-
-```
-## Warning: Removed 2 rows containing non-finite values
-## (stat_boxplot).
+  ggplot(aes(x = especie, y = masa_corporal_g)) +
+* geom_boxplot(aes(fill = isla))
 ```
 
 ![](ejemplo-de-diapositivas_files/figure-html/masa-corporal-1.png)&lt;!-- --&gt;
