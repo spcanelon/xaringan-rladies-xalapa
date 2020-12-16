@@ -30,9 +30,11 @@ a, a > code {
 }
 
 .morado-claro { color: var(--morado-claro) }
+
 .texto-grande {
     font-size: 2em;
 }
+
 .fondo-blanco { background-color: #FFFFFF }
 
 /*-- CODE CHUNKS --*/
@@ -52,4 +54,21 @@ pre {
 pre code {
   background:         none;
   font-size:          18px !important;
+}
+
+/*-- BARRA HORIZONTAL --*/
+hr {
+  content:            '';
+  display:            block;
+  border:             none;
+  background-color:   var(--morado-claro);
+  height:             0.1em;
+}
+
+.inverse hr {
+  content:            '';
+  display:            block;
+  border:             none;
+  background-color:   var(--gris);
+  height:             0.1em;
 }

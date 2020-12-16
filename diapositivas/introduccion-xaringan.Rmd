@@ -131,13 +131,32 @@ class: inverse, middle, center
 template: pregunta
 
 `r icon::fa("images", size = 3)`
-# ¿Cómo podemos crear presentaciones con Rla ayuda de xaringan?
+# ¿Cómo podemos crear<br>presentaciones impresionantes con R?
+
+--
+
+----
+
+## Con la ayuda de...
+
+--
+
+### remark.js
+
+--
+
+### xaringan
+
+--
+
+### CSS
 
 ---
 
-## It takes a team
+## remark.js
 
-### remark.js
+----
+
 .pull-left[
 .center[
 <i class="fab fa-js fa-3x"></i><br>
@@ -151,22 +170,23 @@ Markdown
 ]
 
 .pull-right[
-> .morado-claro[A simple, in browser, Markdown driven slideshow tool] .fade[targeted at people who know their way around HTML and CSS]
+> Una herramienta sencilla para presentaciones de diapositivas basadas en Markdown a traves del navegador web.
 
 ```{r}
-knitr::include_url("https://remarkjs.com", height = "250px")
+knitr::include_url("https://remarkjs.com")
 ```
 ]
 
 ---
+##  xaringan
 
-### xaringan
+----
 
 .pull-left[
 .center[
 ![:scale 25%](img/hex-xaringan.png)
 
-**xaringan** is a package that introduces `remark.js` to R Markdown
+**xaringan** es un paquete que le presenta `remark.js` a R Markdown
 
 ![:scale 15%](img/hex-rmarkdown.png)
 ]]
@@ -177,34 +197,45 @@ knitr::include_url("https://slides.yihui.org/xaringan")
 ]
 
 ---
+## CSS
 
-### CSS
+----
 
-**CSS** stands for **C**ascading **S**tyle **S**heet, and turns
+**CSS** significa **C**ascading **S**tyle **S**heet y es una hoja de estilo que convierte...
 .pull-left[
-functional, but dull HTML (content)...
-![:scale 95%](img/ej-sin-css.png)
+Contenido HTML que es funcional, pero aburrido...
+
+<img src="img/ej-sin-css.png"
+width="100%" style="border:2px solid rgba(136, 57, 138, 0.3)"/>
 ]
 
 .pull-right[
-...into HTML (content) with style! `r emo::ji("sunglasses")`
-![:scale 95%](img/ej-con-css.png)
+...¡en contenido HTML con estilo! `r emo::ji("sunglasses")`
+
+<img src="img/ej-con-css.png"
+width="100%" style="border:2px solid rgba(136, 57, 138, 0.3)"/>
 ]
 
 ???
-Remark helps us:
-- create a new slide (Markdown syntax* and slide properties);
-- format a slide (e.g. text alignment);
-- configure the slideshow;
-- and use the presentation (keyboard shortcuts).
+Remark nos ayuda a:
+- crear una diapositiva nueva (usando sintaxis de Markdown y propiedades de la diapositiva);
+- formatear la diapositiva (p.ej. con alineación del texto);
+- y presentar (usando atajos de teclado)
 
 ---
+name: en-vivo
+background-color: var(--morado-claro)
+class: middle, center, inverse
 
-# Getting started
+`r icon::fa("code", size = 3)`
+# Demo en vivo
 
-## nhsrtheme
+---
+template: en-vivo
 
-**Step 1.** Install the `nhsrtheme` package from GitHub
+# ¡Comencemos!
+
+**Primer paso** Install the `nhsrtheme` package from GitHub
 ```{r, eval=FALSE, echo=TRUE}
 # install.packages("devtools")
 devtools::install_github("nhs-r-community/nhsrtheme")
@@ -276,14 +307,6 @@ output:
 - Other [highlightStyle options](https://github.com/gnab/remark/wiki/Configuration#highlighting) from **remark.js** are:
 
   + `arta`, `ascetic`, `dark`, `default`, `far`, `github`, `googlecode`,   `idea`, `ir-black`, `magula`, `monokai`, `rainbow`, `solarized-dark`, `solarized-light`, `sunburst`, `tomorrow`, `tomorrow-night-blue`, `tomorrow-night-bright`, `tomorrow-night`, `tomorrow-night-eighties`, `vs`, `zenburn`.
-
----
-name: en-vivo
-background-color: var(--morado-claro)
-class: middle, center, inverse
-
-`r icon::fa("code", size = 3)`
-# Demo en vivo
 
 ---
 ## Our first few slides
