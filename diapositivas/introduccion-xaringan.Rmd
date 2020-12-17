@@ -561,6 +561,11 @@ Y el texto es un poco más claro.
 ]
 
 ---
+template: en-vivo
+
+## `r icon::fa("search")` Busquemos ejemplos de ubicación en las diapositivas ejemplares
+
+---
 name: imagenes
 ## `r icon::fa("image")` Imagenes
 
@@ -684,6 +689,11 @@ class: middle, center, inverse
 
 # **background-size: contain**
 ### (contener)
+
+---
+template: en-vivo
+
+## `r icon::fa("search")` Busquemos ejemplos de imagenes en las diapositivas ejemplares
 
 ---
 template: pregunta
