@@ -85,3 +85,6 @@ hr {
   background-color:   var(--gris);
   height:             0.1em;
 }
+
+/*-- Esconde el numero de la diapositiva titular --*/
+.titular .remark-slide-number { display: none; }
