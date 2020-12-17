@@ -234,9 +234,8 @@ class: middle, inverse
 
 .pull-right[
 .right[
-<img style="border-radius: 50%;" src="https://pbs.twimg.com/profile_images/1124352295448092672/kruQyvMK_400x400.jpg"
-width="150px"
-/>
+<img src="https://pbs.twimg.com/profile_images/1124352295448092672/kruQyvMK_400x400.jpg"
+width="150px" style="border-radius: 50%;"/>
 
 [`r icon::fa("link")` meetup.com/rladies-xalapa](https://www.meetup.com/rladies-xalapa/)<br/>
 [`r icon::fa("twitter")` @RLadiesXalapa](https://twitter.com/RLadiesXalapa)<br/>
