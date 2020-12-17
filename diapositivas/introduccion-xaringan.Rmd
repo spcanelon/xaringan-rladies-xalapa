@@ -77,7 +77,7 @@ width="150px"/>-->
 ### `r rmarkdown::metadata$date`
 
 [`r icon::fa("github", size = 1)` bit.ly/xaringan-xalapa](https://bit.ly/xaringan-xalapa)
-<br>[`r icon::fa("images")` diapositivas/introduccion-xaringan ](https://spcanelon.github.io/xaringan-rladies-xalapa/diapositivas/introduccion-xaringan)
+<br>[`r icon::fa("images")` diapositivas/introduccion-xaringan ](https://spcanelon.github.io/xaringan-rladies-xalapa/diapositivas/introduccion-xaringan.html)
 
 ---
 name: saludo
