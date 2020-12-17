@@ -713,14 +713,15 @@ template: tablas
 datos::pinguinos %&gt;% 
   head()
 ## # A tibble: 6 x 8
-##   especie isla      largo_pico_mm alto_pico_mm largo_aleta_mm masa_corporal_g sexo    anio
-##   &lt;fct&gt;   &lt;fct&gt;             &lt;dbl&gt;        &lt;dbl&gt;          &lt;int&gt;           &lt;int&gt; &lt;fct&gt;  &lt;int&gt;
-## 1 Adelia  Torgersen          39.1         18.7            181            3750 macho   2007
-## 2 Adelia  Torgersen          39.5         17.4            186            3800 hembra  2007
-## 3 Adelia  Torgersen          40.3         18              195            3250 hembra  2007
-## 4 Adelia  Torgersen          NA           NA               NA              NA &lt;NA&gt;    2007
-## 5 Adelia  Torgersen          36.7         19.3            193            3450 hembra  2007
-## 6 Adelia  Torgersen          39.3         20.6            190            3650 macho   2007
+##   especie isla  largo_pico_mm alto_pico_mm largo_aleta_mm masa_corporal_g
+##   &lt;fct&gt;   &lt;fct&gt;         &lt;dbl&gt;        &lt;dbl&gt;          &lt;int&gt;           &lt;int&gt;
+## 1 Adelia  Torg…          39.1         18.7            181            3750
+## 2 Adelia  Torg…          39.5         17.4            186            3800
+## 3 Adelia  Torg…          40.3         18              195            3250
+## 4 Adelia  Torg…          NA           NA               NA              NA
+## 5 Adelia  Torg…          36.7         19.3            193            3450
+## 6 Adelia  Torg…          39.3         20.6            190            3650
+## # … with 2 more variables: sexo &lt;fct&gt;, anio &lt;int&gt;
 ```
 
 --
@@ -831,8 +832,8 @@ datos::pinguinos %&gt;%
   DT::datatable()
 ```
 
-<div id="htmlwidget-116dc1288e94660170a1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-116dc1288e94660170a1">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],["Adelia","Adelia","Adelia","Adelia","Adelia","Adelia"],["Torgersen","Torgersen","Torgersen","Torgersen","Torgersen","Torgersen"],[39.1,39.5,40.3,null,36.7,39.3],[18.7,17.4,18,null,19.3,20.6],[181,186,195,null,193,190],[3750,3800,3250,null,3450,3650],["macho","hembra","hembra",null,"hembra","macho"],[2007,2007,2007,2007,2007,2007]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especie<\/th>\n      <th>isla<\/th>\n      <th>largo_pico_mm<\/th>\n      <th>alto_pico_mm<\/th>\n      <th>largo_aleta_mm<\/th>\n      <th>masa_corporal_g<\/th>\n      <th>sexo<\/th>\n      <th>anio<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5,6,8]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-73b5b996ab4292eeb241" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-73b5b996ab4292eeb241">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],["Adelia","Adelia","Adelia","Adelia","Adelia","Adelia"],["Torgersen","Torgersen","Torgersen","Torgersen","Torgersen","Torgersen"],[39.1,39.5,40.3,null,36.7,39.3],[18.7,17.4,18,null,19.3,20.6],[181,186,195,null,193,190],[3750,3800,3250,null,3450,3650],["macho","hembra","hembra",null,"hembra","macho"],[2007,2007,2007,2007,2007,2007]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especie<\/th>\n      <th>isla<\/th>\n      <th>largo_pico_mm<\/th>\n      <th>alto_pico_mm<\/th>\n      <th>largo_aleta_mm<\/th>\n      <th>masa_corporal_g<\/th>\n      <th>sexo<\/th>\n      <th>anio<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5,6,8]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 ---
 template: tablas
@@ -852,7 +853,7 @@ datos::pinguinos %&gt;%
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#macsiencwc .gt_table {
+#likbltnwit .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -875,7 +876,7 @@ datos::pinguinos %&gt;%
   border-left-color: #D3D3D3;
 }
 
-#macsiencwc .gt_heading {
+#likbltnwit .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -887,7 +888,7 @@ datos::pinguinos %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#macsiencwc .gt_title {
+#likbltnwit .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -897,7 +898,7 @@ datos::pinguinos %&gt;%
   border-bottom-width: 0;
 }
 
-#macsiencwc .gt_subtitle {
+#likbltnwit .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -907,13 +908,13 @@ datos::pinguinos %&gt;%
   border-top-width: 0;
 }
 
-#macsiencwc .gt_bottom_border {
+#likbltnwit .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#macsiencwc .gt_col_headings {
+#likbltnwit .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -928,7 +929,7 @@ datos::pinguinos %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#macsiencwc .gt_col_heading {
+#likbltnwit .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -948,7 +949,7 @@ datos::pinguinos %&gt;%
   overflow-x: hidden;
 }
 
-#macsiencwc .gt_column_spanner_outer {
+#likbltnwit .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -960,15 +961,15 @@ datos::pinguinos %&gt;%
   padding-right: 4px;
 }
 
-#macsiencwc .gt_column_spanner_outer:first-child {
+#likbltnwit .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#macsiencwc .gt_column_spanner_outer:last-child {
+#likbltnwit .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#macsiencwc .gt_column_spanner {
+#likbltnwit .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -980,7 +981,7 @@ datos::pinguinos %&gt;%
   width: 100%;
 }
 
-#macsiencwc .gt_group_heading {
+#likbltnwit .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1002,7 +1003,7 @@ datos::pinguinos %&gt;%
   vertical-align: middle;
 }
 
-#macsiencwc .gt_empty_group_heading {
+#likbltnwit .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1017,19 +1018,19 @@ datos::pinguinos %&gt;%
   vertical-align: middle;
 }
 
-#macsiencwc .gt_striped {
+#likbltnwit .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#macsiencwc .gt_from_md > :first-child {
+#likbltnwit .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#macsiencwc .gt_from_md > :last-child {
+#likbltnwit .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#macsiencwc .gt_row {
+#likbltnwit .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1048,7 +1049,7 @@ datos::pinguinos %&gt;%
   overflow-x: hidden;
 }
 
-#macsiencwc .gt_stub {
+#likbltnwit .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1060,7 +1061,7 @@ datos::pinguinos %&gt;%
   padding-left: 12px;
 }
 
-#macsiencwc .gt_summary_row {
+#likbltnwit .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1070,7 +1071,7 @@ datos::pinguinos %&gt;%
   padding-right: 5px;
 }
 
-#macsiencwc .gt_first_summary_row {
+#likbltnwit .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1080,7 +1081,7 @@ datos::pinguinos %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#macsiencwc .gt_grand_summary_row {
+#likbltnwit .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1090,7 +1091,7 @@ datos::pinguinos %&gt;%
   padding-right: 5px;
 }
 
-#macsiencwc .gt_first_grand_summary_row {
+#likbltnwit .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1100,7 +1101,7 @@ datos::pinguinos %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#macsiencwc .gt_table_body {
+#likbltnwit .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1109,7 +1110,7 @@ datos::pinguinos %&gt;%
   border-bottom-color: #D3D3D3;
 }
 
-#macsiencwc .gt_footnotes {
+#likbltnwit .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1123,13 +1124,13 @@ datos::pinguinos %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#macsiencwc .gt_footnote {
+#likbltnwit .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#macsiencwc .gt_sourcenotes {
+#likbltnwit .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1143,46 +1144,46 @@ datos::pinguinos %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#macsiencwc .gt_sourcenote {
+#likbltnwit .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#macsiencwc .gt_left {
+#likbltnwit .gt_left {
   text-align: left;
 }
 
-#macsiencwc .gt_center {
+#likbltnwit .gt_center {
   text-align: center;
 }
 
-#macsiencwc .gt_right {
+#likbltnwit .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#macsiencwc .gt_font_normal {
+#likbltnwit .gt_font_normal {
   font-weight: normal;
 }
 
-#macsiencwc .gt_font_bold {
+#likbltnwit .gt_font_bold {
   font-weight: bold;
 }
 
-#macsiencwc .gt_font_italic {
+#likbltnwit .gt_font_italic {
   font-style: italic;
 }
 
-#macsiencwc .gt_super {
+#likbltnwit .gt_super {
   font-size: 65%;
 }
 
-#macsiencwc .gt_footnote_marks {
+#likbltnwit .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="macsiencwc" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="likbltnwit" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -1382,25 +1383,28 @@ output:
 2\. "Teje" el documento con el botón Knit de RStudio 🧶
 
 ---
-class: inverse, bottom, left
+class: inverse, middle, left
 
+.pull-left[
+&gt; Si quieres aprender más sobre xaringan y te sientes cómoda con el inglés, puedes conseguir más en:
 
+&gt; - El libro [R Markdown](https://bookdown.org/yihui/rmarkdown/xaringan.html)
+&gt; - Mi taller extensivo titulado&lt;br&gt;"[Sharing Your Work with xaringan](https://spcanelon.github.io/xaringan-basics-and-beyond)"
+]
+
+--
+.pull-right[
 &lt;img style="border-radius: 50%;" src="https://silvia.rbind.io/authors/silvia/avatar.png" width="170px"/&gt;
 # ¡Muchísimas gracias!
 
 ### Aqui es donde me puedes conseguir...
-.pull-left[
+
 .right[
 [silvia.rbind.io <i class="fas  fa-link "></i>](https://silvia.rbind.io)&lt;br/&gt;
 [@spcanelon <i class="fab  fa-twitter "></i>](https://twitter.com/spcanelon)&lt;br/&gt;
 [@spcanelon <i class="fab  fa-github "></i>](https://github.com/spcanelon)&lt;br/&gt;
 ]]
 
---
-
-.pull-right[
-Si quieres aprender más sobre xaringan y te sientes cómoda con el inglés, puedes conseguir más en mi taller extensivo titulado "[Sharing Your Work with xaringan](https://spcanelon.github.io/xaringan-basics-and-beyond)"
-]
 
 ---
 template: pregunta

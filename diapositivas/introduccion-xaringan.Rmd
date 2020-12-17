@@ -875,25 +875,28 @@ output:
 2\. "Teje" el documento con el botón Knit de RStudio `r emo::ji("yarn")`
 
 ---
-class: inverse, bottom, left
+class: inverse, middle, left
 
+.pull-left[
+> Si quieres aprender más sobre xaringan y te sientes cómoda con el inglés, puedes conseguir más en:
 
+> - El libro [R Markdown](https://bookdown.org/yihui/rmarkdown/xaringan.html)
+> - Mi taller extensivo titulado<br>"[Sharing Your Work with xaringan](https://spcanelon.github.io/xaringan-basics-and-beyond)"
+]
+
+--
+.pull-right[
 <img style="border-radius: 50%;" src="https://silvia.rbind.io/authors/silvia/avatar.png" width="170px"/>
 # ¡Muchísimas gracias!
 
 ### Aqui es donde me puedes conseguir...
-.pull-left[
+
 .right[
 [silvia.rbind.io `r icon::fa("link")`](https://silvia.rbind.io)<br/>
 [@spcanelon `r icon::fa("twitter")`](https://twitter.com/spcanelon)<br/>
 [@spcanelon `r icon::fa("github")`](https://github.com/spcanelon)<br/>
 ]]
 
---
-
-.pull-right[
-Si quieres aprender más sobre xaringan y te sientes cómoda con el inglés, puedes conseguir más en mi taller extensivo titulado "[Sharing Your Work with xaringan](https://spcanelon.github.io/xaringan-basics-and-beyond)"
-]
 
 ---
 template: pregunta
