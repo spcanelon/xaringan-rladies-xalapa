@@ -68,7 +68,7 @@ background-image: url(img/jacarandas.jpg)
 background-size: contain
 background-position: -66% 10%
 
-<!--<img style="border-radius: 50%;" src="https://pbs.twimg.com/media/D5qAsCmUYAAzYtE?format=jpg&name=small"
+<!--<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/xaringan-rladies-xalapa/master/diapositivas/img/rladies-xalapa.jpg"
 width="150px"/>-->
 <img src="img/hex-xaringan.png" width="125px"/>
 # `r rmarkdown::metadata$title` 
@@ -107,7 +107,7 @@ class: center, middle
 
 --
 
-<img src="https://pbs.twimg.com/media/D5qAsCmUYAAzYtE?format=jpg&name=small"
+<img src="https://raw.githubusercontent.com/spcanelon/xaringan-rladies-xalapa/master/diapositivas/img/rladies-xalapa.jpg"
 width="150px"
 /><br>
 ## [R-Ladies Xalapa](https://www.meetup.com/rladies-xalapa)
@@ -848,13 +848,8 @@ template: pregunta
 ### **Segunda opción:** Alojando tus archivos en un repositorio para `r icon::fa("link")`
 
 ---
-template: en-vivo
 
-## ¡Vamos a compartir las diapositivas!
-
----
-
-## Generar diapositivas independientes para compartir
+## `r icon::fa("paper-plane")` Generar diapositivas independientes para compartir
 
 1\. Agregue una línea al YAML
 
@@ -883,6 +878,31 @@ output:
 ```
 
 2\. "Teje" el documento con el botón Knit de RStudio `r emo::ji("yarn")`
+
+---
+template: en-vivo
+background: url(https://tenor.com/yPym.gif)
+
+## ¡Vamos a compartir las diapositivas!
+
+---
+
+## `r icon::fa("link")` Generar un enlace para las diapositivas que se puede compartir
+
+### 1\. Activa GitHub/GitLab Pages para tu repositorio para renderizar tus archivos HTML
+
+### 2\. Determina el enlace que le corresponde a tus diapositivas, por ejemplo:
+
+http://www.github.com/spcanelon/xaringan-rladies-xalapa/blob/master/tutorial/ejemplo-de-diapositivas.html
+
+### se convierte en
+
+**http://spcanelon.github.io/xaringan-rladies-xalapa/tutorial/ejemplo-de-diapositivas.html**
+
+### 3\. ¡Comparte el enlace!
+
+`r emo::ji("white_check_mark")` Estos pasos funcionan para cualquier repositorio público y cualquier archivo HTML renderizado
+
 
 ---
 class: inverse, middle, left
