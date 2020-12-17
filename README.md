@@ -3,7 +3,7 @@
 
 El taller tiene por objetivo introducir a las participantes al paquete [xaringan](https://github.com/yihui/xaringan#xaringan) de R como una herramienta para crear diapositivas de presentación impresionantes que se pueden implementar en la web para compartir fácilmente.
 
-![](https://pbs.twimg.com/media/EoGFpy0XUAIW_z0?format=jpg&name=large)
+![](xaringan-rladies-xalapa-general.png)
 
 ## Paquetes para instalar
 
@@ -23,9 +23,9 @@ devtools::install_github(c(
   "hadley/emo"
 ))
 ```
+## Diapositivas: [diapositivas/introduccion-xaringan.html](https://spcanelon.github.io/xaringan-rladies-xalapa/diapositivas/introduccion-xaringan.html)
 
-## Rmd como ejemplo
-### [tutorial/ejemplo-de-diapositivas.Rmd](tutorial/ejemplo-de-diapositivas.Rmd)
+## Rmd como ejemplo: [tutorial/ejemplo-de-diapositivas.Rmd](tutorial/ejemplo-de-diapositivas.Rmd)
 
-## Página del evento
-### [meetup.com/rladies-xalapa/274906676](https://www.meetup.com/rladies-xalapa/events/274906676/)
+## Página del evento: [meetup.com/rladies-xalapa/274906676](https://www.meetup.com/rladies-xalapa/events/274906676/)
+![](https://pbs.twimg.com/media/EoGFpy0XUAIW_z0?format=jpg&name=large)
