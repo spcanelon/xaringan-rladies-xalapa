@@ -21,17 +21,17 @@ output:
 ---
 
 ```{r setup, include = FALSE}
-library(knitr)
-library(tidyverse)
-library(datos)
-library(icon)
-library(emo)
+library(knitr)                              # paquete que trae funciones utiles para R Markdown
+library(tidyverse)                          # paquete que trae varios paquetes comunes en el tidyverse
+library(datos)                              # paquete que viene con datos populares traducidos al español :)
+library(icon)                               # paquete para iconos
+library(emo)                                # paquete para emojis
 
-# set default options
-knitr::opts_chunk$set(echo = FALSE,
-                      dpi = 300,
-                      warning = FALSE,
-                      error = FALSE)
+# opciones predeterminadas
+knitr::opts_chunk$set(echo = FALSE,         # FALSE: los bloques de código NO se muestran
+                      dpi = 300,            # asegura gráficos de alta resolución
+                      warning = FALSE,      # los mensajes de advertencia NO se muestran
+                      error = FALSE)        # los mensajes de error NO se muestran
 ```
 
 class: left, bottom
@@ -101,13 +101,13 @@ Otra opción es utilizar algunas diapositivas como transiciones en tu presentaci
 .pull-right[
 
 .left[
-1\. [Haciendo listas y enfatizando el texto](#listas)
+1. [Haciendo listas y enfatizando el texto](#listas)
 
-2\. [Tablas y citas](#tablas-citas)
+2. [Tablas y citas](#tablas-citas)
 
-3\. [Resaltando lineas de código](#resaltando-lineas)
+3. [Resaltando lineas de código](#resaltando-lineas)
 
-4\. [Diapositiva final e información de contacto](#adios)
+4. [Diapositiva final e información de contacto](#adios)
 ]
 
 ] <!--end of right-column-->
