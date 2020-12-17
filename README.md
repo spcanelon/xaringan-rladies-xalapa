@@ -28,4 +28,4 @@ devtools::install_github(c(
 ## Rmd como ejemplo: [tutorial/ejemplo-de-diapositivas.Rmd](tutorial/ejemplo-de-diapositivas.Rmd)
 
 ## Página del evento: [meetup.com/rladies-xalapa/274906676](https://www.meetup.com/rladies-xalapa/events/274906676/)
-![](https://pbs.twimg.com/media/EoGFpy0XUAIW_z0?format=jpg&name=large)
+![](https://secure.meetupstatic.com/photos/event/6/c/c/5/highres_493767845.jpeg)
