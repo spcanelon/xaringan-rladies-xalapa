@@ -4,11 +4,11 @@
     <title>Título de la Presentación</title>
     <meta charset="utf-8" />
     <meta name="author" content="Nombre de la autora" />
-    <script src="libs/header-attrs/header-attrs.js"></script>
-    <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
-    <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
+    <script src="libs/header-attrs-2.5.3/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rladies-fonts.css" rel="stylesheet" />
+    <link href="libs/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
@@ -83,13 +83,13 @@ Otra opción es utilizar algunas diapositivas como transiciones en tu presentaci
 .pull-right[
 
 .left[
-1\. [Haciendo listas y enfatizando el texto](#listas)
+1. [Haciendo listas y enfatizando el texto](#listas)
 
-2\. [Tablas y citas](#tablas-citas)
+2. [Tablas y citas](#tablas-citas)
 
-3\. [Resaltando lineas de código](#resaltando-lineas)
+3. [Resaltando lineas de código](#resaltando-lineas)
 
-4\. [Diapositiva final e información de contacto](#adios)
+4. [Diapositiva final e información de contacto](#adios)
 ]
 
 ] &lt;!--end of right-column--&gt;
@@ -234,7 +234,7 @@ datos::pinguinos %&gt;%
 ```r
 datos::pinguinos %&gt;%
   ggplot(aes(x = especie, y = masa_corporal_g)) +
-* geom_boxplot(aes(fill = isla))
+  geom_boxplot(aes(fill = isla))               
 ```
 
 ![](ejemplo-de-diapositivas_files/figure-html/masa-corporal-1.png)&lt;!-- --&gt;

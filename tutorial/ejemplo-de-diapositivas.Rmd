@@ -12,7 +12,6 @@ output:
       - rladies
       - rladies-fonts
     seal: false
-    self_contained: true
     nature:
       highlightStyle: github
       highlightLines: true
@@ -216,7 +215,7 @@ datos::pinguinos %>%
 ```{r masa-corporal, eval=TRUE, echo=TRUE, fig.height = 4.5}
 datos::pinguinos %>%
   ggplot(aes(x = especie, y = masa_corporal_g)) +
-  geom_boxplot(aes(fill = isla))               #<<
+  geom_boxplot(aes(fill = isla))               
 ```
 
 ---
