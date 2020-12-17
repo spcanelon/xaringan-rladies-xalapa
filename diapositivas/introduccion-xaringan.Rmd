@@ -1,10 +1,10 @@
 ---
-title: "Introducción al paquete xaringan"
+title: "Introducción al<br>paquete xaringan"
 subtitle: "R-Ladies Xalapa"
 session: ""
 author: "Silvia Canelón, Ph.D."
 institute: "University of Pennsylvania | Dept. of Biostatistics, Epidemiology, and Informatics"
-date: "Diciembre 17, 2020"
+date: "17 diciembre, 2020"
 output:
   xaringan::moon_reader:
     css: 
@@ -63,23 +63,21 @@ xaringanExtra::style_share_again(
 )
 ```
 
-class: center, middle, inverse
+class: right, middle, inverse
+background-image: url(img/jacarandas.jpg)
+background-size: contain
+background-position: -66% 10%
 
-<img style="border-radius: 50%;" src="https://pbs.twimg.com/media/D5qAsCmUYAAzYtE?format=jpg&name=small"
-width="150px"
-/>&nbsp;
-<img style="border-radius: 0%;" src="img/hex-xaringan.png"
-width="125px"
-/>
-
-# `r rmarkdown::metadata$title`
+<!--<img style="border-radius: 50%;" src="https://pbs.twimg.com/media/D5qAsCmUYAAzYtE?format=jpg&name=small"
+width="150px"/>-->
+<img src="img/hex-xaringan.png" width="125px"/>
+# `r rmarkdown::metadata$title` 
 ## **`r rmarkdown::metadata$subtitle`**
-----
 ### `r rmarkdown::metadata$author`
 ### `r rmarkdown::metadata$date`
 
 [`r icon::fa("github", size = 1)` bit.ly/xaringan-xalapa](https://bit.ly/xaringan-xalapa)
-[`r icon::fa("images")` diapositivas: ](spcanelon.github.io/xaringan-rladies-xalapa/diapositivas/introduccion-xaringan)
+<br>[`r icon::fa("images")` diapositivas/introduccion-xaringan ](spcanelon.github.io/xaringan-rladies-xalapa/diapositivas/introduccion-xaringan)
 
 ---
 name: saludo
@@ -105,22 +103,23 @@ class: center, middle
 
 # Agradecimientos
 
+----
+
 --
 
 <img src="https://pbs.twimg.com/media/D5qAsCmUYAAzYtE?format=jpg&name=small"
-width="100px"
+width="150px"
 /><br>
 ## [R-Ladies Xalapa](https://www.meetup.com/rladies-xalapa)
 
---
-
-### [`r emo::ji("package")` xaringan](https://github.com/yihui/xaringan#xaringan)
-Hoy estaremos usando el [tema de R-Ladies](https://alison.rbind.io/post/2017-12-18-r-ladies-presentation-ninja/)
 
 --
 
-### [`r emo::ji("package")` xaringanExtra](https://github.com/gadenbuie/xaringanExtra/#xaringanExtra)
-Presiona la tecla "O" para ver todas las diapositivas a la vez
+### [`r emo::ji("package")` xaringan](https://github.com/yihui/xaringan#xaringan): Hoy usaremos el [tema de R-Ladies](https://alison.rbind.io/post/2017-12-18-r-ladies-presentation-ninja/)
+
+--
+
+### [`r emo::ji("package")` xaringanExtra](https://github.com/gadenbuie/xaringanExtra/#xaringanExtra): Presiona la tecla "O" para ver todas las diapositivas a la vez `r emo::ji("wink")`
 
 ---
 name: pregunta
@@ -132,7 +131,7 @@ class: inverse, middle, center
 template: pregunta
 
 `r icon::fa("images", size = 3)`
-# ¿Cómo podemos crear<br>presentaciones impresionantes con R?
+# ¿Cómo creamos<br>presentaciones impresionantes con R?
 
 --
 
@@ -282,7 +281,7 @@ template: en-vivo
 
 ### YAML
 
-```{r, eval=FALSE, echo=TRUE}
+```{yaml, eval=FALSE, echo=TRUE}
 ---
 title: "Título de la Presentación"
 subtitle: "Subtítulo de la Presentación"
@@ -292,7 +291,7 @@ date: "Fecha"
 output:
   xaringan::moon_reader:                 # ¡Ojo -- nuevo tipo de salida!
     css:                                 #<<
-     - default                           # el archivo CSS del tema predeterminado for xaringan #<<
+     - default                           # el archivo CSS del tema predeterminado para xaringan #<<
      - rladies                           # el archivo CSS del tema R-Ladies #<<
      - rladies-fonts                     # el archivo CSS de fuentes del tema R-Ladies #<<
     lib_dir: libs                        # crea un directorio para bibliotecas
@@ -300,7 +299,7 @@ output:
     nature:
       highlightStyle: github             # resalta sintaxis para los bloques de código
       highlightLines: true               # true: permite resaltar líneas de código  
-      countIncrementalSlides: false      # false: disables counting of incremental slides
+      countIncrementalSlides: false      # false: diapositivas incrementales no aumentarán la cuenta
       ratio: "4:3"                       # proporción: "16:9" para un tamaño de pantalla ancha  #<<
 ---
 ```
@@ -348,7 +347,7 @@ xaringan::inf_mr()
 
 --
 
-**Segunda opción**. "Teje" el documento con el botón Knit de RStudio `r emo::ji("yarn")` 
+**Segunda opción**. Accede la función usando el menu en RStudio: **Addins >> XARINGAN Infinite Moon Reader**
 
 ---
 template: en-vivo
@@ -524,7 +523,7 @@ Como el texto arriba y<br>la etiqueta hexagonal de abajo
 --
 
 .pull-right[
-**Y la clase `.pull-right[]` (_jalar-derecha_) jala contenido al<br>47% derecho**
+**La clase `.pull-right[]` (_jalar-derecha_) jala contenido al<br>47% derecho**
 
 Ya has visto hoy el uso de estas clases de contenido `r emo::ji("smile")`
 <br>
@@ -577,8 +576,8 @@ template: imagenes
 
 - opción sencilla
 - no es muy flexible
-- el tamaño de salida depende completamente del tamaño de la imagen, pero el escalado se puede administrar mediante [macros (funciones JavaScript) personalizados](https://slides.yihui.org/xaringan/#33)
-- _Photo tomada por [Junel Mujar](https://unsplash.com/@junelmujar)_
+- el tamaño de salida depende del tamaño de la imagen, pero el escalado se puede administrar mediante [macros (funciones JavaScript) personalizados](https://slides.yihui.org/xaringan/#33)
+- Foto tomada por [Junel Mujar](https://unsplash.com/@junelmujar)
 ]
 
 .pull-right[
@@ -716,6 +715,13 @@ datos::pinguinos %>%
   head()
 ```
 
+--
+
+.footnote[
+> El paquete [`datos` ](https://cienciadedatos.github.io/datos/) provee la traducción al español de conjuntos de datos en inglés originalmente disponibles en otros paquetes de R, como [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
+
+> La autora principal del paquete `datos` es "R-Lady" [Riva Quiroga](https://twitter.com/rivaquiroga) `r emo::ji("clap")`
+]
 ---
 template: tablas
 
@@ -759,7 +765,7 @@ name: graficos
 template: graficos
 
 .pull-left[
-### Code
+### Código
 
 ```{r grafico-derecha-error, echo=TRUE, fig.show='hide'}
 datos::pinguinos %>%
@@ -771,7 +777,7 @@ datos::pinguinos %>%
 
 .pull-right[
 
-### Plot
+### Salida
 
 `r emo::ji("scream")` ¡Ah! ¿Qué pasó aquí?
 
@@ -785,11 +791,11 @@ template: graficos
 name: grafico-derecha
 
 .pull-left[
-### Code
+### Código
 
-Es común que tengamos que [ajustar el tamaño del gráfico de salida](https://bookdown.org/yihui/rmarkdown-cookbook/figure-size.html) con opciones de bloque ("chunk options") como `fig.height` (_altura de la figura_) y `fig.width` (_el ancho de la figura_)
+Es común tener que [ajustar el tamaño del gráfico de salida](https://bookdown.org/yihui/rmarkdown-cookbook/figure-size.html) con opciones de bloque ("chunk options") como `fig.height` (_altura de la figura_) y `fig.width` (_ancho de la figura_)
 
-Solución con un ajuste usando `fig.height`:
+Solución con un ajuste usando `fig.height = 5`:
 
 ````
 ```{r, fig.height = 5}`r ''`
@@ -798,11 +804,13 @@ datos::pinguinos %>%
   geom_boxplot(aes(fill = isla))
 ```
 ````
+
+- **Nota:** La unidad de medida aqui es _pulgadas_
 ]
 
 .pull-right[
 
-### Plot
+### Salida
 `r emo::ji("relieved")` ¡Mucho mejor!
 
 ```{r grafico-derecha, echo=FALSE, fig.height=5}
@@ -833,6 +841,38 @@ template: pregunta
 template: en-vivo
 
 ## ¡Vamos a compartir las diapositivas!
+
+---
+
+## Generar diapositivas independientes para compartir
+
+1\. Agregue una línea al YAML
+
+```{yaml, eval=FALSE, echo=TRUE}
+---
+title: "Título de la Presentación"
+subtitle: "Subtítulo de la Presentación"
+author: "Nombre de la autora"
+institute: "R-Ladies Xalapa"
+date: "Fecha"
+output:
+  xaringan::moon_reader:                 # ¡Ojo -- nuevo tipo de salida!
+    css:
+     - default                           # el archivo CSS del tema predeterminado para xaringan
+     - rladies                           # el archivo CSS del tema R-Ladies
+     - rladies-fonts                     # el archivo CSS de fuentes del tema R-Ladies
+    lib_dir: libs                        # crea un directorio para bibliotecas
+    seal: false                          # false: permite crear una diapositiva de título personalizada
+    self_contained: true                 # true: permite generar un archivo html independiente #<<
+    nature:
+      highlightStyle: github             # resalta sintaxis para los bloques de código
+      highlightLines: true               # true: permite resaltar líneas de código  
+      countIncrementalSlides: false      # false: diapositivas incrementales no aumentarán la cuenta
+      ratio: "4:3"                       # proporción: "16:9" para un tamaño de pantalla ancha
+---
+```
+
+2\. "Teje" el documento con el botón Knit de RStudio `r emo::ji("yarn")`
 
 ---
 class: inverse, bottom, left
