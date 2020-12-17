@@ -37,6 +37,19 @@ a, a > code {
 
 .fondo-blanco { background-color: #FFFFFF }
 
+/*-- ENLACES/ANCLAS --*/
+a {
+  border-bottom:      3px solid var(--morado-claro);
+  line-height:        2rem;
+}
+
+a:hover { border-bottom: none; }
+
+.inverse a {
+  border-bottom:      3px solid var(--blanco);
+  line-height:        2rem;
+}
+
 /*-- CODE CHUNKS --*/
 
 /*-- Code chunk background layer --*/

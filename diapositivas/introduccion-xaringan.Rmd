@@ -16,7 +16,7 @@ output:
     seal: false
     self_contained: true
     nature:
-      highlightStyle: github
+      highlightStyle: googlecode
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
@@ -27,15 +27,15 @@ output:
 library(metathis)
 meta() %>%
   meta_general(
-    description = "An Introduction to xaringan for Presentations: The Basics and Beyond",
+    description = "Tutorial de xaringan creado para R-Ladies Xalapa",
     generator = "xaringan and remark.js"
   ) %>% 
-  meta_name("github-repo" = "spcanelon/xaringan-basics-and-beyond") %>% 
+  meta_name("github-repo" = "spcanelon/xaringan-rladies-xalapa") %>% 
   meta_social(
-    title = "Sharing Your Work with xaringan",
-    url = "https://spcanelon.github.io/xaringan-basics-and-beyond",
-    image = "https://github.com/spcanelon/xaringan-basics-and-beyond/blob/main/xaringan-nhsr-general.png",
-    image_alt = "Title slide for the Sharing Your Work with xaringan workshop series",
+    title = "Introducción al paquete xaringan",
+    url = "https://spcanelon.github.io/xaringan-rladies-xalapa",
+    image = "https://github.com/spcanelon/xaringan-rladies-xalapa/blob/master/xaringan-rladies-xalapa-general.png",
+    image_alt = "Diapositiva titular para el tutorial Introduccioón al paquete xaringan",
     og_type = "website",
     og_author = "Silvia Canelon",
     twitter_card_type = "summary_large_image",
@@ -107,6 +107,9 @@ class: center, middle
 
 --
 
+<img src="https://pbs.twimg.com/media/D5qAsCmUYAAzYtE?format=jpg&name=small"
+width="100px"
+/><br>
 ## [R-Ladies Xalapa](https://www.meetup.com/rladies-xalapa)
 
 --
@@ -181,11 +184,11 @@ knitr::include_url("https://remarkjs.com", height = "375px")
 
 .pull-left[
 .center[
-![:scale 25%](img/hex-xaringan.png)
+![:scale 30%](img/hex-xaringan.png)
 
 **xaringan** es un paquete que le presenta<br>`remark.js` a R Markdown
 
-![:scale 15%](img/hex-rmarkdown.png)
+![:scale 20%](img/hex-rmarkdown.png)
 ]]
 .pull-right[
 ```{r}
@@ -236,7 +239,7 @@ template: pregunta
 
 ## **Segunda opción:** Usar la plantilla hecha para R-Ladies Xalapa 
 
-### `r icon::fa("link")` [tutorial/ejemplo-de-diapositivas.Rmd](https://github.com/spcanelon/xaringan-rladies-xalapa/blob/master/tutorial/ejemplo-de-diapositivas.Rmd)
+### `r icon::fa("github")` [tutorial/ejemplo-de-diapositivas.Rmd](https://github.com/spcanelon/xaringan-rladies-xalapa/blob/master/tutorial/ejemplo-de-diapositivas.Rmd)
 
 ---
 
@@ -383,51 +386,15 @@ template: en-vivo
 
 
 ---
+template: en-vivo
 
-## Title slide
-
-.pull-left[
-### Code
-![](img/code-title-slide.png)
-This is the very first slide after the YAML so it doesn't need to begin with `---`]
-.pull-right[
-### Slide
-<img src="img/sample-title-slide.png" width="100%" 
-style="border:2px solid #E8EDEE"/> 
-]
-
----
-## Inverse slide
-
-.pull-left[
-### Code
-![](img/code-inverse-slide.png)]
-
-.pull-right[
-### Slide
-<img src="img/sample-inverse-slide.png" width="100%" 
-style="border:0px solid #E8EDEE"/> 
-]
-
----
-## Incremental slides
-
-.pull-left[
-### Code
-![](img/code-incremental-slides.png)]
-
-.pull-right[
-### Slide
-<img src="img/sample-incremental-slides.png" width="100%" style="border:2px solid #E8EDEE"/> 
-]
-
----
+## `r icon::fa("search")` Examinemos las diapositivas ejemplares con más detalle
 
 ---
 template: pregunta
 
 `r icon::fa("magic", size = 3)`
-# ¿Cómo introducimos contenido un poco más interesante?
+# ¿Cómo introducimos contenido interesante?
 
 --
 
@@ -437,25 +404,25 @@ template: pregunta
 
 --
 
-### `r icon::fa("image")`&nbsp;&nbsp;imagenes lindas
+### `r icon::fa("image")`&nbsp;&nbsp;imagenes
 
 ---
 name: ubicacion
-## Ubicación <i class="fas fa-th-large" style = "float: right"></i>
+## `r icon::fa("th-large")` Ubicación
 
 ---
 template: ubicacion
 
-### Alinear una dispositiva completa
+### Alinear una dispositiva entera
 
 .left-column[
 
 Horizontalmente
 
 ```r
-left,
-*center,
-right
+left,    # izquierda
+*center,  # centro
+right    # derecha
 ```
 
 ----
@@ -463,9 +430,9 @@ right
 Verticalmente
 
 ```r
-top, 
-*middle, 
-bottom 
+top,     # arriba
+*middle,  # medio
+bottom   # abajo
 ```
 ]
 
@@ -528,12 +495,12 @@ class: center, middle
 ---
 ```
 
-.right[.morado-claro[example on next slide `r icon::fa("arrow-circle-right")` ]]
+.right[.morado-claro[ejemplo en la diapositiva que sigue `r icon::fa("arrow-circle-right")`]]
 
 ]
 
 ---
-class: center, middle
+class: center, middle 
 
 # Diapositiva con algo de texto alineado
 
@@ -596,26 +563,22 @@ Y el texto es un poco más claro.
 
 ---
 name: imagenes
-## Pictures <i class="fas fa-image" style = "float: right"></i>
+## `r icon::fa("image")` Imagenes
 
 ---
 template: imagenes
 
-### There are a variety of ways to add images to your slides
-
-### Markdown
+### **Primera opción:** Markdown
 .pull-left[
 
 ```{markdown, eval=FALSE, echo=TRUE}
 ![](img/jacarandas.jpg)
 ```
 
-- simple
-- not very flexible
-- output size fully dependent on the size of the image, but scaling can be managed [using custom macros (JavaScript functions) ](https://slides.yihui.org/xaringan/#33)
- 
-.small[
-Photo by [Annie Spratt](https://unsplash.com/@anniespratt)]
+- opción sencilla
+- no es muy flexible
+- el tamaño de salida depende completamente del tamaño de la imagen, pero el escalado se puede administrar mediante [macros (funciones JavaScript) personalizados](https://slides.yihui.org/xaringan/#33)
+- _Photo tomada por [Junel Mujar](https://unsplash.com/@junelmujar)_
 ]
 
 .pull-right[
@@ -625,40 +588,40 @@ Photo by [Annie Spratt](https://unsplash.com/@anniespratt)]
 ---
 template: imagenes
 
-### knitr
+### **Segunda opción:** knitr
 
 .pull-left[
 
-```{r picture-knitr, eval=TRUE, echo=TRUE, fig.show="hide"}
+```{r imagen-knitr, eval=TRUE, echo=TRUE, fig.show="hide"}
 knitr::include_graphics("img/jacarandas.jpg")
 ```
-- pretty flexible
-- a little bulky
-- more options [here](https://www.rdocumentation.org/packages/knitr/versions/1.30/topics/include_graphics)
+
+- bastante flexible
+- el bloque de código toma espacio
+- ofrece [varias opciones](https://www.rdocumentation.org/packages/knitr/versions/1.30/topics/include_graphics)
 ]
 
 .pull-right[
-```{r, ref.label="picture-knitr", out.width="90%"}
+```{r, ref.label="imagen-knitr", out.width="90%"}
 ```
 ]
 
 ---
 template: imagenes
 
-### HTML
+### **Tercera opción:** HTML
 .pull-left[
 ```{html, eval=FALSE, echo=TRUE}
 <img src="img/jacarandas.jpg" width="90%"/>
 ```
-- most flexible
-- a bit unsightly
-- takes time to [get used to syntax](https://www.w3schools.com/html/html_images.asp)
-
-.small[**Tip:** To insert an avatar: 
+- la opción más flexible
+- no tiene apariencia agradable
+- toma un poco de tiempo acostumbrarse [al sintaxis](https://www.w3schools.com/html/html_images.asp)
+- `r emo::ji("eyes")` **Ojo:** Para insertar un avatar: 
 ```{html, eval=FALSE, echo=TRUE}
-<img src="https://insertweblink.here" width="170px" style="border-radius: 50%;"/>
+<img src="https://enlaceweb.aqui" 
+width="150px" style="border-radius: 50%;"/>
 ```
-]
 ]
 
 .pull-right[
@@ -668,114 +631,60 @@ template: imagenes
 ---
 template: imagenes
 
-### Image sources
+### Rutas de imagenes
 
-Below you'll see a few places where you can find beautiful and free background images contributed by artists all over world.
-
-**Tip:** You can use the `.footnote[]` class to credit the source of the image ([example here](https://spcanelon.github.io/xaringan-basics-and-beyond/slides/day-01-basics.html)) `r emo::ji("slightly_smiling_face")`
-
-.pull-left[
-- [unsplash.com](unsplash.com)
-- [rawpixel.com](rawpixel.com)
-- [pexels.com](https://www.pexels.com/)
-]
-
-.pull-right[
-> - In the public domain<br>
-  (no attribution necessary)
-> - Free with attribution<br>
-  (e.g. Photo by [Junel Mujar](https://unsplash.com/@junelmujar))
-]
-
----
-template: imagenes
-
-### Image paths
-
-.pull-left[
-R Markdown and xaringan don't always agree on where images are located<br>(i.e. relative file paths). 
-
-You might find that `knitr::include_graphics()` produces an image from a code chunk in your Rmd, and that the same image may not show up when you render your xaringan slides. `r emo::ji("woman_shrugging")`
-]
-
-.pull-right[
-I recommend using this directory structure to help avoid confusion<br>(example file path: `img/jacarandas.jpg`)
+Yo recomiendo esta estructura de directorio (p.ej. ruta de archivo: `img/jacarandas.jpg`)
 
 ```{r eval=FALSE, echo=TRUE}
 .
 ├── img #<<
     ├── jacarandas.jpg #<<
 ├── libs
-├── ejemplo-de-diapositivas.Rmd
-└── ejemplo-de-diapositivas.html
+├── introduccion-xaringan.Rmd
+└── introduccion-xaringan.html
 ```
-]
 
 ---
 template: imagenes
 
-### Background
+### Background (_fondo_)
 
-You can use the [background-image property](https://github.com/gnab/remark/wiki/Markdown#background-image) underneath the `---` slide separator
+Puedes usar la propiedad [background-image ](https://github.com/gnab/remark/wiki/Markdown#background-image) por debajo del separador de diapositivas (`---`)
 
-- `background-image:` 
-  - `url(https://enlaceweb.aqui)` --> image from the web
-  - `url(img/jacarandas.jpg)` --> local image, using relative file paths
-- `background-size:`
-    - `cover` --> rescales + crops with no empty space
-    - `contain` --> rescales only
-- `background-position:` play with [this](https://css-tricks.com/almanac/properties/b/background-position/)
+- `background-image:` (_imagen del fondo_)
+  - `url(https://enlaceweb.aqui)` --> imagen del web
+  - `url(img/jacarandas.jpg)` --> imagen local, usando rutas de archivos relativas
+- `background-size:` (_tamaño de la imagen del fondo_)
+    - `cover` --> (_cubrir_) cambia la escala y recorta sin que quede espacio en blanco
+    - `contain` --> (_contener_) cambia la escala solamente
+- `background-position:`  (_posición de la imagen del fondo_) [experimenta con esta propiedad](https://css-tricks.com/almanac/properties/b/background-position/)
 
 
-.right[.morado-claro[`background-size` examples in action! `r icon::fa("arrow-circle-right")` ]]
+.right[.morado-claro[¡ejemplos de `background-size` en acción! `r icon::fa("arrow-circle-right")` ]]
 
 
 ---
 background-image: url(img/jacarandas.jpg)
-class: top, center
+class: middle, center, inverse
 
-# **No background-size**
-**Image size: 3999x3005**
+# **Sin indicar "background-size"**
+**Tamaño de la imagen: 4538x3408**
 
 ---
 background-image: url(img/jacarandas.jpg)
 background-size: cover
-class: top, center
+class: middle, center, inverse
 
-# **Cover**
+# **background-size: cover**
+### (cubrir)
 
 ---
 background-image: url(img/jacarandas.jpg)
 background-size: contain
-background-color: var(--morado-oscuro)
-class: middle, center
+class: middle, center, inverse
 
-.fondo-blanco[
-# **Contain**
-]
-
----
-name: practicar
-class: inverse
-
-.left-column[
-## Para practicar<br>`r icon::fa("edit")`<br>
-]
-
-.right-column[
-### Haz una diapositiva para saludar a tu audiencia
-
-----
-
-Piense en incluir detalles como tu<br>
-nombre, instituto, ubicación, y/o información de contacto 
-
-Aqui hay algunas opciones:
-- practique cambiando [la ubicación](#ubicacion) del contenido en la diapositiva
-- separa tu contenido con una barra horizontal `----`
-- agreque una [imagen](#imagenes) o foto
-- agregue un enlace a una página web o red social
-]
+# **background-size: contain**
+### (contener)
 
 ---
 template: pregunta
@@ -795,7 +704,7 @@ template: pregunta
 
 ---
 name: tablas
-## Tablas <i class="fas fa-table" style = "float: right"></i>
+## `r icon::fa("table")` Tablas
 
 ---
 template: tablas
@@ -812,7 +721,6 @@ template: tablas
 
 ### Tabla HTML
 
-
 ```{r, echo=TRUE, eval=TRUE}
 datos::pinguinos %>% 
   head() %>%
@@ -822,8 +730,7 @@ datos::pinguinos %>%
 ---
 template: tablas
 
-### Tabla DT
-
+### Tabla [DT](https://rstudio.github.io/DT)
 
 ```{r, echo=TRUE}
 datos::pinguinos %>% 
@@ -834,18 +741,44 @@ datos::pinguinos %>%
 ---
 template: tablas
 
-### Tabla GT
+### Tabla [GT](https://gt.rstudio.com/index.html)
 
 
 ```{r, echo=TRUE, eval=TRUE}
 datos::pinguinos %>% 
   head() %>%
-  gt::gt()
+  gt::gt() %>%
+  gt::tab_spanner(label = "pico", columns = vars(largo_pico_mm, alto_pico_mm))
 ```
 
 ---
 name: graficos
-## Gráficos <i class="fas fa-chart-bar" style = "float: right"></i>
+## `r icon::fa("chart-bar")` Gráficos
+
+---
+template: graficos
+
+.pull-left[
+### Code
+
+```{r grafico-derecha-error, echo=TRUE, fig.show='hide'}
+datos::pinguinos %>%
+  ggplot(aes(x = especie, y = masa_corporal_g)) +
+  geom_boxplot(aes(fill = isla))
+```
+
+]
+
+.pull-right[
+
+### Plot
+
+`r emo::ji("scream")` ¡Ah! ¿Qué pasó aquí?
+
+```{r, ref.label="grafico-derecha-error"}
+```
+
+]
 
 ---
 template: graficos
@@ -854,38 +787,30 @@ name: grafico-derecha
 .pull-left[
 ### Code
 
-```{r grafico-derecha, echo=TRUE, fig.show='hide'}
+Es común que tengamos que [ajustar el tamaño del gráfico de salida](https://bookdown.org/yihui/rmarkdown-cookbook/figure-size.html) con opciones de bloque ("chunk options") como `fig.height` (_altura de la figura_) y `fig.width` (_el ancho de la figura_)
+
+Solución con un ajuste usando `fig.height`:
+
+````
+```{r, fig.height = 5}`r ''`
 datos::pinguinos %>%
   ggplot(aes(x = especie, y = masa_corporal_g)) +
   geom_boxplot(aes(fill = isla))
 ```
+````
 ]
 
 .pull-right[
 
 ### Plot
+`r emo::ji("relieved")` ¡Mucho mejor!
 
-```{r, ref.label="grafico-derecha"}
+```{r grafico-derecha, echo=FALSE, fig.height=5}
+datos::pinguinos %>%
+  ggplot(aes(x = especie, y = masa_corporal_g)) +
+  geom_boxplot(aes(fill = isla))
 ```
 
-]
-
----
-name: practicar
-class: inverse
-
-.left-column[
-## Para practicar<br>`r icon::fa("edit")`<br>
-]
-
-.right-column[
-### Haz una nueva dispositiva y practique agregando contenido de R
-
-----
-
-Aqui hay unas opciones:
-- agregue una [tabla](#tablas)
-- agregue un [gráfico](#graficos)
 ]
 
 ---
@@ -910,19 +835,25 @@ template: en-vivo
 ## ¡Vamos a compartir las diapositivas!
 
 ---
-class: adios, inverse, middle, left
+class: inverse, bottom, left
 
-.pull-left[
+
 <img style="border-radius: 50%;" src="https://silvia.rbind.io/authors/silvia/avatar.png" width="170px"/>
-# Muchísimas gracias!
+# ¡Muchísimas gracias!
 
 ### Aqui es donde me puedes conseguir...
-
+.pull-left[
 .right[
 [silvia.rbind.io `r icon::fa("link")`](https://silvia.rbind.io)<br/>
 [@spcanelon `r icon::fa("twitter")`](https://twitter.com/spcanelon)<br/>
 [@spcanelon `r icon::fa("github")`](https://github.com/spcanelon)<br/>
 ]]
+
+--
+
+.pull-right[
+Si quieres aprender más sobre xaringan y te sientes cómoda con el inglés, puedes conseguir más en mi taller extensivo titulado "[Sharing Your Work with xaringan](https://spcanelon.github.io/xaringan-basics-and-beyond)"
+]
 
 ---
 template: pregunta
@@ -939,11 +870,11 @@ Otras opciones que ofrece **remark.js** para resaltar tu código con [highlightS
 
 ---
 
-## Creando código+gráfico lado-a-lado
+# Creando código+gráfico lado-a-lado
 
 Aqui aprovechamos las opciones de los bloques para evitar repetir el código<sup/>1</sup>
 
-1. Código a la izquierda, gráfico a la derecha ([example](#grafico-derecha))
+1. Código a la izquierda, gráfico a la derecha ([ejemplo](#grafico-derecha-error))
 
   - Bloque 1: `{r grafico-derecha, fig.show = 'hide'}`
   - Bloque 2: `{r ref.label = 'grafico-derecha', echo = FALSE}`
@@ -957,27 +888,70 @@ Aqui aprovechamos las opciones de los bloques para evitar repetir el código<sup
 ]
 
 ---
-class: left
 
-## Agregando iconos
+# Agregando iconos
 
-.center[
+`r emo::ji("smile")` [`r emo::ji("package")` emo(ji)](https://github.com/hadley/emo#emoji)
 
-`r emo::ji("smile")`<br>
-Emoji: Use el [`r emo::ji("package")` emo(ji)](https://github.com/hadley/emo#emoji)
+--
+
+`r icon::fa("code-branch")` [FontAwesome](https://fontawesome.com/icons?d=gallery&m=free)
+- Copia y pega html directamente de la página web:<br>`<i class="fas fa-code-branch"></i>`<br>
+- Use el [`r emo::ji("package")` icon](https://slides.mitchelloharawild.com/icon/) o el [`r emo::ji("package")` fontawesome ](https://github.com/rstudio/fontawesome#the-fontawesome-package)
+
+--
+
+`r icon::ai("orcid")` [Academicons](https://jpswalsh.github.io/academicons/)
+<br>La forma más fácil para acceder estos iconos es con el `r emo::ji("package")` icon
+
+---
+# Fuentes de imagenes
+
+`r emo::ji("eyes")` **Ojo:**  Puedes utilizar la clase `.footnote[]` para acreditar la fuente de la imagen
+
+.pull-left[
+- [unsplash.com](unsplash.com)
+- [rawpixel.com](rawpixel.com)
+- [pexels.com](https://www.pexels.com/)
+]
+
+.pull-right[
+> - En el dominio publico<br>(sin necesidad de atribución)
+> - Gratis con atribución<br>(p.ej. Foto tomada por [Junel Mujar](https://unsplash.com/@junelmujar))
+]
+
+---
+
+.pull-left[
+## Para practicar<br>`r icon::fa("edit")`<br>
+]
+
+.pull-right[
+### Haz una diapositiva para saludar a tu audiencia
 
 ----
 
-<i class="fas fa-brain"></i>
-<br>
-[FontAwesome](https://fontawesome.com/icons?d=gallery&c=medical&m=free)
+Piense en incluir detalles como tu<br>
+nombre, instituto, ubicación, y/o información de contacto 
 
-Copia y pega html directamente de la página web:<br>`<i class="fas fa-brain"></i>`<br>
-Use el [`r emo::ji("package")` icon](https://slides.mitchelloharawild.com/icon/) o el [`r emo::ji("package")` fontawesome ](https://github.com/rstudio/fontawesome#the-fontawesome-package)
+Aqui hay algunas opciones:
+- practique cambiando [la ubicación](#ubicacion) del contenido en la diapositiva
+- separa tu contenido con una barra horizontal `----`
+- agreque una [imagen](#imagenes) o foto
+- agregue un enlace a una página web o red social
+]
+
+---
+.pull-left[
+## Para practicar<br>`r icon::fa("edit")`<br>
+]
+
+.pull-right[
+### Haz una nueva dispositiva y practique agregando contenido de R
 
 ----
 
-`r icon::ai("orcid")`<br>
-[Academicons](https://jpswalsh.github.io/academicons/)
-<br>La forma más facil para acceder estos iconos es con el `r emo::ji("package")` icon:<br>` r icon::fa("orcid")`
+Aqui hay unas opciones:
+- agregue una [tabla](#tablas)
+- agregue un [gráfico](#graficos)
 ]
