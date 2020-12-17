@@ -38,8 +38,6 @@
     <link href="libs/xaringanExtra-shareagain-0.2.4/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain-0.2.4/shareagain.js"></script>
     <link href="libs/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
-    <link href="libs/academicons-1.8.6/css/academicons.min.css" rel="stylesheet" />
-    <link href="libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
     <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
     <script src="libs/jquery-1.12.4/jquery.min.js"></script>
     <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
@@ -49,6 +47,7 @@
     <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
     <link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
     <script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+    <link href="libs/academicons-1.8.6/css/academicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/mi-tema.css" type="text/css" />
   </head>
   <body>
@@ -153,20 +152,19 @@ template: pregunta
 
 .pull-left[
 .center[
-&lt;i class="fab fa-js fa-3x"&gt;&lt;/i&gt;&lt;br&gt;
-JavaScript
+### &lt;i class="fab fa-js fa-3x"&gt;&lt;/i&gt;&lt;br&gt;JavaScript
 
-**and**
+### **y**
 
-&lt;i class="fab fa-markdown fa-3x"&gt;&lt;/i&gt;&lt;br&gt;
-Markdown
+### &lt;i class="fab fa-markdown fa-3x"&gt;&lt;/i&gt;&lt;br&gt;Markdown
 ]
 ]
 
 .pull-right[
 &gt; Una herramienta sencilla para presentaciones de diapositivas basadas en Markdown a traves del navegador web.
 
-&lt;iframe src="https://remarkjs.com" width="100%" height="400px"&gt;&lt;/iframe&gt;
+&lt;iframe src="https://remarkjs.com" width="100%" height="375px"&gt;&lt;/iframe&gt;
+[https://remarkjs.com](https://remarkjs.com)
 ]
 
 ---
@@ -178,12 +176,13 @@ Markdown
 .center[
 ![:scale 25%](img/hex-xaringan.png)
 
-**xaringan** es un paquete que le presenta `remark.js` a R Markdown
+**xaringan** es un paquete que le presenta&lt;br&gt;`remark.js` a R Markdown
 
 ![:scale 15%](img/hex-rmarkdown.png)
 ]]
 .pull-right[
 &lt;iframe src="https://slides.yihui.org/xaringan" width="100%" height="400px"&gt;&lt;/iframe&gt;
+[https://slides.yihui.org/xaringan](https://slides.yihui.org/xaringan)
 ]
 
 ---
@@ -213,6 +212,46 @@ Remark nos ayuda a:
 - y presentar (usando atajos de teclado)
 
 ---
+template: pregunta
+
+<i class="fas  fa-question-circle fa-3x "></i>
+# ¿Cómo creamos una presentacion?
+
+--
+
+----
+
+## **Primera opción:** Crear una presentación desde cero
+
+--
+
+## **Segunda opción:** Usar la plantilla hecha para R-Ladies Xalapa 
+
+### <i class="fas  fa-link "></i> [tutorial/ejemplo-de-diapositivas.Rmd](https://github.com/spcanelon/xaringan-rladies-xalapa/blob/master/tutorial/ejemplo-de-diapositivas.Rmd)
+
+---
+
+## <i class="fas  fa-file "></i> Creando una presentación desde cero
+
+.pull-left[
+### 1\. 📄 New File
+
+### 2\. 📄 New R Markdown
+
+![:scale 75%](img/rmd-xaringan-1.png)
+]
+
+--
+
+.pull-right[
+### 3\. 📝 From Template <i class="fas  fa-angle-double-right "></i> Ninja Presentation
+
+![:scale 75%](img/rmd-xaringan-2.png)
+
+### 4\. 💾 ¡Ahora guarda tu nuevo documento!
+]
+
+---
 name: en-vivo
 background-color: var(--morado-claro)
 class: middle, center, inverse
@@ -223,127 +262,119 @@ class: middle, center, inverse
 ---
 template: en-vivo
 
-# ¡Comencemos!
-
-**Primer paso** Install the `nhsrtheme` package from GitHub
-
-```r
-# install.packages("devtools")
-devtools::install_github("nhs-r-community/nhsrtheme")
-```
-
-**Step 2.** Load the `nhsrtheme` package
-
-```r
-library(nhsrtheme)
-```
+## ¡Comencemos!
 
 ---
 
-## New Rmd File
-.pull-left[
-1. New File
-2. New R Markdown
-![:scale 90%](img/new-r-markdown.png)
-]
+## <i class="fas  fa-file-alt "></i> Usar la plantilla hecha para R-Ladies Xalapa
 
-.pull-right[
-3\. From Template <i class="fas  fa-angle-double-right "></i> NHS-R Presentation&lt;br&gt;4. Give your slide deck a name!
-![:scale 85%](img/nhsrtheme-template.png)
-]
+### YAML
 
----
-
-## Directory
-The new directory in the "Files" pane contains
-.left[
-+ <i class="fas  fa-file-code "></i> the new Rmd file (i.e. `my-slides.Rmd`)
-
-+ <i class="fas  fa-folder-open "></i> the `img` folder containing logo files
-
-+ <i class="fas  fa-folder-open "></i> the `css` folder containing the custom `nhsr` theme files&lt;br&gt;.small[and an HTML file in charge of [adding the NHS logo to each slide](https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides)]
-]
-
----
-
-## YAML
 
 ```r
-title: "Presentation title"
-subtitle: "Presentation subtitle"
-author: "Author Name"
-institute: "NHS Organisation"
-date: "Presentation Date"
+---
+title: "Título de la Presentación"
+subtitle: "Subtítulo de la Presentación"
+author: "Nombre de la autora"
+institute: "R-Ladies Xalapa"
+date: "Fecha"
 output:
-  xaringan::moon_reader:               # new kind of output!
-    css:                               
-     -default                          # default xaringan theme CSS file
-     -css/nhsr.css                     # custom primary CSS file
-     -css/nhsr-fonts.css               # custom font CSS file
-    lib_dir: libs                        # creates directory for libraries
-    seal: false                          # false: custom title slide
+  xaringan::moon_reader:                 # ¡Ojo -- nuevo tipo de salida!
+*   css:
+*    - default                           # el archivo CSS del tema predeterminado for xaringan
+*    - rladies                           # el archivo CSS del tema R-Ladies
+*    - rladies-fonts                     # el archivo CSS de fuentes del tema R-Ladies
+    lib_dir: libs                        # crea un directorio para bibliotecas
+*   seal: false                          # false: permite crear una diapositiva de título personalizada
     nature:
-      highlightStyle: googlecode         # highlighting syntax for code
-      highlightLines: true               # true: enables code line highlighting 
-      highlightLanguage: ["r"]           # languages to highlight
+      highlightStyle: github             # resalta sintaxis para los bloques de código
+      highlightLines: true               # true: permite resaltar líneas de código  
       countIncrementalSlides: false      # false: disables counting of incremental slides
-      ratio: "16:9"                      # 4:3 for standard size
-    includes:
-      after_body: [css/insert-logo.html] # adds NHS logo to slides (you can ignore it)
+*     ratio: "4:3"                       # proporción: "16:9" para un tamaño de pantalla ancha
+---
 ```
 
 ---
-## Extra info
+## <i class="fas  fa-file-alt "></i> Usar la plantilla hecha para R-Ladies Xalapa
 
-- `seal: true` creates a title slide with inverse colors using metadata from your YAML
+### El bloque de configuración ("setup")
 
-- Other [highlightStyle options](https://github.com/gnab/remark/wiki/Configuration#highlighting) from **remark.js** are:
 
-  + `arta`, `ascetic`, `dark`, `default`, `far`, `github`, `googlecode`,   `idea`, `ir-black`, `magula`, `monokai`, `rainbow`, `solarized-dark`, `solarized-light`, `sunburst`, `tomorrow`, `tomorrow-night-blue`, `tomorrow-night-bright`, `tomorrow-night`, `tomorrow-night-eighties`, `vs`, `zenburn`.
+```r
+library(knitr)                              # paquete que trae funciones utiles para R Markdown
+library(tidyverse)                          # paquete que trae varios paquetes comunes en el tidyverse
+library(datos)                              # paquete que viene con datos populares traducidos al español :)
+library(icon)                               # paquete para iconos
+library(emo)                                # paquete para emojis
+
+# opciones predeterminadas
+knitr::opts_chunk$set(echo = FALSE,         # FALSE: los bloques de código NO se muestran
+                      dpi = 300,            # asegura gráficos de alta resolución
+                      warning = FALSE,      # los mensajes de advertencia NO se muestran
+                      error = FALSE)        # los mensajes de error NO se muestran
+```
+
+--
+
+<i class="fas  fa-star " style="color:#e5bf00;"></i> El bloque de configuración no se muestra en ninguna diapositiva gracias a la opción `include = FALSE`
+
+--
+
+<i class="fas  fa-star " style="color:#e5bf00;"></i> El contenido para la primera diapositiva comienza justo debajo de los tres guiones (`---`) al final del YAML
 
 ---
-## Our first few slides
 
-<i class="fas  fa-star " style="color:#e5bf00;"></i> Slide content starts immediately after the YAML `---`
+## <i class="fas  fa-rocket "></i> ¡Vamos a generar las diapositivas! 
 
-.left-column[
-The .morado-claro[nhsrtheme] xaringan template comes pre-loaded with a few things
-]
-.right-column[
-- .morado-claro[A `setup` chunk] with a few libraries and some chunk options set for the whole slide deck
+### ¡Con la función del Moon Reader (_lector de luna?_) podemos ver cambios en tiempo real! 
 
-- Some example slides separated by three dashes (`---`)
-  1. .morado-claro[Title slide with the `title-slide` class.]&lt;br&gt;Content is aligned with the `left` and the `bottom` of the slide
-  1. .morado-claro[Inverse slide with the `inverse` slide class.]&lt;br&gt;Content is aligned with `middle` and `center` of the slide
-  1. .morado-claro[Incremental slides with no specified slide class (default).]&lt;br&gt;Incremental steps are made using two dashes (`--`), and bullet points made using markdown (`*`)
-]
+--
 
----
-
-## Moon Reader
-
-To view the slides generated by your new Rmd file, you have two options:
-
-**Option 1**. Run xaringan's infinite moon reader function in the console 🚀 
+**Primera opción**. Ejecute la función xaringan `infinite_moon_reader()` o `inf_mr()` en tu consola 🚀 
 
 
 ```r
 xaringan::inf_mr()
 ```
 
-&gt; .small[Note: you can also access this feature using the IDE toolbar: **Addins &gt; XARINGAN Infinite Moon Reader**]
+--
 
-**Option 2**. Knit the document 🧶 
+**Segunda opción**. "Teje" el documento con el botón Knit de RStudio 🧶 
+
+---
+template: en-vivo
+
+## ¡A generar las diapositivas!
 
 ---
 
-## Setup chunk
-.left-column[
-A `setup` chunk with a few libraries and some chunk options set for the whole slide deck
+# Sintaxis de xaringan
+
+### ¿Qué notas en el código que te parece conocido?
+
+--
+
+.pull-left[
+
+### Tal vez conocido de **Markdown**
+
+- Encabezados (#, ##, ###)
+- **Negrita** y _cursiva_
+- Enlaces con `[]()`
+- Listas de puntos que se pueden crear con `-`, `+`, or `*`
+- Listas enumeradas que se pueden crear con `1.`
 ]
-.right-column[
-![](img/code-setup-chunk.png)
+
+--
+
+.pull-right[
+### Esto no es tan conocido, y viene de **remark.js**
+- La primera diapositiva comienza después del YAML
+- Diapositivas se separan una de otra con&lt;br&gt;tres guiones (`---`)
+- Diapositivas incrementales se separan con&lt;br&gt;dos guiones (`--`)
+- Contenido de la diapositiva se separa de las notas de la presentadora con tres signos de interrogación (`???`)
 ]
+
 
 ---
 
@@ -385,73 +416,35 @@ style="border:0px solid #E8EDEE"/&gt;
 ]
 
 ---
-# xaringan syntax
-
-### What did you notice?
-
-???
-What about the syntax used in the R Markdown file looked familiar?
-Please type your answers in the chat box.
-
---
-
-.pull-left[
-
-### Familiar from **markdown**
-
-- Headings (#, ##, ###)
-- **Bold** and _italic_ type
-- Links and images with `![]()`
-- Bullet points can be added&lt;br&gt;with `-`, `+`, or `-`
-- Numbered lists can be created&lt;br&gt;with `1.`
-]
-
-???
-What about the syntax looked new or different?
-Please type your answers in the chat box.
-
---
-
-.pull-right[
-### Not so familiar, from **remark.js**
-- First slide starts immediately after YAML, doesn't need to begin with three dashes(`---`)
-- Slides are separated by&lt;br&gt;three dashes (`---`)
-- Incremental slides are separated by&lt;br&gt;two dashes (`--`)
-- Slide content is separated from presenter notes by three questions marks (`???`)
-]
 
 ---
 template: pregunta
 
 <i class="fas  fa-magic fa-3x "></i>
-# How can we make our slides&lt;br&gt;look more interesting???
+# ¿Cómo introducimos contenido un poco más interesante?
 
 --
 
 ----
 
-### <i class="fas  fa-th-large "></i>&amp;nbsp;&amp;nbsp;with placement
+### <i class="fas  fa-th-large "></i>&amp;nbsp;&amp;nbsp; ubicación
 
 --
 
-### <i class="fas  fa-image "></i>&amp;nbsp;&amp;nbsp;pretty pictures
-
---
-
-### &lt;i class="fas fa-star"&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;and icons
+### <i class="fas  fa-image "></i>&amp;nbsp;&amp;nbsp;imagenes lindas
 
 ---
-name: placement
-## Placement &lt;i class="fas fa-th-large" style = "float: right"&gt;&lt;/i&gt;
+name: ubicacion
+## Ubicación &lt;i class="fas fa-th-large" style = "float: right"&gt;&lt;/i&gt;
 
 ---
-template: placement
+template: ubicacion
 
-### Align an entire slide
+### Alinear una dispositiva completa
 
 .left-column[
 
-Horizontally
+Horizontalmente
 
 ```r
 left,
@@ -461,7 +454,7 @@ right
 
 ----
 
-Vertically
+Verticalmente
 
 ```r
 top, 
@@ -479,36 +472,36 @@ bottom
 
 *class: center, middle
 
-# Slide with centered content in the middle
+# Diapositiva con contenido centrado y en el medio de la diapositiva
 
-This content is also centered and in the middle of the slide 
+Este contenido tambien esta centrado y en el medio de la diapositiva
 
 ---
 ```
 
-.right[.morado-claro[example on next slide <i class="fas  fa-arrow-circle-right "></i> ]]
+.right[.morado-claro[ejemplo en la diapositiva que sigue <i class="fas  fa-arrow-circle-right "></i> ]]
 ]
 
 ---
 class: center, middle
 
-# Slide with centered content and aligned with the middle
+# Diapositiva con contenido centrado y en el medio de la diapositiva
 
-This content is also centered and aligned with the middle of the slide
+Este contenido tambien esta centrado y en el medio de la diapositiva
 
 
 ---
-template: placement
+template: ubicacion
 
-### Align only some text
+### Alinear solo parte del texto
 
 .left-column[
-Horizontal only
+Solamente horizontalmente
 
 ```r
-*.left[words]
-.center[words]
-*.right[words]
+*.left[palabras]
+.center[palabras]
+*.right[palabras]
 ```
 ]
 
@@ -520,11 +513,11 @@ Horizontal only
 
 class: center, middle 
 
-# Slide with some text aligned
+# Diapositiva con algo de texto alineado
 
-*.left[We can start writing a sentence on the left...]
+*.left[Podemos comenzar a escribir una oración a mano izquierda...]
 
-*.right[and end on the right.]
+*.right[...y terminar a mano derecha.]
 
 ---
 ```
@@ -536,21 +529,21 @@ class: center, middle
 ---
 class: center, middle
 
-# Slide with some text aligned
+# Diapositiva con algo de texto alineado
 
-.left[We can start writing a sentence on the left...]
+.left[Podemos comenzar a escribir una oración a mano izquierda...]
 
-.right[...and finish it on the right.]
+.right[...y terminar a mano derecha.]
 
 ---
-template: placement
+template: ubicacion
 
-### Pull content to either side of the slide
+### Jalar el contenido a un lado de la diapositiva
 
 .pull-left[
-**The `.pull-left[]` class pulls content to&lt;br&gt;the left 47%**
+**La clase `.pull-left[]` (_jalar-izquierda_) jala contenido al&lt;br&gt;47% izquierdo**
 
-Like the text above and&lt;br&gt;the hex sticker below
+Como el texto arriba y&lt;br&gt;la etiqueta hexagonal de abajo
 
 ![:scale 25%](img/hex-rmarkdown.png)
 ]
@@ -558,9 +551,9 @@ Like the text above and&lt;br&gt;the hex sticker below
 --
 
 .pull-right[
-**And `.pull-right[]` pulls content to&lt;br&gt;the right 47%**
+**Y la clase `.pull-right[]` (_jalar-derecha_) jala contenido al&lt;br&gt;47% derecho**
 
-You've already seen these content classes&lt;br&gt;in action today 😄
+Ya has visto hoy el uso de estas clases de contenido 😄
 &lt;br&gt;
 
 ![:scale 30%](img/hex-xaringan.png)
@@ -569,27 +562,27 @@ You've already seen these content classes&lt;br&gt;in action today 😄
 
 --
 
-They don't have to take up the entire slide. Like for this text, you can decide to continue creating content that isn't pulled to either side.
+El uso de estas clases no tiene por que ocupar la diapositiva entera. Por ejemplo, puedes decidir que quieres continuar escribiendo texto que no sea jalado para ningun lado.
 
 ---
-template: placement
+template: ubicacion
 
-### Arrange content into a two-column layout
+### Organizar el contenido en un diseño de dos columnas
 
 .left-column[
-**`.left-column[]` places content into a column 20% wide**
+**`.left-column[]` (_columna-izquierda_) coloca el contenido en una columna que tiene un 20% de ancho de la diapositiva**
 
-And text is a little lighter
+Y el texto es un poco más claro.
 ]
 
 --
 
 .right-column[
-**`.right-column[]` places content into a column 75% wide**
-- It also has a _little_ bit of padding on the top
+**`.right-column[]` (_columna-derecha-) coloca contenido en una columna que tiene un 75% de ancho de la diapositiva**
+- Tambien tiene un _poquito_ de relleno por arriba
 
-- And unlike the `.pull` content classes, these column classes are fixed for the entire slide
-- They are meant to be used together
+- Y a diferencia de las clases de contenido `.pull` (_jalar_), estas clases de columnas estan fijas para la diapositiva entera
+- Estas clases de columnas estan diseñadas para usarse juntas
 
 .center[
 ![:scale 15%](img/hex-xaringan.png)]
@@ -604,7 +597,7 @@ template: imagenes
 
 ### There are a variety of ways to add images to your slides
 
-## Markdown
+### Markdown
 .pull-left[
 
 
@@ -708,12 +701,11 @@ I recommend using this directory structure to help avoid confusion&lt;br&gt;(exa
 
 ```r
 .
-├── css
 *├── img
 *   ├── jacarandas.jpg
 ├── libs
-├── my-slides.Rmd
-└── my-slides.html
+├── ejemplo-de-diapositivas.Rmd
+└── ejemplo-de-diapositivas.html
 ```
 ]
 
@@ -761,238 +753,192 @@ class: middle, center
 ]
 
 ---
-class: left
-name: icons
-## Icons &lt;i class="fas fa-star" style = "float: right"&gt;&lt;/i&gt;
-
---
-
-.left-column[.center[
-😄&lt;br&gt;
-[Emojis](https://github.com/hadley/emo#emoji)
-]]
-.right-column[
-Use the [emo(ji) 📦](https://github.com/hadley/emo#emoji):&lt;br&gt;
-Icon on the left: ` r emo::ji("smile")` (surrounded by backticks `)
-]
-
---
-
-.left-column[.center[
-&lt;i class="fas fa-brain"&gt;&lt;/i&gt;
-&lt;br&gt;
-[FontAwesome](https://fontawesome.com/icons?d=gallery&amp;c=medical&amp;m=free)
-]]
-
-.right-column[
-Copy and paste html directly from the website:&lt;br&gt;`&lt;i class="fas fa-brain"&gt;&lt;/i&gt;`&lt;br&gt;
-Use the [icon 📦](https://slides.mitchelloharawild.com/icon/): ` r icon::fa("brain")`,&lt;br&gt;or the [fontawesome 📦](https://github.com/rstudio/fontawesome#the-fontawesome-package): ` r fontawesome:fa("brain")`
-]
-
---
-
-.left-column[.center[
-<i class="ai  ai-orcid "></i>&lt;br&gt;
-[Academicons](https://jpswalsh.github.io/academicons/)
-]]
-.right-column[
-The easiest way to access them is with the icon 📦:&lt;br&gt;` r icon::fa("orcid")`
-]
-
---
-
-.left-column[.center[
-<i class="ion  ion-ios-flask-outline "></i>&lt;br&gt;
-[Ionicons](https://ionicons.com/)
-]]
-.right-column[
-I haven't had as much luck with these, but you can use the icon 📦 here as well: ` r icon::ii("ios-flask-outline")`
-]
-
----
-name: your-turn
+name: practicar
 class: inverse
 
 .left-column[
-## Your turn&lt;br&gt;<i class="fas  fa-edit "></i>&lt;br&gt;
-### .my-pink[10:00 mins]
+## Para practicar&lt;br&gt;<i class="fas  fa-edit "></i>&lt;br&gt;
 ]
 
 .right-column[
-### Make an "about me" slide
+### Haz una diapositiva para saludar a tu audiencia
 
 ----
 
-Think about including details like your&lt;br&gt;name, affiliation, location, and/or contact information
+Piense en incluir detalles como tu&lt;br&gt;
+nombre, instituto, ubicación, y/o información de contacto 
 
-Here are some options to consider
-- practice [moving content around](#placement) the slide
-- separate content with a horizontal bar `----`
-- [add an image](#pictures) or photo
-- link to sites and/or social media
-- add some [icons](#icons)!
-- see [my about me slide](#about-me) for ideas
+Aqui hay algunas opciones:
+- practique cambiando [la ubicación](#ubicacion) del contenido en la diapositiva
+- separa tu contenido con una barra horizontal `----`
+- agreque una [imagen](#imagenes) o foto
+- agregue un enlace a una página web o red social
 ]
 
 ---
 template: pregunta
 
 <i class="fab  fa-r-project fa-3x "></i>
-# What about R content?
+# ¿Qué tal contenido de R?
 
 --
 
 ----
 
-.pull-left[.center[
-<i class="fas  fa-table fa-2x "></i>
-### tables
-]]
+### <i class="fas  fa-table "></i>&amp;nbsp;&amp;nbsp; tablas
 
 --
 
-.pull-right[
-.center[
-<i class="fas  fa-chart-bar fa-2x "></i>
-### plots
-]]
+### <i class="fas  fa-chart-bar "></i>&amp;nbsp;&amp;nbsp; gráficos
 
 ---
-name: tables
-## Tables &lt;i class="fas fa-table" style = "float: right"&gt;&lt;/i&gt;
+name: tablas
+## Tablas &lt;i class="fas fa-table" style = "float: right"&gt;&lt;/i&gt;
 
 ---
-template: tables
+template: tablas
 
-### Direct output
-
-----
+### Salida directa
 
 
 ```r
-NHSRdatasets::LOS_model %&gt;% head()
-## # A tibble: 6 x 5
-##      ID Organisation   Age   LOS Death
-##   &lt;int&gt; &lt;ord&gt;        &lt;int&gt; &lt;int&gt; &lt;int&gt;
-## 1     1 Trust1          55     2     0
-## 2     2 Trust2          27     1     0
-## 3     3 Trust3          93    12     0
-## 4     4 Trust4          45     3     1
-## 5     5 Trust5          70    11     0
-## 6     6 Trust6          60     7     0
+datos::pinguinos %&gt;% 
+  head()
+## # A tibble: 6 x 8
+##   especie isla      largo_pico_mm alto_pico_mm largo_aleta_mm masa_corporal_g sexo    anio
+##   &lt;fct&gt;   &lt;fct&gt;             &lt;dbl&gt;        &lt;dbl&gt;          &lt;int&gt;           &lt;int&gt; &lt;fct&gt;  &lt;int&gt;
+## 1 Adelia  Torgersen          39.1         18.7            181            3750 macho   2007
+## 2 Adelia  Torgersen          39.5         17.4            186            3800 hembra  2007
+## 3 Adelia  Torgersen          40.3         18              195            3250 hembra  2007
+## 4 Adelia  Torgersen          NA           NA               NA              NA &lt;NA&gt;    2007
+## 5 Adelia  Torgersen          36.7         19.3            193            3450 hembra  2007
+## 6 Adelia  Torgersen          39.3         20.6            190            3650 macho   2007
 ```
 
-.footnote[We're using the [NHSRdatasets 📦](https://github.com/nhs-r-community/NHSRdatasets#nhs-r-community-datasets-) here! It was developed by Chris Mainey and contains a few datasets to use for practice.]
-
 ---
-template: tables
+template: tablas
 
-### HTML table
+### Tabla HTML
 
-----
-.pull-left[
+
 
 ```r
-NHSRdatasets::LOS_model %&gt;% head() %&gt;%
+datos::pinguinos %&gt;% 
+  head() %&gt;%
   knitr::kable(format = "html")
 ```
-]
 
-.pull-right[
 &lt;table&gt;
  &lt;thead&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:right;"&gt; ID &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; Organisation &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Age &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; LOS &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Death &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; especie &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; isla &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; largo_pico_mm &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; alto_pico_mm &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; largo_aleta_mm &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; masa_corporal_g &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; sexo &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; anio &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Trust1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 55 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Torgersen &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 39.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 181 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3750 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; macho &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Trust2 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 27 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Torgersen &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 39.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 186 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3800 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; hembra &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Trust3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 93 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Torgersen &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 40.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 195 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3250 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; hembra &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Trust4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 45 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Torgersen &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Trust5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 70 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Torgersen &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 193 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3450 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; hembra &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Trust6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 60 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Adelia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Torgersen &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 39.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 190 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3650 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; macho &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-]
 
 ---
-template: tables
+template: tablas
 
-### DT table
+### Tabla DT
 
-----
 
 
 ```r
-NHSRdatasets::LOS_model %&gt;% head() %&gt;%
+datos::pinguinos %&gt;% 
+  head() %&gt;%
   DT::datatable()
 ```
 
-<div id="htmlwidget-b72942c68ce2f7511543" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b72942c68ce2f7511543">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1,2,3,4,5,6],["Trust1","Trust2","Trust3","Trust4","Trust5","Trust6"],[55,27,93,45,70,60],[2,1,12,3,11,7],[0,0,0,1,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>ID<\/th>\n      <th>Organisation<\/th>\n      <th>Age<\/th>\n      <th>LOS<\/th>\n      <th>Death<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f6e9502d66e77a327c85" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f6e9502d66e77a327c85">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],["Adelia","Adelia","Adelia","Adelia","Adelia","Adelia"],["Torgersen","Torgersen","Torgersen","Torgersen","Torgersen","Torgersen"],[39.1,39.5,40.3,null,36.7,39.3],[18.7,17.4,18,null,19.3,20.6],[181,186,195,null,193,190],[3750,3800,3250,null,3450,3650],["macho","hembra","hembra",null,"hembra","macho"],[2007,2007,2007,2007,2007,2007]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especie<\/th>\n      <th>isla<\/th>\n      <th>largo_pico_mm<\/th>\n      <th>alto_pico_mm<\/th>\n      <th>largo_aleta_mm<\/th>\n      <th>masa_corporal_g<\/th>\n      <th>sexo<\/th>\n      <th>anio<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5,6,8]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 ---
-template: tables
+template: tablas
 
-### GT table
+### Tabla GT
 
-----
 
-.pull-left[
 
 ```r
-NHSRdatasets::LOS_model %&gt;% head() %&gt;%
+datos::pinguinos %&gt;% 
+  head() %&gt;%
   gt::gt()
 ```
-]
 
-.pull-right[
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#tiqjkvceyc .gt_table {
+#dhhodqkciw .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1015,7 +961,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   border-left-color: #D3D3D3;
 }
 
-#tiqjkvceyc .gt_heading {
+#dhhodqkciw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1027,7 +973,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#tiqjkvceyc .gt_title {
+#dhhodqkciw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1037,7 +983,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   border-bottom-width: 0;
 }
 
-#tiqjkvceyc .gt_subtitle {
+#dhhodqkciw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1047,13 +993,13 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   border-top-width: 0;
 }
 
-#tiqjkvceyc .gt_bottom_border {
+#dhhodqkciw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tiqjkvceyc .gt_col_headings {
+#dhhodqkciw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1068,7 +1014,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#tiqjkvceyc .gt_col_heading {
+#dhhodqkciw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1088,7 +1034,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   overflow-x: hidden;
 }
 
-#tiqjkvceyc .gt_column_spanner_outer {
+#dhhodqkciw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1100,15 +1046,15 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   padding-right: 4px;
 }
 
-#tiqjkvceyc .gt_column_spanner_outer:first-child {
+#dhhodqkciw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tiqjkvceyc .gt_column_spanner_outer:last-child {
+#dhhodqkciw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tiqjkvceyc .gt_column_spanner {
+#dhhodqkciw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1120,7 +1066,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   width: 100%;
 }
 
-#tiqjkvceyc .gt_group_heading {
+#dhhodqkciw .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1142,7 +1088,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   vertical-align: middle;
 }
 
-#tiqjkvceyc .gt_empty_group_heading {
+#dhhodqkciw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1157,19 +1103,19 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   vertical-align: middle;
 }
 
-#tiqjkvceyc .gt_striped {
+#dhhodqkciw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tiqjkvceyc .gt_from_md > :first-child {
+#dhhodqkciw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tiqjkvceyc .gt_from_md > :last-child {
+#dhhodqkciw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tiqjkvceyc .gt_row {
+#dhhodqkciw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1188,7 +1134,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   overflow-x: hidden;
 }
 
-#tiqjkvceyc .gt_stub {
+#dhhodqkciw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1200,7 +1146,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   padding-left: 12px;
 }
 
-#tiqjkvceyc .gt_summary_row {
+#dhhodqkciw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1210,7 +1156,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   padding-right: 5px;
 }
 
-#tiqjkvceyc .gt_first_summary_row {
+#dhhodqkciw .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1220,7 +1166,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#tiqjkvceyc .gt_grand_summary_row {
+#dhhodqkciw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1230,7 +1176,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   padding-right: 5px;
 }
 
-#tiqjkvceyc .gt_first_grand_summary_row {
+#dhhodqkciw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1240,7 +1186,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#tiqjkvceyc .gt_table_body {
+#dhhodqkciw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1249,7 +1195,7 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   border-bottom-color: #D3D3D3;
 }
 
-#tiqjkvceyc .gt_footnotes {
+#dhhodqkciw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1263,13 +1209,13 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#tiqjkvceyc .gt_footnote {
+#dhhodqkciw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#tiqjkvceyc .gt_sourcenotes {
+#dhhodqkciw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1283,124 +1229,141 @@ NHSRdatasets::LOS_model %&gt;% head() %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#tiqjkvceyc .gt_sourcenote {
+#dhhodqkciw .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#tiqjkvceyc .gt_left {
+#dhhodqkciw .gt_left {
   text-align: left;
 }
 
-#tiqjkvceyc .gt_center {
+#dhhodqkciw .gt_center {
   text-align: center;
 }
 
-#tiqjkvceyc .gt_right {
+#dhhodqkciw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tiqjkvceyc .gt_font_normal {
+#dhhodqkciw .gt_font_normal {
   font-weight: normal;
 }
 
-#tiqjkvceyc .gt_font_bold {
+#dhhodqkciw .gt_font_bold {
   font-weight: bold;
 }
 
-#tiqjkvceyc .gt_font_italic {
+#dhhodqkciw .gt_font_italic {
   font-style: italic;
 }
 
-#tiqjkvceyc .gt_super {
+#dhhodqkciw .gt_super {
   font-size: 65%;
 }
 
-#tiqjkvceyc .gt_footnote_marks {
+#dhhodqkciw .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="tiqjkvceyc" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="dhhodqkciw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">ID</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Organisation</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Age</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">LOS</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Death</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">especie</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">isla</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">largo_pico_mm</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">alto_pico_mm</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">largo_aleta_mm</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">masa_corporal_g</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">sexo</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">anio</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">Trust1</td>
-      <td class="gt_row gt_center">55</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">0</td>
+      <td class="gt_row gt_center">Adelia</td>
+      <td class="gt_row gt_center">Torgersen</td>
+      <td class="gt_row gt_right">39.1</td>
+      <td class="gt_row gt_right">18.7</td>
+      <td class="gt_row gt_center">181</td>
+      <td class="gt_row gt_center">3750</td>
+      <td class="gt_row gt_center">macho</td>
+      <td class="gt_row gt_center">2007</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">Trust2</td>
-      <td class="gt_row gt_center">27</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">0</td>
+      <td class="gt_row gt_center">Adelia</td>
+      <td class="gt_row gt_center">Torgersen</td>
+      <td class="gt_row gt_right">39.5</td>
+      <td class="gt_row gt_right">17.4</td>
+      <td class="gt_row gt_center">186</td>
+      <td class="gt_row gt_center">3800</td>
+      <td class="gt_row gt_center">hembra</td>
+      <td class="gt_row gt_center">2007</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">3</td>
-      <td class="gt_row gt_center">Trust3</td>
-      <td class="gt_row gt_center">93</td>
-      <td class="gt_row gt_center">12</td>
-      <td class="gt_row gt_center">0</td>
+      <td class="gt_row gt_center">Adelia</td>
+      <td class="gt_row gt_center">Torgersen</td>
+      <td class="gt_row gt_right">40.3</td>
+      <td class="gt_row gt_right">18.0</td>
+      <td class="gt_row gt_center">195</td>
+      <td class="gt_row gt_center">3250</td>
+      <td class="gt_row gt_center">hembra</td>
+      <td class="gt_row gt_center">2007</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">4</td>
-      <td class="gt_row gt_center">Trust4</td>
-      <td class="gt_row gt_center">45</td>
-      <td class="gt_row gt_center">3</td>
-      <td class="gt_row gt_center">1</td>
+      <td class="gt_row gt_center">Adelia</td>
+      <td class="gt_row gt_center">Torgersen</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_center">NA</td>
+      <td class="gt_row gt_center">NA</td>
+      <td class="gt_row gt_center">NA</td>
+      <td class="gt_row gt_center">2007</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">5</td>
-      <td class="gt_row gt_center">Trust5</td>
-      <td class="gt_row gt_center">70</td>
-      <td class="gt_row gt_center">11</td>
-      <td class="gt_row gt_center">0</td>
+      <td class="gt_row gt_center">Adelia</td>
+      <td class="gt_row gt_center">Torgersen</td>
+      <td class="gt_row gt_right">36.7</td>
+      <td class="gt_row gt_right">19.3</td>
+      <td class="gt_row gt_center">193</td>
+      <td class="gt_row gt_center">3450</td>
+      <td class="gt_row gt_center">hembra</td>
+      <td class="gt_row gt_center">2007</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">6</td>
-      <td class="gt_row gt_center">Trust6</td>
-      <td class="gt_row gt_center">60</td>
-      <td class="gt_row gt_center">7</td>
-      <td class="gt_row gt_center">0</td>
+      <td class="gt_row gt_center">Adelia</td>
+      <td class="gt_row gt_center">Torgersen</td>
+      <td class="gt_row gt_right">39.3</td>
+      <td class="gt_row gt_right">20.6</td>
+      <td class="gt_row gt_center">190</td>
+      <td class="gt_row gt_center">3650</td>
+      <td class="gt_row gt_center">macho</td>
+      <td class="gt_row gt_center">2007</td>
     </tr>
   </tbody>
   
   
 </table></div>
-]
-.footnote[Make sure to check out the [GT package workshop](https://github.com/nhs-r-community/Conference_2020#workshop-sessions) tomorrow!]
----
-name: plots
-## Plots &lt;i class="fas fa-chart-bar" style = "float: right"&gt;&lt;/i&gt;
 
 ---
-template: plots
-name: plot-right
+name: graficos
+## Gráficos &lt;i class="fas fa-chart-bar" style = "float: right"&gt;&lt;/i&gt;
+
+---
+template: graficos
+name: grafico-derecha
 
 .pull-left[
 ### Code
 
-----
-
 
 ```r
-NHSRdatasets::LOS_model %&gt;%
-  ggplot(aes(x = Age, y = Organisation)) +
-  geom_boxplot(aes(fill = Organisation)) +
-  nhsrtheme::scale_fill_nhs("highlights")
+datos::pinguinos %&gt;%
+  ggplot(aes(x = especie, y = masa_corporal_g)) +
+  geom_boxplot(aes(fill = isla))
 ```
 ]
 
@@ -1408,69 +1371,57 @@ NHSRdatasets::LOS_model %&gt;%
 
 ### Plot
 
-----
-
-![](introduccion-xaringan_files/figure-html/unnamed-chunk-18-1.png)&lt;!-- --&gt;
+![](introduccion-xaringan_files/figure-html/unnamed-chunk-14-1.png)&lt;!-- --&gt;
 
 ]
 
-.footnote[Note the use of the [nhsrtheme 📦](https://github.com/nhs-r-community/nhsrtheme#nhs-r-theme-) here! It was developed by Tom Jemmett and contains a few different colour palettes based on the NHS identity guidelines]
 ---
-template: plots
-name: alison-tips
-
-### Creating side-by-side code + plot
-
-----
-
-Here's how to leverage code chunk options to avoid repeating your code&lt;sup1/sup&gt;:
-
-1. Code on left, plot on right ([example](#plot-right))
-
-  - Chunk 1: `{r plot-right, fig.show = 'hide'}`
-  - Chunk 2: `{r ref.label = 'plot-right', echo = FALSE}`
-
-2. Plot on left, code on right
-  - Chunk 1: `{r plot-left, echo = FALSE}`
-  - Chunk 2: `{r ref.label = 'plot-left', fig.show = 'hide'}`
-
-.small[
-These and more great tips in Alison Hill's [Teaching in Production](https://rstudio-education.github.io/teaching-in-production/slides/index.html#46)
-]
-
----
-name: your-turn
+name: practicar
 class: inverse
 
 .left-column[
-## Your turn&lt;br&gt;<i class="fas  fa-edit "></i>&lt;br&gt;
-### .my-pink[10:00 mins]
+## Para practicar&lt;br&gt;<i class="fas  fa-edit "></i>&lt;br&gt;
 ]
 
 .right-column[
-### Make a new slide and practice&lt;br&gt;adding some R content
+### Haz una nueva dispositiva y practique agregando contenido de R
 
 ----
 
-Here are some options to consider
-- add a [table](#tables)
-- add a [plot](#plots)
-- try [arranging content](#alison-tips) to have code on one side and the output on the other
+Aqui hay unas opciones:
+- agregue una [tabla](#tablas)
+- agregue un [gráfico](#graficos)
 ]
+
+---
+template: pregunta
+
+<i class="fas  fa-share-alt fa-3x "></i>
+# ¿Cómo compartimos nuestras diapositivas?
+
+--
+
+----
+
+### **Primera opción:** Con "self_contained: TRUE" en el YAML para <i class="fas  fa-paper-plane "></i>
+
+--
+
+### **Segunda opción:** Alojando tus archivos en un repositorio para <i class="fas  fa-link "></i>
 
 ---
 template: en-vivo
 
-### Let's try deploying slides to GitHub!
+## ¡Vamos a compartir las diapositivas!
 
 ---
-class: goodbye-slide, inverse, middle, left
+class: adios, inverse, middle, left
 
 .pull-left[
 &lt;img style="border-radius: 50%;" src="https://silvia.rbind.io/authors/silvia/avatar.png" width="170px"/&gt;
-# Thank you!
+# Muchísimas gracias!
 
-### Here's where you can find me...
+### Aqui es donde me puedes conseguir...
 
 .right[
 [silvia.rbind.io <i class="fas  fa-link "></i>](https://silvia.rbind.io)&lt;br/&gt;
@@ -1478,12 +1429,69 @@ class: goodbye-slide, inverse, middle, left
 [@spcanelon <i class="fab  fa-github "></i>](https://github.com/spcanelon)&lt;br/&gt;
 ]]
 
+---
+template: pregunta
+
+<i class="fas  fa-exclamation fa-3x "></i>
+# ¡Aqui comienza material extra!
+
+---
+# Resaltando los bloques de código
+
+Otras opciones que ofrece **remark.js** para resaltar tu código con [highlightStyle](https://github.com/gnab/remark/wiki/Configuration#highlighting) son:
+
+  + `arta`, `ascetic`, `dark`, `default`, `far`, `github`, `googlecode`,   `idea`, `ir-black`, `magula`, `monokai`, `rainbow`, `solarized-dark`, `solarized-light`, `sunburst`, `tomorrow`, `tomorrow-night-blue`, `tomorrow-night-bright`, `tomorrow-night`, `tomorrow-night-eighties`, `vs`, `zenburn`.
+
+---
+
+## Creando código+gráfico lado-a-lado
+
+Aqui aprovechamos las opciones de los bloques para evitar repetir el código&lt;sup/&gt;1&lt;/sup&gt;
+
+1. Código a la izquierda, gráfico a la derecha ([example](#grafico-derecha))
+
+  - Bloque 1: `{r grafico-derecha, fig.show = 'hide'}`
+  - Bloque 2: `{r ref.label = 'grafico-derecha', echo = FALSE}`
+
+2. Gráfico a la izquierda, código a la derecha
+  - Bloque 1: `{r grafico-izquierda, echo = FALSE}`
+  - Bloque 2: `{r ref.label = 'grafico-izquierda', fig.show = 'hide'}`
+
+.footnote[
+1. Estos consejos y más en la charla de Alison Hill titulada ["Teaching in Production"](https://rstudio-education.github.io/teaching-in-production/slides/index.html#46)
+]
+
+---
+class: left
+
+## Agregando iconos
+
+.center[
+
+😄&lt;br&gt;
+Emoji: Use el [📦 emo(ji)](https://github.com/hadley/emo#emoji)
+
+----
+
+&lt;i class="fas fa-brain"&gt;&lt;/i&gt;
+&lt;br&gt;
+[FontAwesome](https://fontawesome.com/icons?d=gallery&amp;c=medical&amp;m=free)
+
+Copia y pega html directamente de la página web:&lt;br&gt;`&lt;i class="fas fa-brain"&gt;&lt;/i&gt;`&lt;br&gt;
+Use el [📦 icon](https://slides.mitchelloharawild.com/icon/) o el [📦 fontawesome ](https://github.com/rstudio/fontawesome#the-fontawesome-package)
+
+----
+
+<i class="ai  ai-orcid "></i>&lt;br&gt;
+[Academicons](https://jpswalsh.github.io/academicons/)
+&lt;br&gt;La forma más facil para acceder estos iconos es con el 📦 icon:&lt;br&gt;` r icon::fa("orcid")`
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="macros.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "googlecode",
+"highlightStyle": "github",
 "highlightLines": true,
 "countIncrementalSlides": false,
 "ratio": "16:9"

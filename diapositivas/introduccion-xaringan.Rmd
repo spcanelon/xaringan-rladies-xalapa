@@ -16,7 +16,7 @@ output:
     seal: false
     self_contained: true
     nature:
-      highlightStyle: googlecode
+      highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
@@ -43,15 +43,13 @@ meta() %>%
   )
 ```
 
-```{r setup, include = FALSE}
+```{r configuracion, include = FALSE}
 library(knitr)
 library(tidyverse)
 library(datos)
 library(icon)
 library(emo)
 library(xaringanExtra)
-library(nhsrtheme)
-library(NHSRdatasets)
 # set default options
 opts_chunk$set(echo=FALSE,
                collapse = TRUE,
@@ -159,13 +157,11 @@ template: pregunta
 
 .pull-left[
 .center[
-<i class="fab fa-js fa-3x"></i><br>
-JavaScript
+### <i class="fab fa-js fa-3x"></i><br>JavaScript
 
-**and**
+### **y**
 
-<i class="fab fa-markdown fa-3x"></i><br>
-Markdown
+### <i class="fab fa-markdown fa-3x"></i><br>Markdown
 ]
 ]
 
@@ -173,8 +169,9 @@ Markdown
 > Una herramienta sencilla para presentaciones de diapositivas basadas en Markdown a traves del navegador web.
 
 ```{r}
-knitr::include_url("https://remarkjs.com")
+knitr::include_url("https://remarkjs.com", height = "375px")
 ```
+[https://remarkjs.com](https://remarkjs.com)
 ]
 
 ---
@@ -186,7 +183,7 @@ knitr::include_url("https://remarkjs.com")
 .center[
 ![:scale 25%](img/hex-xaringan.png)
 
-**xaringan** es un paquete que le presenta `remark.js` a R Markdown
+**xaringan** es un paquete que le presenta<br>`remark.js` a R Markdown
 
 ![:scale 15%](img/hex-rmarkdown.png)
 ]]
@@ -194,6 +191,7 @@ knitr::include_url("https://remarkjs.com")
 ```{r}
 knitr::include_url("https://slides.yihui.org/xaringan")
 ```
+[https://slides.yihui.org/xaringan](https://slides.yihui.org/xaringan)
 ]
 
 ---
@@ -223,6 +221,46 @@ Remark nos ayuda a:
 - y presentar (usando atajos de teclado)
 
 ---
+template: pregunta
+
+`r icon::fa("question-circle", size = 3)`
+# ¿Cómo creamos una presentacion?
+
+--
+
+----
+
+## **Primera opción:** Crear una presentación desde cero
+
+--
+
+## **Segunda opción:** Usar la plantilla hecha para R-Ladies Xalapa 
+
+### `r icon::fa("link")` [tutorial/ejemplo-de-diapositivas.Rmd](https://github.com/spcanelon/xaringan-rladies-xalapa/blob/master/tutorial/ejemplo-de-diapositivas.Rmd)
+
+---
+
+## `r icon::fa("file")` Creando una presentación desde cero
+
+.pull-left[
+### 1\. `r emo::ji("page_facing_up")` New File
+
+### 2\. `r emo::ji("page_facing_up")` New R Markdown
+
+![:scale 75%](img/rmd-xaringan-1.png)
+]
+
+--
+
+.pull-right[
+### 3\. `r emo::ji("memo")` From Template `r icon::fa("angle-double-right")` Ninja Presentation
+
+![:scale 75%](img/rmd-xaringan-2.png)
+
+### 4\. `r emo::ji("floppy_disk")` ¡Ahora guarda tu nuevo documento!
+]
+
+---
 name: en-vivo
 background-color: var(--morado-claro)
 class: middle, center, inverse
@@ -233,123 +271,116 @@ class: middle, center, inverse
 ---
 template: en-vivo
 
-# ¡Comencemos!
-
-**Primer paso** Install the `nhsrtheme` package from GitHub
-```{r, eval=FALSE, echo=TRUE}
-# install.packages("devtools")
-devtools::install_github("nhs-r-community/nhsrtheme")
-```
-
-**Step 2.** Load the `nhsrtheme` package
-```{r, eval=FALSE, echo=TRUE}
-library(nhsrtheme)
-```
+## ¡Comencemos!
 
 ---
 
-## New Rmd File
-.pull-left[
-1. New File
-2. New R Markdown
-![:scale 90%](img/new-r-markdown.png)
-]
+## `r icon::fa("file-alt")` Usar la plantilla hecha para R-Ladies Xalapa
 
-.pull-right[
-3\. From Template `r icon::fa("angle-double-right")` NHS-R Presentation<br>4. Give your slide deck a name!
-![:scale 85%](img/nhsrtheme-template.png)
-]
+### YAML
 
----
-
-## Directory
-The new directory in the "Files" pane contains
-.left[
-+ `r icon::fa("file-code")` the new Rmd file (i.e. `my-slides.Rmd`)
-
-+ `r icon::fa("folder-open")` the `img` folder containing logo files
-
-+ `r icon::fa("folder-open")` the `css` folder containing the custom `nhsr` theme files<br>.small[and an HTML file in charge of [adding the NHS logo to each slide](https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides)]
-]
-
----
-
-## YAML
 ```{r, eval=FALSE, echo=TRUE}
-title: "Presentation title"
-subtitle: "Presentation subtitle"
-author: "Author Name"
-institute: "NHS Organisation"
-date: "Presentation Date"
+---
+title: "Título de la Presentación"
+subtitle: "Subtítulo de la Presentación"
+author: "Nombre de la autora"
+institute: "R-Ladies Xalapa"
+date: "Fecha"
 output:
-  xaringan::moon_reader:               # new kind of output!
-    css:                               
-     -default                          # default xaringan theme CSS file
-     -css/nhsr.css                     # custom primary CSS file
-     -css/nhsr-fonts.css               # custom font CSS file
-    lib_dir: libs                        # creates directory for libraries
-    seal: false                          # false: custom title slide
+  xaringan::moon_reader:                 # ¡Ojo -- nuevo tipo de salida!
+    css:                                 #<<
+     - default                           # el archivo CSS del tema predeterminado for xaringan #<<
+     - rladies                           # el archivo CSS del tema R-Ladies #<<
+     - rladies-fonts                     # el archivo CSS de fuentes del tema R-Ladies #<<
+    lib_dir: libs                        # crea un directorio para bibliotecas
+    seal: false                          # false: permite crear una diapositiva de título personalizada #<<
     nature:
-      highlightStyle: googlecode         # highlighting syntax for code
-      highlightLines: true               # true: enables code line highlighting 
-      highlightLanguage: ["r"]           # languages to highlight
+      highlightStyle: github             # resalta sintaxis para los bloques de código
+      highlightLines: true               # true: permite resaltar líneas de código  
       countIncrementalSlides: false      # false: disables counting of incremental slides
-      ratio: "16:9"                      # 4:3 for standard size
-    includes:
-      after_body: [css/insert-logo.html] # adds NHS logo to slides (you can ignore it)
+      ratio: "4:3"                       # proporción: "16:9" para un tamaño de pantalla ancha  #<<
+---
 ```
 
 ---
-## Extra info
+## `r icon::fa("file-alt")` Usar la plantilla hecha para R-Ladies Xalapa
 
-- `seal: true` creates a title slide with inverse colors using metadata from your YAML
+### El bloque de configuración ("setup")
 
-- Other [highlightStyle options](https://github.com/gnab/remark/wiki/Configuration#highlighting) from **remark.js** are:
+````{r setup, include = TRUE, echo=TRUE}
+library(knitr)                              # paquete que trae funciones utiles para R Markdown
+library(tidyverse)                          # paquete que trae varios paquetes comunes en el tidyverse
+library(datos)                              # paquete que viene con datos populares traducidos al español :)
+library(icon)                               # paquete para iconos
+library(emo)                                # paquete para emojis
 
-  + `arta`, `ascetic`, `dark`, `default`, `far`, `github`, `googlecode`,   `idea`, `ir-black`, `magula`, `monokai`, `rainbow`, `solarized-dark`, `solarized-light`, `sunburst`, `tomorrow`, `tomorrow-night-blue`, `tomorrow-night-bright`, `tomorrow-night`, `tomorrow-night-eighties`, `vs`, `zenburn`.
+# opciones predeterminadas
+knitr::opts_chunk$set(echo = FALSE,         # FALSE: los bloques de código NO se muestran
+                      dpi = 300,            # asegura gráficos de alta resolución
+                      warning = FALSE,      # los mensajes de advertencia NO se muestran
+                      error = FALSE)        # los mensajes de error NO se muestran
+```
+
+--
+
+`r icon::fa("star", color = "#e5bf00")` El bloque de configuración no se muestra en ninguna diapositiva gracias a la opción `include = FALSE`
+
+--
+
+`r icon::fa("star", color = "#e5bf00")` El contenido para la primera diapositiva comienza justo debajo de los tres guiones (`---`) al final del YAML
 
 ---
-## Our first few slides
 
-`r icon::fa("star", color = "#e5bf00")` Slide content starts immediately after the YAML `---`
+## `r icon::fa("rocket")` ¡Vamos a generar las diapositivas! 
 
-.left-column[
-The .morado-claro[nhsrtheme] xaringan template comes pre-loaded with a few things
-]
-.right-column[
-- .morado-claro[A `setup` chunk] with a few libraries and some chunk options set for the whole slide deck
+### ¡Con la función del Moon Reader (_lector de luna?_) podemos ver cambios en tiempo real! 
 
-- Some example slides separated by three dashes (`---`)
-  1. .morado-claro[Title slide with the `title-slide` class.]<br>Content is aligned with the `left` and the `bottom` of the slide
-  1. .morado-claro[Inverse slide with the `inverse` slide class.]<br>Content is aligned with `middle` and `center` of the slide
-  1. .morado-claro[Incremental slides with no specified slide class (default).]<br>Incremental steps are made using two dashes (`--`), and bullet points made using markdown (`*`)
-]
+--
 
----
-
-## Moon Reader
-
-To view the slides generated by your new Rmd file, you have two options:
-
-**Option 1**. Run xaringan's infinite moon reader function in the console `r emo::ji("rocket")` 
+**Primera opción**. Ejecute la función xaringan `infinite_moon_reader()` o `inf_mr()` en tu consola `r emo::ji("rocket")` 
 
 ```{r eval=FALSE, echo=TRUE}
 xaringan::inf_mr()
 ```
 
-> .small[Note: you can also access this feature using the IDE toolbar: **Addins > XARINGAN Infinite Moon Reader**]
+--
 
-**Option 2**. Knit the document `r emo::ji("yarn")` 
+**Segunda opción**. "Teje" el documento con el botón Knit de RStudio `r emo::ji("yarn")` 
+
+---
+template: en-vivo
+
+## ¡A generar las diapositivas!
 
 ---
 
-## Setup chunk
-.left-column[
-A `setup` chunk with a few libraries and some chunk options set for the whole slide deck
+# Sintaxis de xaringan
+
+### ¿Qué notas en el código que te parece conocido?
+
+--
+
+.pull-left[
+
+### Tal vez conocido de **Markdown**
+
+- Encabezados (#, ##, ###)
+- **Negrita** y _cursiva_
+- Enlaces con `[]()`
+- Listas de puntos que se pueden crear con `-`, `+`, or `*`
+- Listas enumeradas que se pueden crear con `1.`
 ]
-.right-column[
-![](img/code-setup-chunk.png)
+
+--
+
+.pull-right[
+### Esto no es tan conocido, y viene de **remark.js**
+- La primera diapositiva comienza después del YAML
+- Diapositivas se separan una de otra con<br>tres guiones (`---`)
+- Diapositivas incrementales se separan con<br>dos guiones (`--`)
+- Contenido de la diapositiva se separa de las notas de la presentadora con tres signos de interrogación (`???`)
 ]
+
 
 ---
 
@@ -391,73 +422,35 @@ style="border:0px solid #E8EDEE"/>
 ]
 
 ---
-# xaringan syntax
-
-### What did you notice?
-
-???
-What about the syntax used in the R Markdown file looked familiar?
-Please type your answers in the chat box.
-
---
-
-.pull-left[
-
-### Familiar from **markdown**
-
-- Headings (#, ##, ###)
-- **Bold** and _italic_ type
-- Links and images with `![]()`
-- Bullet points can be added<br>with `-`, `+`, or `-`
-- Numbered lists can be created<br>with `1.`
-]
-
-???
-What about the syntax looked new or different?
-Please type your answers in the chat box.
-
---
-
-.pull-right[
-### Not so familiar, from **remark.js**
-- First slide starts immediately after YAML, doesn't need to begin with three dashes(`---`)
-- Slides are separated by<br>three dashes (`---`)
-- Incremental slides are separated by<br>two dashes (`--`)
-- Slide content is separated from presenter notes by three questions marks (`???`)
-]
 
 ---
 template: pregunta
 
 `r icon::fa("magic", size = 3)`
-# How can we make our slides<br>look more interesting???
+# ¿Cómo introducimos contenido un poco más interesante?
 
 --
 
 ----
 
-### `r icon::fa("th-large")`&nbsp;&nbsp;with placement
+### `r icon::fa("th-large")`&nbsp;&nbsp; ubicación
 
 --
 
-### `r icon::fa("image")`&nbsp;&nbsp;pretty pictures
-
---
-
-### <i class="fas fa-star"></i>&nbsp;&nbsp;and icons
+### `r icon::fa("image")`&nbsp;&nbsp;imagenes lindas
 
 ---
-name: placement
-## Placement <i class="fas fa-th-large" style = "float: right"></i>
+name: ubicacion
+## Ubicación <i class="fas fa-th-large" style = "float: right"></i>
 
 ---
-template: placement
+template: ubicacion
 
-### Align an entire slide
+### Alinear una dispositiva completa
 
 .left-column[
 
-Horizontally
+Horizontalmente
 
 ```r
 left,
@@ -467,7 +460,7 @@ right
 
 ----
 
-Vertically
+Verticalmente
 
 ```r
 top, 
@@ -485,36 +478,36 @@ bottom
 
 *class: center, middle
 
-# Slide with centered content in the middle
+# Diapositiva con contenido centrado y en el medio de la diapositiva
 
-This content is also centered and in the middle of the slide 
+Este contenido tambien esta centrado y en el medio de la diapositiva
 
 ---
 ```
 
-.right[.morado-claro[example on next slide `r icon::fa("arrow-circle-right")` ]]
+.right[.morado-claro[ejemplo en la diapositiva que sigue `r icon::fa("arrow-circle-right")` ]]
 ]
 
 ---
 class: center, middle
 
-# Slide with centered content and aligned with the middle
+# Diapositiva con contenido centrado y en el medio de la diapositiva
 
-This content is also centered and aligned with the middle of the slide
+Este contenido tambien esta centrado y en el medio de la diapositiva
 
 
 ---
-template: placement
+template: ubicacion
 
-### Align only some text
+### Alinear solo parte del texto
 
 .left-column[
-Horizontal only
+Solamente horizontalmente
 
 ```r
-*.left[words]
-.center[words]
-*.right[words]
+*.left[palabras]
+.center[palabras]
+*.right[palabras]
 ```
 ]
 
@@ -526,11 +519,11 @@ Horizontal only
 
 class: center, middle 
 
-# Slide with some text aligned
+# Diapositiva con algo de texto alineado
 
-*.left[We can start writing a sentence on the left...]
+*.left[Podemos comenzar a escribir una oración a mano izquierda...]
 
-*.right[and end on the right.]
+*.right[...y terminar a mano derecha.]
 
 ---
 ```
@@ -542,21 +535,21 @@ class: center, middle
 ---
 class: center, middle
 
-# Slide with some text aligned
+# Diapositiva con algo de texto alineado
 
-.left[We can start writing a sentence on the left...]
+.left[Podemos comenzar a escribir una oración a mano izquierda...]
 
-.right[...and finish it on the right.]
+.right[...y terminar a mano derecha.]
 
 ---
-template: placement
+template: ubicacion
 
-### Pull content to either side of the slide
+### Jalar el contenido a un lado de la diapositiva
 
 .pull-left[
-**The `.pull-left[]` class pulls content to<br>the left 47%**
+**La clase `.pull-left[]` (_jalar-izquierda_) jala contenido al<br>47% izquierdo**
 
-Like the text above and<br>the hex sticker below
+Como el texto arriba y<br>la etiqueta hexagonal de abajo
 
 ![:scale 25%](img/hex-rmarkdown.png)
 ]
@@ -564,9 +557,9 @@ Like the text above and<br>the hex sticker below
 --
 
 .pull-right[
-**And `.pull-right[]` pulls content to<br>the right 47%**
+**Y la clase `.pull-right[]` (_jalar-derecha_) jala contenido al<br>47% derecho**
 
-You've already seen these content classes<br>in action today `r emo::ji("smile")`
+Ya has visto hoy el uso de estas clases de contenido `r emo::ji("smile")`
 <br>
 
 ![:scale 30%](img/hex-xaringan.png)
@@ -575,27 +568,27 @@ You've already seen these content classes<br>in action today `r emo::ji("smile")
 
 --
 
-They don't have to take up the entire slide. Like for this text, you can decide to continue creating content that isn't pulled to either side.
+El uso de estas clases no tiene por que ocupar la diapositiva entera. Por ejemplo, puedes decidir que quieres continuar escribiendo texto que no sea jalado para ningun lado.
 
 ---
-template: placement
+template: ubicacion
 
-### Arrange content into a two-column layout
+### Organizar el contenido en un diseño de dos columnas
 
 .left-column[
-**`.left-column[]` places content into a column 20% wide**
+**`.left-column[]` (_columna-izquierda_) coloca el contenido en una columna que tiene un 20% de ancho de la diapositiva**
 
-And text is a little lighter
+Y el texto es un poco más claro.
 ]
 
 --
 
 .right-column[
-**`.right-column[]` places content into a column 75% wide**
-- It also has a _little_ bit of padding on the top
+**`.right-column[]` (_columna-derecha-) coloca contenido en una columna que tiene un 75% de ancho de la diapositiva**
+- Tambien tiene un _poquito_ de relleno por arriba
 
-- And unlike the `.pull` content classes, these column classes are fixed for the entire slide
-- They are meant to be used together
+- Y a diferencia de las clases de contenido `.pull` (_jalar_), estas clases de columnas estan fijas para la diapositiva entera
+- Estas clases de columnas estan diseñadas para usarse juntas
 
 .center[
 ![:scale 15%](img/hex-xaringan.png)]
@@ -610,7 +603,7 @@ template: imagenes
 
 ### There are a variety of ways to add images to your slides
 
-## Markdown
+### Markdown
 .pull-left[
 
 ```{markdown, eval=FALSE, echo=TRUE}
@@ -710,12 +703,11 @@ I recommend using this directory structure to help avoid confusion<br>(example f
 
 ```{r eval=FALSE, echo=TRUE}
 .
-├── css
 ├── img #<<
     ├── jacarandas.jpg #<<
 ├── libs
-├── my-slides.Rmd
-└── my-slides.html
+├── ejemplo-de-diapositivas.Rmd
+└── ejemplo-de-diapositivas.html
 ```
 ]
 
@@ -763,190 +755,109 @@ class: middle, center
 ]
 
 ---
-class: left
-name: icons
-## Icons <i class="fas fa-star" style = "float: right"></i>
-
---
-
-.left-column[.center[
-`r emo::ji("smile")`<br>
-[Emojis](https://github.com/hadley/emo#emoji)
-]]
-.right-column[
-Use the [emo(ji) `r emo::ji("package")`](https://github.com/hadley/emo#emoji):<br>
-Icon on the left: ` r emo::ji("smile")` (surrounded by backticks `)
-]
-
---
-
-.left-column[.center[
-<i class="fas fa-brain"></i>
-<br>
-[FontAwesome](https://fontawesome.com/icons?d=gallery&c=medical&m=free)
-]]
-
-.right-column[
-Copy and paste html directly from the website:<br>`<i class="fas fa-brain"></i>`<br>
-Use the [icon `r emo::ji("package")`](https://slides.mitchelloharawild.com/icon/): ` r icon::fa("brain")`,<br>or the [fontawesome `r emo::ji("package")`](https://github.com/rstudio/fontawesome#the-fontawesome-package): ` r fontawesome:fa("brain")`
-]
-
---
-
-.left-column[.center[
-`r icon::ai("orcid")`<br>
-[Academicons](https://jpswalsh.github.io/academicons/)
-]]
-.right-column[
-The easiest way to access them is with the icon `r emo::ji("package")`:<br>` r icon::fa("orcid")`
-]
-
---
-
-.left-column[.center[
-`r icon::ii("ios-flask-outline")`<br>
-[Ionicons](https://ionicons.com/)
-]]
-.right-column[
-I haven't had as much luck with these, but you can use the icon `r emo::ji("package")` here as well: ` r icon::ii("ios-flask-outline")`
-]
-
----
-name: your-turn
+name: practicar
 class: inverse
 
 .left-column[
-## Your turn<br>`r icon::fa("edit")`<br>
-### .my-pink[10:00 mins]
+## Para practicar<br>`r icon::fa("edit")`<br>
 ]
 
 .right-column[
-### Make an "about me" slide
+### Haz una diapositiva para saludar a tu audiencia
 
 ----
 
-Think about including details like your<br>name, affiliation, location, and/or contact information
+Piense en incluir detalles como tu<br>
+nombre, instituto, ubicación, y/o información de contacto 
 
-Here are some options to consider
-- practice [moving content around](#placement) the slide
-- separate content with a horizontal bar `----`
-- [add an image](#pictures) or photo
-- link to sites and/or social media
-- add some [icons](#icons)!
-- see [my about me slide](#about-me) for ideas
+Aqui hay algunas opciones:
+- practique cambiando [la ubicación](#ubicacion) del contenido en la diapositiva
+- separa tu contenido con una barra horizontal `----`
+- agreque una [imagen](#imagenes) o foto
+- agregue un enlace a una página web o red social
 ]
 
 ---
 template: pregunta
 
 `r icon::fa("r-project", size = 3)`
-# What about R content?
+# ¿Qué tal contenido de R?
 
 --
 
 ----
 
-.pull-left[.center[
-`r icon::fa("table", size = 2)`
-### tables
-]]
+### `r icon::fa("table")`&nbsp;&nbsp; tablas
 
 --
 
-.pull-right[
-.center[
-`r icon::fa("chart-bar", size = 2)`
-### plots
-]]
+### `r icon::fa("chart-bar")`&nbsp;&nbsp; gráficos
 
 ---
-name: tables
-## Tables <i class="fas fa-table" style = "float: right"></i>
+name: tablas
+## Tablas <i class="fas fa-table" style = "float: right"></i>
 
 ---
-template: tables
+template: tablas
 
-### Direct output
-
-----
+### Salida directa
 
 ```{r, echo=TRUE}
-NHSRdatasets::LOS_model %>% head()
+datos::pinguinos %>% 
+  head()
 ```
-
-.footnote[We're using the [NHSRdatasets `r emo::ji("package")`](https://github.com/nhs-r-community/NHSRdatasets#nhs-r-community-datasets-) here! It was developed by Chris Mainey and contains a few datasets to use for practice.]
 
 ---
-template: tables
+template: tablas
 
-### HTML table
+### Tabla HTML
 
-----
-.pull-left[
-```{r, echo=TRUE, eval=FALSE}
-NHSRdatasets::LOS_model %>% head() %>%
+
+```{r, echo=TRUE, eval=TRUE}
+datos::pinguinos %>% 
+  head() %>%
   knitr::kable(format = "html")
 ```
-]
-
-.pull-right[
-```{r, echo=FALSE}
-NHSRdatasets::LOS_model %>% head() %>%
-  knitr::kable(format = "html")
-```
-]
 
 ---
-template: tables
+template: tablas
 
-### DT table
+### Tabla DT
 
-----
 
 ```{r, echo=TRUE}
-NHSRdatasets::LOS_model %>% head() %>%
+datos::pinguinos %>% 
+  head() %>%
   DT::datatable()
 ```
 
 ---
-template: tables
+template: tablas
 
-### GT table
+### Tabla GT
 
-----
 
-.pull-left[
-```{r, echo=TRUE, eval=FALSE}
-NHSRdatasets::LOS_model %>% head() %>%
+```{r, echo=TRUE, eval=TRUE}
+datos::pinguinos %>% 
+  head() %>%
   gt::gt()
 ```
-]
-
-.pull-right[
-```{r, echo=FALSE}
-NHSRdatasets::LOS_model %>% head() %>%
-  gt::gt()
-```
-]
-.footnote[Make sure to check out the [GT package workshop](https://github.com/nhs-r-community/Conference_2020#workshop-sessions) tomorrow!]
----
-name: plots
-## Plots <i class="fas fa-chart-bar" style = "float: right"></i>
 
 ---
-template: plots
-name: plot-right
+name: graficos
+## Gráficos <i class="fas fa-chart-bar" style = "float: right"></i>
+
+---
+template: graficos
+name: grafico-derecha
 
 .pull-left[
 ### Code
 
-----
-
-```{r plot-right, echo=TRUE, fig.show='hide'}
-NHSRdatasets::LOS_model %>%
-  ggplot(aes(x = Age, y = Organisation)) +
-  geom_boxplot(aes(fill = Organisation)) +
-  nhsrtheme::scale_fill_nhs("highlights")
+```{r grafico-derecha, echo=TRUE, fig.show='hide'}
+datos::pinguinos %>%
+  ggplot(aes(x = especie, y = masa_corporal_g)) +
+  geom_boxplot(aes(fill = isla))
 ```
 ]
 
@@ -954,70 +865,58 @@ NHSRdatasets::LOS_model %>%
 
 ### Plot
 
-----
-
-```{r, ref.label="plot-right"}
+```{r, ref.label="grafico-derecha"}
 ```
 
 ]
 
-.footnote[Note the use of the [nhsrtheme `r emo::ji("package")`](https://github.com/nhs-r-community/nhsrtheme#nhs-r-theme-) here! It was developed by Tom Jemmett and contains a few different colour palettes based on the NHS identity guidelines]
 ---
-template: plots
-name: alison-tips
-
-### Creating side-by-side code + plot
-
-----
-
-Here's how to leverage code chunk options to avoid repeating your code<sup1/sup>:
-
-1. Code on left, plot on right ([example](#plot-right))
-
-  - Chunk 1: `{r plot-right, fig.show = 'hide'}`
-  - Chunk 2: `{r ref.label = 'plot-right', echo = FALSE}`
-
-2. Plot on left, code on right
-  - Chunk 1: `{r plot-left, echo = FALSE}`
-  - Chunk 2: `{r ref.label = 'plot-left', fig.show = 'hide'}`
-
-.small[
-These and more great tips in Alison Hill's [Teaching in Production](https://rstudio-education.github.io/teaching-in-production/slides/index.html#46)
-]
-
----
-name: your-turn
+name: practicar
 class: inverse
 
 .left-column[
-## Your turn<br>`r icon::fa("edit")`<br>
-### .my-pink[10:00 mins]
+## Para practicar<br>`r icon::fa("edit")`<br>
 ]
 
 .right-column[
-### Make a new slide and practice<br>adding some R content
+### Haz una nueva dispositiva y practique agregando contenido de R
 
 ----
 
-Here are some options to consider
-- add a [table](#tables)
-- add a [plot](#plots)
-- try [arranging content](#alison-tips) to have code on one side and the output on the other
+Aqui hay unas opciones:
+- agregue una [tabla](#tablas)
+- agregue un [gráfico](#graficos)
 ]
+
+---
+template: pregunta
+
+`r icon::fa("share-alt", size = 3)`
+# ¿Cómo compartimos nuestras diapositivas?
+
+--
+
+----
+
+### **Primera opción:** Con "self_contained: TRUE" en el YAML para `r icon::fa("paper-plane")`
+
+--
+
+### **Segunda opción:** Alojando tus archivos en un repositorio para `r icon::fa("link")`
 
 ---
 template: en-vivo
 
-### Let's try deploying slides to GitHub!
+## ¡Vamos a compartir las diapositivas!
 
 ---
-class: goodbye-slide, inverse, middle, left
+class: adios, inverse, middle, left
 
 .pull-left[
 <img style="border-radius: 50%;" src="https://silvia.rbind.io/authors/silvia/avatar.png" width="170px"/>
-# Thank you!
+# Muchísimas gracias!
 
-### Here's where you can find me...
+### Aqui es donde me puedes conseguir...
 
 .right[
 [silvia.rbind.io `r icon::fa("link")`](https://silvia.rbind.io)<br/>
@@ -1025,3 +924,60 @@ class: goodbye-slide, inverse, middle, left
 [@spcanelon `r icon::fa("github")`](https://github.com/spcanelon)<br/>
 ]]
 
+---
+template: pregunta
+
+`r icon::fa("exclamation", size = 3)`
+# ¡Aqui comienza material extra!
+
+---
+# Resaltando los bloques de código
+
+Otras opciones que ofrece **remark.js** para resaltar tu código con [highlightStyle](https://github.com/gnab/remark/wiki/Configuration#highlighting) son:
+
+  + `arta`, `ascetic`, `dark`, `default`, `far`, `github`, `googlecode`,   `idea`, `ir-black`, `magula`, `monokai`, `rainbow`, `solarized-dark`, `solarized-light`, `sunburst`, `tomorrow`, `tomorrow-night-blue`, `tomorrow-night-bright`, `tomorrow-night`, `tomorrow-night-eighties`, `vs`, `zenburn`.
+
+---
+
+## Creando código+gráfico lado-a-lado
+
+Aqui aprovechamos las opciones de los bloques para evitar repetir el código<sup/>1</sup>
+
+1. Código a la izquierda, gráfico a la derecha ([example](#grafico-derecha))
+
+  - Bloque 1: `{r grafico-derecha, fig.show = 'hide'}`
+  - Bloque 2: `{r ref.label = 'grafico-derecha', echo = FALSE}`
+
+2. Gráfico a la izquierda, código a la derecha
+  - Bloque 1: `{r grafico-izquierda, echo = FALSE}`
+  - Bloque 2: `{r ref.label = 'grafico-izquierda', fig.show = 'hide'}`
+
+.footnote[
+1. Estos consejos y más en la charla de Alison Hill titulada ["Teaching in Production"](https://rstudio-education.github.io/teaching-in-production/slides/index.html#46)
+]
+
+---
+class: left
+
+## Agregando iconos
+
+.center[
+
+`r emo::ji("smile")`<br>
+Emoji: Use el [`r emo::ji("package")` emo(ji)](https://github.com/hadley/emo#emoji)
+
+----
+
+<i class="fas fa-brain"></i>
+<br>
+[FontAwesome](https://fontawesome.com/icons?d=gallery&c=medical&m=free)
+
+Copia y pega html directamente de la página web:<br>`<i class="fas fa-brain"></i>`<br>
+Use el [`r emo::ji("package")` icon](https://slides.mitchelloharawild.com/icon/) o el [`r emo::ji("package")` fontawesome ](https://github.com/rstudio/fontawesome#the-fontawesome-package)
+
+----
+
+`r icon::ai("orcid")`<br>
+[Academicons](https://jpswalsh.github.io/academicons/)
+<br>La forma más facil para acceder estos iconos es con el `r emo::ji("package")` icon:<br>` r icon::fa("orcid")`
+]
