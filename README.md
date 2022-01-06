@@ -13,17 +13,17 @@ El taller tiene por objetivo introducir a las participantes al paquete [xaringan
 install.packages(c(
   "xaringan",
   "knitr",
-  "tidyverse"
+  "tidyverse",
+  "fontawesome"
 ))
 
 # Desde GitHub
 devtools::install_github(c(
   "cienciadedatos/datos",
-  "ropenscilabs/icon",
   "hadley/emo"
 ))
 ```
-## Diapositivas: [diapositivas/introduccion-xaringan.html](https://spcanelon.github.io/xaringan-rladies-xalapa/diapositivas/introduccion-xaringan.html)
+## Diapositivas: [xaringan-rladies-xalapa/index.html](https://spcanelon.github.io/xaringan-rladies-xalapa/index.html)
 
 ## Rmd como ejemplo: [tutorial/ejemplo-de-diapositivas.Rmd](tutorial/ejemplo-de-diapositivas.Rmd)
 
