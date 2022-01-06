@@ -47,13 +47,15 @@ meta() %>%
 library(knitr)
 library(tidyverse)
 library(datos)
-library(icon)
+library(fontawesome)
 library(emo)
 library(xaringanExtra)
 # set default options
 opts_chunk$set(echo=FALSE,
+               warning=FALSE,
                collapse = TRUE,
                dpi = 300)
+knit_engines$set("yaml", "markdown")
 
 xaringanExtra::use_tile_view()
 xaringanExtra::use_clipboard()
@@ -76,8 +78,8 @@ width="150px"/>-->
 ### `r rmarkdown::metadata$author`
 ### `r rmarkdown::metadata$date`
 
-[`r icon::fa("github", size = 1)` bit.ly/xaringan-xalapa](https://bit.ly/xaringan-xalapa)
-<br>[`r icon::fa("images")` diapositivas/introduccion-xaringan ](https://spcanelon.github.io/xaringan-rladies-xalapa/diapositivas/introduccion-xaringan.html)
+[`r fontawesome::fa("github")` bit.ly/xaringan-xalapa](https://bit.ly/xaringan-xalapa)
+<br>[`r fontawesome::fa("images")` diapositivas ](https://spcanelon.github.io/xaringan-rladies-xalapa/diapositivas/introduccion-xaringan.html)
 
 ---
 name: saludo
@@ -94,9 +96,9 @@ class: inverse, middle, center
 
 .fade[University of Pennsylvania<br>Philadelphia, PA, USA]
 
-[`r icon::fa("link")` silvia.rbind.io](https://silvia.rbind.io)
-[`r icon::fa("twitter")` @spcanelon](https://twitter.com/spcanelon)
-[`r icon::fa("github", size = 1)` @spcanelon](https://github.com/spcanelon)
+[`r fontawesome::fa("link")` silvia.rbind.io](https://silvia.rbind.io)
+[`r fontawesome::fa("twitter")` @spcanelon](https://twitter.com/spcanelon)
+[`r fontawesome::fa("github")` @spcanelon](https://github.com/spcanelon)
 
 ---
 class: center, middle
@@ -130,7 +132,7 @@ class: inverse, middle, center
 ---
 template: pregunta
 
-`r icon::fa("images", size = 3)`
+`r fontawesome::fa("images", height = "3em")`
 # ¿Cómo creamos<br>presentaciones impresionantes con R?
 
 --
@@ -206,6 +208,7 @@ knitr::include_url("https://slides.yihui.org/xaringan")
 Contenido HTML que es funcional, pero aburrido...
 
 <img src="img/ej-sin-css.png"
+alt="imagen de una diapositiva en blanco y negro y con la fuente Times New Roman que viene estándar en páginas web"
 width="100%" style="border:2px solid rgba(136, 57, 138, 0.3)"/>
 ]
 
@@ -213,6 +216,7 @@ width="100%" style="border:2px solid rgba(136, 57, 138, 0.3)"/>
 ...¡en contenido HTML con estilo! `r emo::ji("sunglasses")`
 
 <img src="img/ej-con-css.png"
+alt="imagen de una diapositiva en color y con una fuente personalizada"
 width="100%" style="border:2px solid rgba(136, 57, 138, 0.3)"/>
 ]
 
@@ -225,7 +229,7 @@ Remark nos ayuda a:
 ---
 template: pregunta
 
-`r icon::fa("question-circle", size = 3)`
+`r fontawesome::fa("question-circle", height = "3em")`
 # ¿Cómo creamos una presentacion?
 
 --
@@ -238,26 +242,30 @@ template: pregunta
 
 ## **Segunda opción:** Usar la plantilla hecha para R-Ladies Xalapa 
 
-### `r icon::fa("github")` [tutorial/ejemplo-de-diapositivas.Rmd](https://github.com/spcanelon/xaringan-rladies-xalapa/blob/master/tutorial/ejemplo-de-diapositivas.Rmd)
+### `r fontawesome::fa("github")` [tutorial/ejemplo-de-diapositivas.Rmd](https://github.com/spcanelon/xaringan-rladies-xalapa/blob/master/tutorial/ejemplo-de-diapositivas.Rmd)
 
 ---
 
-## `r icon::fa("file")` Creando una presentación desde cero
+## `r fontawesome::fa("file")` Creando una presentación desde cero
 
 .pull-left[
 ### 1\. `r emo::ji("page_facing_up")` New File
 
 ### 2\. `r emo::ji("page_facing_up")` New R Markdown
 
-![:scale 75%](img/rmd-xaringan-1.png)
+<img src="img/rmd-xaringan-1.png"
+alt="el camino dentro de RStudio para crear un nuevo archivo RMarkdown es File > New File, R Markdown"
+width="75%"/>
 ]
 
 --
 
 .pull-right[
-### 3\. `r emo::ji("memo")` From Template `r icon::fa("angle-double-right")` Ninja Presentation
+### 3\. `r emo::ji("memo")` From Template `r fontawesome::fa("angle-double-right")` Ninja Presentation
 
-![:scale 75%](img/rmd-xaringan-2.png)
+<img src="img/rmd-xaringan-2.png"
+alt="en la nueva ventana, selecciona From Template y luego Ninja Presentation"
+width="75%"/>
 
 ### 4\. `r emo::ji("floppy_disk")` ¡Ahora guarda tu nuevo documento!
 ]
@@ -267,7 +275,7 @@ name: en-vivo
 background-color: var(--morado-claro)
 class: middle, center, inverse
 
-`r icon::fa("code", size = 3)`
+`r fontawesome::fa("code", height = "3em")`
 # Demo en vivo
 
 ---
@@ -277,7 +285,7 @@ template: en-vivo
 
 ---
 
-## `r icon::fa("file-alt")` Usar la plantilla hecha para R-Ladies Xalapa
+## `r fontawesome::fa("file-alt")` Usar la plantilla hecha para R-Ladies Xalapa
 
 ### YAML
 
@@ -305,15 +313,15 @@ output:
 ```
 
 ---
-## `r icon::fa("file-alt")` Usar la plantilla hecha para R-Ladies Xalapa
+## `r fontawesome::fa("file-alt")` Usar la plantilla hecha para R-Ladies Xalapa
 
 ### El bloque de configuración ("setup")
 
-````{r setup, include = TRUE, echo=TRUE}
+```{r setup, include = TRUE, echo=TRUE, eval=FALSE}
 library(knitr)                              # paquete que trae funciones utiles para R Markdown
 library(tidyverse)                          # paquete que trae varios paquetes comunes en el tidyverse
 library(datos)                              # paquete que viene con datos populares traducidos al español :)
-library(icon)                               # paquete para iconos
+library(fontawesome)                               # paquete para iconos
 library(emo)                                # paquete para emojis
 
 # opciones predeterminadas
@@ -325,15 +333,15 @@ knitr::opts_chunk$set(echo = FALSE,         # FALSE: los bloques de código NO s
 
 --
 
-`r icon::fa("star", color = "#e5bf00")` El bloque de configuración no se muestra en ninguna diapositiva gracias a la opción `include = FALSE`
+`r fontawesome::fa("star")` El bloque de configuración no se muestra en ninguna diapositiva gracias a la opción `include = FALSE`
 
 --
 
-`r icon::fa("star", color = "#e5bf00")` El contenido para la primera diapositiva comienza justo debajo de los tres guiones (`---`) al final del YAML
+`r fontawesome::fa("star")` El contenido para la primera diapositiva comienza justo debajo de los tres guiones (`---`) al final del YAML
 
 ---
 
-## `r icon::fa("rocket")` ¡Vamos a generar las diapositivas! 
+## `r fontawesome::fa("rocket")` ¡Vamos a generar las diapositivas! 
 
 ### ¡Con la función del Moon Reader (_lector de luna?_) podemos ver cambios en tiempo real! 
 
@@ -387,27 +395,27 @@ template: en-vivo
 ---
 template: en-vivo
 
-## `r icon::fa("search")` Examinemos las diapositivas ejemplares con más detalle
+## `r fontawesome::fa("search")` Examinemos las diapositivas ejemplares con más detalle
 
 ---
 template: pregunta
 
-`r icon::fa("magic", size = 3)`
+`r fontawesome::fa("magic", height = "3em")`
 # ¿Cómo introducimos contenido interesante?
 
 --
 
 ----
 
-### `r icon::fa("th-large")`&nbsp;&nbsp; ubicación
+### `r fontawesome::fa("th-large")`&nbsp;&nbsp; ubicación
 
 --
 
-### `r icon::fa("image")`&nbsp;&nbsp;imagenes
+### `r fontawesome::fa("image")`&nbsp;&nbsp;imagenes
 
 ---
 name: ubicacion
-## `r icon::fa("th-large")` Ubicación
+## `r fontawesome::fa("th-large")` Ubicación
 
 ---
 template: ubicacion
@@ -451,7 +459,7 @@ Este contenido tambien esta centrado y en el medio de la diapositiva
 ---
 ```
 
-.right[.morado-claro[ejemplo en la diapositiva que sigue `r icon::fa("arrow-circle-right")` ]]
+.right[.morado-claro[ejemplo en la diapositiva que sigue `r fontawesome::fa("arrow-circle-right")` ]]
 ]
 
 ---
@@ -494,7 +502,7 @@ class: center, middle
 ---
 ```
 
-.right[.morado-claro[ejemplo en la diapositiva que sigue `r icon::fa("arrow-circle-right")`]]
+.right[.morado-claro[ejemplo en la diapositiva que sigue `r fontawesome::fa("arrow-circle-right")`]]
 
 ]
 
@@ -513,11 +521,11 @@ template: ubicacion
 ### Jalar el contenido a un lado de la diapositiva
 
 .pull-left[
-**La clase `.pull-left[]` (_jalar-izquierda_) jala contenido al<br>47% izquierdo**
+**La clase `.pull-left[]` (_jalar-izquierda_) jala contenido al 47% izquierdo**
 
-Como el texto arriba y<br>la etiqueta hexagonal de abajo
+Como el texto arriba y la etiqueta hexagonal de abajo
 
-![:scale 25%](img/hex-rmarkdown.png)
+![:scale 30%](img/hex-rmarkdown.png)
 ]
 
 --
@@ -563,11 +571,11 @@ Y el texto es un poco más claro.
 ---
 template: en-vivo
 
-## `r icon::fa("search")` Busquemos ejemplos de ubicación en las diapositivas ejemplares
+## `r fontawesome::fa("search")` Busquemos ejemplos de ubicación en las diapositivas ejemplares
 
 ---
 name: imagenes
-## `r icon::fa("image")` Imagenes
+## `r fontawesome::fa("image")` Imagenes
 
 ---
 template: imagenes
@@ -576,7 +584,7 @@ template: imagenes
 .pull-left[
 
 ```{markdown, eval=FALSE, echo=TRUE}
-![](img/jacarandas.jpg)
+!["flores púrpuras"](img/jacarandas.jpg)
 ```
 
 - opción sencilla
@@ -596,17 +604,18 @@ template: imagenes
 
 .pull-left[
 
-```{r imagen-knitr, eval=TRUE, echo=TRUE, fig.show="hide"}
+```{r imagen-knitr, echo=TRUE, fig.show="hide"}
 knitr::include_graphics("img/jacarandas.jpg")
 ```
 
 - bastante flexible
 - el bloque de código toma espacio
+- permite incluír text alternativo mediante la opción de bloque [`fig.alt`](https://www.rstudio.com/blog/knitr-fig-alt/)
 - ofrece [varias opciones](https://www.rdocumentation.org/packages/knitr/versions/1.30/topics/include_graphics)
 ]
 
 .pull-right[
-```{r, ref.label="imagen-knitr", out.width="90%"}
+```{r, ref.label="imagen-knitr", out.width="90%", eval=TRUE}
 ```
 ]
 
@@ -616,7 +625,8 @@ template: imagenes
 ### **Tercera opción:** HTML
 .pull-left[
 ```{html, eval=FALSE, echo=TRUE}
-<img src="img/jacarandas.jpg" width="90%"/>
+<img src="img/jacarandas.jpg" width="90%"
+alt="flores púrpuras"/>
 ```
 - la opción más flexible
 - no tiene apariencia agradable
@@ -624,7 +634,9 @@ template: imagenes
 - `r emo::ji("eyes")` **Ojo:** Para insertar un avatar: 
 ```{html, eval=FALSE, echo=TRUE}
 <img src="https://enlaceweb.aqui" 
-width="150px" style="border-radius: 50%;"/>
+width="150px" 
+alt="foto de la presentadora"
+style="border-radius: 50%;"/>
 ```
 ]
 
@@ -664,7 +676,7 @@ Puedes usar la propiedad [background-image ](https://github.com/gnab/remark/wiki
 - `background-position:`  (_posición de la imagen del fondo_) [experimenta con esta propiedad](https://css-tricks.com/almanac/properties/b/background-position/)
 
 
-.right[.morado-claro[¡ejemplos de `background-size` en acción! `r icon::fa("arrow-circle-right")` ]]
+.right[.morado-claro[¡ejemplos de `background-size` en acción! `r fontawesome::fa("arrow-circle-right")` ]]
 
 
 ---
@@ -693,27 +705,27 @@ class: middle, center, inverse
 ---
 template: en-vivo
 
-## `r icon::fa("search")` Busquemos ejemplos de imagenes en las diapositivas ejemplares
+## `r fontawesome::fa("search")` Busquemos ejemplos de imagenes en las diapositivas ejemplares
 
 ---
 template: pregunta
 
-`r icon::fa("r-project", size = 3)`
+`r fontawesome::fa("r-project", height = "3em")`
 # ¿Qué tal contenido de R?
 
 --
 
 ----
 
-### `r icon::fa("table")`&nbsp;&nbsp; tablas
+### `r fontawesome::fa("table")`&nbsp;&nbsp; tablas
 
 --
 
-### `r icon::fa("chart-bar")`&nbsp;&nbsp; gráficos
+### `r fontawesome::fa("chart-bar")`&nbsp;&nbsp; gráficos
 
 ---
 name: tablas
-## `r icon::fa("table")` Tablas
+## `r fontawesome::fa("table")` Tablas
 
 ---
 template: tablas
@@ -769,7 +781,7 @@ datos::pinguinos %>%
 
 ---
 name: graficos
-## `r icon::fa("chart-bar")` Gráficos
+## `r fontawesome::fa("chart-bar")` Gráficos
 
 ---
 template: graficos
@@ -777,7 +789,7 @@ template: graficos
 .pull-left[
 ### Código
 
-```{r grafico-derecha-error, echo=TRUE, fig.show='hide'}
+```{r grafico-derecha-error, echo=TRUE, fig.show='hide', fig.alt="diagrama de caja, o boxplot, con masa corporal en gramos en el eje y, pero no vemos el eje x porque se corre por debajo del borde inferior de la diapositiva"}
 datos::pinguinos %>%
   ggplot(aes(x = especie, y = masa_corporal_g)) +
   geom_boxplot(aes(fill = isla))
@@ -823,7 +835,7 @@ datos::pinguinos %>%
 ### Salida
 `r emo::ji("relieved")` ¡Mucho mejor!
 
-```{r grafico-derecha, echo=FALSE, fig.height=5}
+```{r grafico-derecha, echo=FALSE, fig.height=5, fig.alt="luego de ajustar la altura del grafico ahora la salida si incluye el eje x y se puede apreciar el grafico entero."}
 datos::pinguinos %>%
   ggplot(aes(x = especie, y = masa_corporal_g)) +
   geom_boxplot(aes(fill = isla))
@@ -834,22 +846,21 @@ datos::pinguinos %>%
 ---
 template: pregunta
 
-`r icon::fa("share-alt", size = 3)`
+`r fontawesome::fa("share-alt", height="3em")`
+
 # ¿Cómo compartimos nuestras diapositivas?
 
 --
 
-----
-
-### **Primera opción:** Con "self_contained: TRUE" en el YAML para `r icon::fa("paper-plane")`
+### **Primera opción:** Con "self_contained: TRUE" en el YAML para `r fontawesome::fa("paper-plane")`
 
 --
 
-### **Segunda opción:** Alojando tus archivos en un repositorio para `r icon::fa("link")`
+### **Segunda opción:** Alojando tus archivos en un repositorio para `r fontawesome::fa("link")`
 
 ---
 
-## `r icon::fa("paper-plane")` Generar diapositivas independientes para compartir
+## `r fontawesome::fa("paper-plane")` Generar diapositivas independientes para compartir
 
 1\. Agregue una línea al YAML
 
@@ -887,7 +898,7 @@ background: url(https://tenor.com/yPym.gif)
 
 ---
 
-## `r icon::fa("link")` Generar un enlace para las diapositivas que se puede compartir
+## `r fontawesome::fa("link")` Generar un enlace para las diapositivas que se puede compartir
 
 ### 1\. Activa GitHub/GitLab Pages para tu repositorio para renderizar tus archivos HTML
 
@@ -922,16 +933,16 @@ class: inverse, middle, left
 ### Aqui es donde me puedes conseguir...
 
 .right[
-[silvia.rbind.io `r icon::fa("link")`](https://silvia.rbind.io)<br/>
-[@spcanelon `r icon::fa("twitter")`](https://twitter.com/spcanelon)<br/>
-[@spcanelon `r icon::fa("github")`](https://github.com/spcanelon)<br/>
+[silvia.rbind.io `r fontawesome::fa("link")`](https://silvia.rbind.io)<br/>
+[@spcanelon `r fontawesome::fa("twitter")`](https://twitter.com/spcanelon)<br/>
+[@spcanelon `r fontawesome::fa("github")`](https://github.com/spcanelon)<br/>
 ]]
 
 
 ---
 template: pregunta
 
-`r icon::fa("exclamation", size = 3)`
+`r fontawesome::fa("exclamation", height="3em")`
 # ¡Aqui comienza material extra!
 
 ---
@@ -968,13 +979,13 @@ Aqui aprovechamos las opciones de los bloques para evitar repetir el código<sup
 
 --
 
-`r icon::fa("code-branch")` [FontAwesome](https://fontawesome.com/icons?d=gallery&m=free)
+`r fontawesome::fa("code-branch")` [FontAwesome](https://fontawesome.com/icons?d=gallery&m=free)
 - Copia y pega html directamente de la página web:<br>`<i class="fas fa-code-branch"></i>`<br>
-- Use el [`r emo::ji("package")` icon](https://slides.mitchelloharawild.com/icon/) o el [`r emo::ji("package")` fontawesome ](https://github.com/rstudio/fontawesome#the-fontawesome-package)
+- Use el [`r emo::ji("package")` fontawesome ](https://github.com/rstudio/fontawesome#the-fontawesome-package)
 
 --
 
-`r icon::ai("orcid")` [Academicons](https://jpswalsh.github.io/academicons/)
+`r fontawesome::fa("orcid")` [Academicons](https://jpswalsh.github.io/academicons/)
 <br>La forma más fácil para acceder estos iconos es con el `r emo::ji("package")` icon
 
 ---
@@ -996,7 +1007,7 @@ Aqui aprovechamos las opciones de los bloques para evitar repetir el código<sup
 ---
 
 .pull-left[
-## Para practicar<br>`r icon::fa("edit")`<br>
+## Para practicar<br>`r fontawesome::fa("edit")`<br>
 ]
 
 .pull-right[
@@ -1016,7 +1027,7 @@ Aqui hay algunas opciones:
 
 ---
 .pull-left[
-## Para practicar<br>`r icon::fa("edit")`<br>
+## Para practicar<br>`r fontawesome::fa("edit")`<br>
 ]
 
 .pull-right[
