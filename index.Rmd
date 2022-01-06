@@ -109,7 +109,7 @@ class: center, middle
 
 --
 
-<img src="https://raw.githubusercontent.com/spcanelon/xaringan-rladies-xalapa/master/diapositivas/img/rladies-xalapa.jpg"
+<img src="img/rladies-xalapa.jpg"
 width="150px"
 /><br>
 ## [R-Ladies Xalapa](https://www.meetup.com/rladies-xalapa)
@@ -531,7 +531,7 @@ Como el texto arriba y la etiqueta hexagonal de abajo
 --
 
 .pull-right[
-**La clase `.pull-right[]` (_jalar-derecha_) jala contenido al<br>47% derecho**
+**La clase `.pull-right[]` (_jalar-derecha_) jala contenido al 47% derecho**
 
 Ya has visto hoy el uso de estas clases de contenido `r emo::ji("smile")`
 <br>
